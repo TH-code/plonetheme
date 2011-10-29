@@ -9,31 +9,31 @@ h1 {
 ol {
   margin: 0.5em 1.5em 0 0; }
 
-#portal-logo img {
+#{$portal-logo} img {
   margin: 1em 2em 1em 0em; }
 
-#portal-siteactions {
+#{$portal-siteactions} {
   float: left;
   padding: 3px 0 3px 2em; }
 
-#portal-searchbox {
+#{$portal-searchbox} {
   padding: 0 0 0 2em;
   float: left;
   clear: left; }
 
 /* end goofy horizontal scroll problem */
 
-#portal-globalnav {
+#{$portal-globalnav} {
   padding: 0em 2em 0em 0em !important;
   li a {
     float: right;
     margin-left: 0.5em !important;
     margin-bottom: -3px; } }
 
-* html #portal-globalnav {
+* html #{$portal-globalnav} {
   height: 0.1%; }
 
-#portal-personaltools {
+#{$portal-personaltools} {
   /* empty personaltools background and border and set on newly added portal-personaltools-wrapper instead */
   background: none;
   border: none;
@@ -43,8 +43,8 @@ ol {
   margin: 0;
   float: left; }
 
-#portal-personaltools-wrapper {
-  /* settings from #portal-personaltools */
+#{$portal-personaltools-wrapper} {
+  /* settings from #{$portal-personaltools} */
   background-color: $globalBackgroundColor;
   border-top-color: $globalBorderColor;
   border-top-style: $borderStyle;
@@ -57,7 +57,7 @@ ol {
   height: 2em;
   clear: both; }
 
-#portal-personaltools {
+#{$portal-personaltools} {
   .portalUser {
     background: transparent url('$portalUrl/user.png') 100% 50% no-repeat;
     margin: 0;
@@ -230,10 +230,10 @@ ul.configletDetails {
 .hiddenStructure {
   margin: -1px -1px 0 0; }
 
-#portal-column-one .visualPadding {
+#{$portal-column-one} .visualPadding {
   padding: 2em 2em 1em 0em; }
 
-#portal-column-two .visualPadding {
+#{$portal-column-two} .visualPadding {
   padding: 2em 0em 1em 2em; }
 
 .contentActions .hiddenStructure {
@@ -275,7 +275,7 @@ dl.portalMessage dt {
 
 /* set sitemap borders and margins for right alignment  - smoothify */
 
-#portal-sitemap {
+#{$portal-sitemap} {
   .navTreeLevel1 {
     padding-left: 0;
     padding-right: 1em;
@@ -304,7 +304,7 @@ dt span.documentByLine {
 
 /* Fix to big header which causes a horizontal scrollbar to appear */
 
-#portal-top {
+#{$portal-top} {
   margin-right: 1px; }
 
 /* LiveSearch */

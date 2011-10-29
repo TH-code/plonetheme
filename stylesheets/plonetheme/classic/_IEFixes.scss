@@ -5,9 +5,9 @@
 */
 
 * {
-  html #portal-columns {
+  html #{$portal-columns} {
     width: 100%; }
-  html*#portal-columns {
+  html*#{$portal-columns} {
     width: auto; } }
 
 input {
@@ -20,8 +20,8 @@ table.listing td.top {
   left: -1px;
   top: -1px; }
 
-div#portal-columns div {
-  &#portal-column-one, &#portal-column-two {
+div#{$portal-columns} div {
+  &#{$portal-column-one}, &#{$portal-column-two} {
     overflow: hidden; } }
 
 textarea {
@@ -40,10 +40,10 @@ textarea {
 
 /* Fix bottom margin on tabs in IE */
 
-#portal-globalnav li.selected a {
+#{$portal-globalnav} li.selected a {
   position: relative; }
 
-#portal-colophon .colophonIcon {
+#{$portal-colophon} .colophonIcon {
   height: 0px !important;
   height: 15px; }
 
@@ -135,9 +135,9 @@ dd.portletFooter {
 /* fix for the horizontal scroll due to the floated searchbox without width definition */
 
 * html {
-  #portal-searchbox {
+  #{$portal-searchbox} {
     overflow: auto; }
-  body.fullscreen #portal-searchbox {
+  body.fullscreen #{$portal-searchbox} {
     overflow: visible; } }
 
 /* IE doesn't know what to do with the caption element, hide it */

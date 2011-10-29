@@ -158,10 +158,10 @@
   
   /* Padding for the columns */
   
-  #portal-column-one .visualPadding {
+  #{$portal-column-one} .visualPadding {
     padding: 2em 0em 1em 2em; }
   
-  #portal-column-two .visualPadding {
+  #{$portal-column-two} .visualPadding {
     padding: 2em 2em 1em 0em; }
   
   /* Content area */
@@ -231,24 +231,24 @@
   
   /* End edit form elements */
   
-  #visual-portal-wrapper {
+  #{$visual-portal-wrapper} {
     margin: 0;
     padding: 0; }
   
   /* Logo properties */
   
-  #portal-logo img {
+  #{$portal-logo} img {
     border: 0;
     padding: 0;
     margin: 1em 0em 1em 2em; }
   
   /* The skin switcher at the top, only shows up if you have multiple skins available */
   
-  #portal-skinswitcher a {
+  #{$portal-skinswitcher} a {
     display: block;
     float: left; }
   
-  #portal-top {
+  #{$portal-top} {
     /* Top section */
     margin: 0;
     padding: 0;
@@ -256,7 +256,7 @@
   
   /* Site-wide action menu - font size, contact, index, sitemap etc */
   
-  #portal-siteactions {
+  #{$portal-siteactions} {
     background-color: transparent;
     white-space: nowrap;
     list-style-image: none;
@@ -284,7 +284,7 @@
   
   /* Searchbox style and positioning */
   
-  #portal-searchbox {
+  #{$portal-searchbox} {
     float: right;
     clear: right;
     background-color: transparent;
@@ -297,7 +297,7 @@
     form {
       white-space: nowrap; } }
   
-  #portal-advanced-search {
+  #{$portal-advanced-search} {
     margin-top: 0.2em;
     clear: both;
     a {
@@ -445,7 +445,7 @@
   
   /* The global section tabs. */
   
-  #portal-globalnav {
+  #{$portal-globalnav} {
     background-color: transparent;
     padding: 0em 0em 0em 2em;
     white-space: nowrap;
@@ -479,7 +479,7 @@
         border-bottom-color: $globalBackgroundColor;
         color: $globalFontColor; } } }
   
-  #portal-personaltools {
+  #{$portal-personaltools} {
     /* Bar with personalized menu (user preferences, etc) */
     background-color: $globalBackgroundColor;
     border-top-color: $globalBorderColor;
@@ -514,13 +514,13 @@
   .visualCaseSensitive {
     text-transform: none; }
   
-  #portal-languageselector {
+  #{$portal-languageselector} {
     margin: 0 1em 0 1em;
     float: right;
     li {
       display: inline; } }
   
-  #portal-breadcrumbs {
+  #{$portal-breadcrumbs} {
     /* The path bar, including breadcrumbs */
     border-bottom-color: $globalBorderColor;
     border-bottom-style: $borderStyle;
@@ -884,7 +884,7 @@
     font-weight: normal;
     color: $discreetColor; }
   
-  #portal-footer {
+  #{$portal-footer} {
     background-color: $globalBackgroundColor;
     border-top: $borderWidth $borderStyle $globalBorderColor;
     border-bottom: $borderWidth $borderStyle $globalBorderColor;
@@ -904,7 +904,7 @@
       &:hover {
         text-decoration: underline; } } }
   
-  #portal-colophon {
+  #{$portal-colophon} {
     float: none;
     margin: 0 0 1em 0;
     padding: 0 0 1em 0;
@@ -937,7 +937,7 @@
   
   /* Sitemap styles */
   
-  #portal-sitemap {
+  #{$portal-sitemap} {
     list-style: none;
     list-style-image: none;
     margin: 0;
@@ -1074,11 +1074,11 @@
   */
   
   body.fullscreen {
-    #portal-logo, #portal-siteactions {
+    #{$portal-logo}, #{$portal-siteactions} {
       display: none; }
-    #portal-globalnav {
+    #{$portal-globalnav} {
       margin-top: 4em; }
-    #portal-searchbox {
+    #{$portal-searchbox} {
       margin: 0.5em 2em 0 0.5em;
       padding: 0;
       position: relative;
@@ -1274,29 +1274,29 @@
 @mixin _classic_columns {
   @if $plone-4 == true {
     @include deco-gs;
-    #portal-column-content > div:not([id^="viewlet"]) {
+    #{$portal-column-content} > div:not([id^="viewlet"]) {
       padding: 1em 1em 0 !important; }
-    #portal-column-content > .documentEditable:not([id^="viewlet"]) {
+    #{$portal-column-content} > .documentEditable:not([id^="viewlet"]) {
       padding: 1em 2em 0 !important; } }
   @else {
-    #portal-columns {
+    #{$portal-columns} {
       width: 100% !important;
       border-collapse: collapse;
       border-spacing: 0; }
     
-    #portal-column-one {
+    #{$portal-column-one} {
       vertical-align: top;
       width: $columnOneWidth;
       border-collapse: collapse;
       padding: 0; }
     
-    #portal-column-content {
+    #{$portal-column-content} {
       vertical-align: top;
       border-collapse: collapse;
       padding: 1em 1em 0 1em;
       margin: 0em 0em 2em 0em; }
     
-    #portal-column-two {
+    #{$portal-column-two} {
       vertical-align: top;
       width: $columnTwoWidth;
       border-collapse: collapse;
@@ -1304,9 +1304,9 @@
     
     /* fullscreen */
     body.fullscreen {
-      #portal-column-one, #portal-column-two {
+      #{$portal-column-one}, #{$portal-column-two} {
         display: none; }
-      #portal-column-content {
+      #{$portal-column-content} {
         width: 100%;
         margin: 0;
         padding: 0; } } } }
@@ -1630,7 +1630,7 @@
   
   .portalNotLoggedIn {}
   
-  #portal-column-content fieldset > * {
+  #{$portal-column-content} fieldset > * {
     input:focus, textarea:focus {
       border-color: $notifyBorderColor;
       border-width: $borderWidth; } }
@@ -2053,7 +2053,7 @@
   
   /* LiveSearch portlet tweaks, since positioning changes */
   
-  #portal-column-one fieldset.livesearchContainer {
+  #{$portal-column-one} fieldset.livesearchContainer {
     right: inherit !important;
     top: 1.5em !important; } }
 
@@ -2520,7 +2520,7 @@
     
     /* Hide all the elements that are irrelevant for printing */
     
-    #portal-logo, #portal-siteactions, .hiddenStructure, #portal-searchbox, #portal-globalnav, #portal-personaltools, #portal-breadcrumbs, #portal-column-one, #portal-column-two, #portal-languageselector, .contentViews, .contentActions, .help, .legend, .portalMessage, .documentActions, .documentByLine, .netscape4, #kss-spinner, #review-history, #content-history, .listingBar, #portal-footer, #portal-colophon, .skipnav, #kss-spinner, #review-history, #content-history, .listingBar, .discussion input, .overlay, .close, .visualNoPrint {
+    #{$portal-logo}, #{$portal-siteactions}, .hiddenStructure, #{$portal-searchbox}, #{$portal-globalnav}, #{$portal-personaltools}, #{$portal-breadcrumbs}, #{$portal-column-one}, #{$portal-column-two}, #{$portal-languageselector}, .contentViews, .contentActions, .help, .legend, .portalMessage, .documentActions, .documentByLine, .netscape4, #kss-spinner, #review-history, #content-history, .listingBar, #{$portal-footer}, #{$portal-colophon}, .skipnav, #kss-spinner, #review-history, #content-history, .listingBar, .discussion input, .overlay, .close, .visualNoPrint {
       display: none; }
     
     .discussion .documentByLine {
