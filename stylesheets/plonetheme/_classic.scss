@@ -1,0 +1,42 @@
+@import "plonetheme/classic/base_modules";
+
+@include classic_member;
+@if $override-styles != true {
+  @include classic_base;
+  @include classic_public;
+}
+@include classic_columns;
+@include classic_authoring;
+@if $override-styles != true {
+  @include classic_portlets;
+  @if $plone-4 == true {
+    @include classic_plone-4;
+  }
+}
+@include classic_controlpanel;
+@include classic_deprecated;
+@include classic_navtree;
+@include classic_invisibles;
+@include classic_forms;
+
+@import "plonetheme/utilities/discussion";
+@import "plonetheme/utilities/ploneKss";
+@import "plonetheme/utilities/tinymce";
+
+@include classic_print;
+@include classic_mobile;
+@if $RTL == true {
+  @import "plonetheme/classic/RTL";
+}
+
+// For your IE styles use this import for basic fixes:
+//   @import "plonetheme/classic/IEFixes.scss";
+
+// For a plone 3 theme you would use a ploneCustom.scss to put your CSS changes. 
+// You should preferrably use this and override the 
+// relevant properties you want to change here instead 
+// of customizing plone.css to survive upgrades. Writing
+// your own plone.css only makes sense for very heavy 
+// customizations. Useful variables from Plone are 
+// documented at the bottom of this file.
+

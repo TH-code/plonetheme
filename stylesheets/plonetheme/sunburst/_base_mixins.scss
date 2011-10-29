@@ -1,0 +1,1838 @@
+@import "plonetheme/sunburst/base_properties";
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/typography/links";
+
+@mixin _sunburst_reset {
+  // Remove implicit browser styles to have a neutral starting point:
+  //  - No elements should have implicit margin/padding
+  //  - No underline by default on links (we add it explicitly in the body text)
+  //  - When we want markers on lists, we will be explicit about it, and they render inline by default
+  //  - Browsers are inconsistent about hX/pre/code, reset
+  //  - Linked images should not have borders
+  /* =Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    &:link, &:visited {
+      text-decoration: none; }
+    ul, ol {
+      list-style: none; }
+    li {
+      display: inline; }
+    h1, h2 ,h3, h4, h5, h6, pre, code {
+      font-size: $em; }
+    a {
+      img, &:link img, &:visited img {
+        border: none; } } }
+  a {
+    outline: none; }
+  table {
+    border-spacing: 0; }
+  img {
+    vertical-align: text-bottom; }
+  iframe {
+    border-width: 0;
+    border-style: none; } }
+
+$base-heading-font-weight: bold !default;
+$base-dt-font-weight: bold !default;
+$base-heading-line-height: 1.5 * $em !default;
+
+@mixin _sunburst_base-clean {
+  /* =Base */
+  body {
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
+    background: $base-background;
+    color: $base-color; }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $base-heading-font;
+    font-weight: $base-heading-font-weight;
+    color: $base-color;
+    line-height: $base-heading-line-height; }
+  h1 {
+    font-size: 2 * $em; }
+  h2 {
+    font-size: 1.75 * $em; }
+  h3 {
+    font-size: 1.25 * $em; }
+  h4 {
+    font-size: 1.25 * $em; }
+  h5 {
+    font-size: 1 * $em; }
+  h6 {
+    font-size: 0.8 * $em; }
+  h2, h3, h4, h5, h6 {
+    color: $base-heading-color;
+    a {
+      @include link-colors($link-color); } }
+  a {
+    @include link-colors($link-color, $hover-color, $active-color, $visited-color, $focus-color);
+    &:focus img {
+      outline: thin dotted; } }
+  dt {
+    font-weight: $base-dt-font-weight; }
+  input {
+    font-family: $base-form-font; }
+  q {
+    quotes: "“" "”" "‘" "’"; } }
+
+@mixin _sunburst_base {
+  /* =Base */
+  body {
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
+    background: $base-background;
+    color: $base-color;
+    width: $body-width;
+    margin: $body-margin; }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $base-heading-font;
+    font-weight: $base-heading-font-weight;
+    color: $base-color;
+    line-height: $base-heading-line-height; }
+  h1, h2 {
+    letter-spacing: -0.05 * $em; }
+  h1 {
+    font-size: 2 * $em; }
+  h2 {
+    font-size: 1.75 * $em; }
+  h3 {
+    font-size: 1.25 * $em; }
+  h4 {
+    font-size: 1.25 * $em; }
+  h5 {
+    font-size: 1 * $em; }
+  h6 {
+    font-size: 0.8 * $em; }
+  h2, h3, h4, h5, h6 {
+    color: $base-heading-color;
+    a {
+      border-bottom: none !important;
+      @include link-colors($link-color); } }
+  a {
+    @include link-colors($link-color, $hover-color, $active-color, $visited-color, $focus-color);
+    &:focus img {
+      outline: thin dotted; } }
+  dt {
+    font-weight: $base-dt-font-weight; }
+  input {
+    font-family: $base-form-font; }
+  q {
+    quotes: "“" "”" "‘" "’"; } }
+
+$portal-header-padding: 0.25 * $em 0.5 * $em !default;
+$portal-header-background: #e3e3e3 !default;
+
+@mixin _sunburst_header-clean {
+  /* =Header */
+  #{$portal-header} {
+    position: relative; }
+  #{$portal-globalnav} {
+    clear: both;
+    font-size: $base-font-size; }
+  #{$portal-personaltools} {
+    float: right;
+    background: $portal-personaltools-background;
+    position: relative;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    padding: $portal-header-padding;
+    font-size: $base-font-size;
+    @include border-bottom-radius($radius);
+    #anon-personalbar {
+      font-weight: normal;
+	  a {
+	    float: left;
+	    margin-right: 0.5 * $em; } } }
+  #{$portal-languageselector} {
+    float: right;
+    background: $portal-header-background;
+    position: relative;
+    top: 0;
+    right: 1px;
+    z-index: 3;
+    padding: $portal-header-padding;
+    font-size: $base-font-size;
+    @include border-bottom-radius($radius);
+    max-width: 50%; } }
+
+@mixin _sunburst_header {
+  /* =Header */
+  #{$portal-header} {
+    position: relative;
+    z-index: 2; }
+  #{$portal-logo} {
+    display: inline-block;
+    margin: 1.375 * $em 0; }
+  #{$portal-globalnav} {
+    clear: both;
+    font-size: $base-font-size;
+    background: $secondary-color;
+    /* ensure top navigation doesnt touch portlets, content etc.. #10491 */
+    margin: 0 0 1 * $em 0;
+    li {
+      a {
+        display: inline-block;
+        padding: 0.5 * $em 1 * $em 2 * $em 1 * $em;
+        background: $secondary-color;
+        min-width: 6 * $em;
+        white-space: normal;
+        /* TODO: Once we have removed the whitespace from the nav template, this can be put back */
+        /* border-bottom: 0.1 * $em solid $body-background */
+        border-right: 0.1 * $em solid $body-background; } }
+    .selected a, a:hover {
+      background: $main-color;
+      color: $body-background; }
+    .selected a:hover {
+      background: $secondary-color;
+      color: $main-color; } }
+  #{$portal-personaltools} {
+    float: right;
+    background: $portal-header-background;
+    position: relative;
+    z-index: 3;
+    /* personaltools should be above #{$portal-header} (with z-index: 2) */
+    top: 0;
+    right: 0;
+    padding: $portal-header-padding;
+    font-size: $base-font-size;
+    @include border-bottom-radius($radius);
+    #anon-personalbar {
+      font-weight: normal;
+      a {
+        float: left;
+        margin-right: 0.5 * $em; } } }
+  #{$portal-languageselector} {
+    float: right;
+    background: $portal-header-background;
+    position: relative;
+    top: 0;
+    right: 1px;
+    z-index: 3;
+    /* portal-header has 2 and we need to be above to be clickable */
+    padding: $portal-header-padding;
+    font-size: $base-font-size;
+    @include border-bottom-radius($radius);
+    max-width: 50%; } }
+
+@mixin _sunburst_search {
+  /* =Search */
+  #{$portal-searchbox} {
+    float: right;
+    text-align: left;
+    clear: right;
+    margin: 1.2 * $em 0;
+    font-size: $base-font-size;
+    form {
+      white-space: nowrap; }
+    label {
+      font-weight: normal; } }
+  #content input.searchField {
+    margin-bottom: 1 * $em; }
+  /* Collapsible elements in search_form */
+  .collapsible .collapser {
+    &.collapsed {
+      padding-right: 14px;
+      background: url("/#{$static}/img/plone/arrowRight.png") center right no-repeat; }
+    &.expanded {
+      padding-right: 14px;
+      background: url("/#{$static}/img/plone/arrowDown.png") center right no-repeat; } } }
+
+@mixin _sunburst_livesearch {
+  /* =Live search */
+  #LSResult {
+    position: absolute;
+    right: 0;
+    background: $body-background;
+    margin: -1.5 * $em 0 0 -7 * $em;
+    fieldset {
+      padding: 1 * $em 0 0;
+      border: 0.1 * $em solid #cccccc; }
+    .LSDescr {
+      font-size: 85%;
+      color: $discreet-color; } }
+  #livesearchLegend {
+    background-color: #cccccc;
+    padding: 0.3 * $em; }
+  .LSRow,
+  #LSNothingFound {
+    display: block;
+    padding: 0.5 * $em 1 * $em;
+    white-space: normal;
+    width: 28 * $em; }
+  .LSHighlight {
+    background: $secondary-color; } }
+
+@mixin _sunburst_breadcrumbs-clean {
+  /* =Breadcrumbs */
+  #{$portal-breadcrumbs} {
+    font-size: $base-font-size;
+    a {
+      border-bottom: none;
+      display: inline-block; } } }
+
+@mixin _sunburst_breadcrumbs {
+  /* =Breadcrumbs */
+  #{$portal-breadcrumbs} {
+    font-size: $base-font-size;
+    margin-bottom: 1 * $em;
+    margin-left: 0.25 * $em;
+    a {
+      border-bottom: none;
+      display: inline-block; } } }
+
+@mixin _sunburst_site-actions-clean {
+  /* =Site actions */
+  #{$portal-siteactions} {
+    font-size: 85%;
+    text-align: center;
+    clear: left;
+    li {
+      a {
+        &:hover {
+          color: $edit-color; } } } } }
+
+@mixin _sunburst_site-actions {
+  /* =Site actions */
+  #{$portal-siteactions} {
+    font-size: 85%;
+    padding-bottom: 2 * $em;
+    text-align: center;
+    clear: left;
+    li {
+      margin-right: 0.5 * $em;
+      a {
+        &:hover {
+          color: $edit-color; } } } } }
+
+@mixin _sunburst_listings {
+  /* =Listings */
+  a.link-anchor {
+    border: none !important;
+    color: black !important;
+    cursor: default !important; }
+  #content a.link-overlay {
+    border-bottom: 1px dotted $main-color !important; }
+  dl dt {
+    .documentByLine {
+      font-weight: normal; } }
+  dl dt {
+    span.summary a {
+      border: none !important; } } }
+
+$portlet-padding: 1 * $em !default;
+$portlet-dt-link-color: black !default;
+
+@mixin _sunburst_portlets-clean {
+  /* =Portlets */
+  dl {
+    &.portlet {
+      margin: 0 0 1 * $em;
+      font-size: $base-font-size;
+      dt {
+        padding: $portlet-header-padding;
+        background: $portlet-header-background;
+        line-height: normal;
+        a {
+          &:link, &:visited, &:hover {
+            color: $portlet-dt-link-color;
+            display: block;
+            border: none; } } }
+      dd.portletItem,
+      dd.portletFooter {
+        padding: $portlet-padding; } }
+    &.portletError {
+      background-color: #ffa500;
+      dd {
+        padding: $portlet-padding; } }
+    &.portlet dt.hiddenStructure {
+      padding: 0; } }
+  dl.portlet dt {} }
+
+@mixin _sunburst_portlets {
+  /* =Portlets */
+  dl {
+    &.portlet {
+      margin: 0 0 1 * $em;
+      font-size: $base-font-size;
+      dt {
+        padding: $portlet-header-padding;
+        background: $portlet-header-background;
+        line-height: normal;
+        a {
+          &:link, &:visited, &:hover {
+            color: $portlet-dt-link-color;
+            display: block;
+            border: none; } } }
+      dd.portletItem,
+      dd.portletFooter {
+        padding: 1 * $em; } }
+    &.portletError {
+      background-color: #ffa500;
+      dd {
+        padding: 1 * $em; } }
+    &.portlet dt.hiddenStructure {
+      padding: 0; } } }
+
+@mixin _sunburst_nav-portlet {
+  /* =Navigation portlet */
+  dl {
+    &.portlet {
+      ul {
+        &.navTree {
+          li {
+            a {
+              border: none;
+              display: block;
+              zoom: 1; } } }
+        &.navTreeLevel0 > .navTreeItem {
+          padding: 0.25 * $em 1 * $em;
+          border-bottom: $nav-portlet-border-bottom-width $nav-portlet-border-bottom-style $nav-portlet-border-bottom-color;
+          line-height: 2 * $em; }
+        &.navTreeLevel1 .navTreeItem {
+          padding-left: 0.5 * $em;
+          line-height: 2 * $em;
+          border: {
+            width: $nav-portlet-border-width;
+            style: $nav-portlet-border-style;
+            color: $nav-portlet-border-color; }; }
+        &.navTree .navTreeCurrentItem {
+          background-color: $nav-portlet-current-background-color;
+          border: {
+            width: $nav-portlet-current-border-width;
+            style: $nav-portlet-current-border-style;
+            color: $nav-portlet-current-border-color; };
+          margin-left: -1 * $em;
+          margin-right: -1 * $em; } } }
+    &.portletNavigationTree dd.portletItem {
+      padding: 0; } } }
+
+@mixin _sunburst_content-area {
+  /* =Content area */
+  #content {
+    line-height: 1.5 * $em;
+    clear: both;
+    font-size: $base-font-size;
+    margin: 1 * $em 0.25 * $em 2 * $em 0.25 * $em;
+    h1 {
+      margin-top: 0.5 * $em;
+      &.documentFirstHeading {
+        margin-top: 0; } }
+    p, table, dl {
+      margin-bottom: 1 * $em; } }
+  dl.portlet p, dl.portlet {
+    margin-bottom: 1 * $em; }
+  /* Special case of #content - TinyMCE */
+  body#content {
+    margin: 1 * $em; }
+  #content, dl.portlet {
+    a {
+      border-bottom: 0.1 * $em solid #cccccc;
+      @include link-colors($link-color, $hover-color, $active-color, $visited-color, $focus-color);
+      &:target {
+        background-color: #ffffbb; } }
+    span.link-external a {
+      background: transparent url("/#{$static}/img/plone/link_icon.png") 0px 1px no-repeat;
+      padding: 1px 0px 1px 16px; } }
+  #category {
+    font-size: 75%;
+    margin-bottom: 1 * $em;
+    color: $discreet-color;
+    text-align: right;
+    a.link-category, span.selectedTag {
+      color: black;
+      padding: 0.25 * $em 0.5 * $em;
+      background: $secondary-color;
+      @include border-radius($radius); }
+    a.link-category:hover {
+      background: $main-color;
+      color: $body-background;
+      border-color: $main-color; }
+    .separator {
+      display: none; } }
+  #content {
+    ul {
+      list-style-type: disc;
+      margin-left: 2 * $em; } }
+  #content, dl.portlet {
+    ol {
+      list-style-type: decimal;
+      margin-left: 2 * $em; }
+    li {
+      margin-bottom: 0.25 * $em;
+      line-height: 1.5 * $em;
+      display: list-item; } }
+  #content {
+    dt {
+      font-weight: bold;
+      margin-bottom: 0;
+      margin-right: 0; }
+    dd {
+      margin: 0 0 1 * $em 2 * $em; }
+    pre {
+      background-color: #222222;
+      color: $body-background;
+      font-family: Consolas, Inconsolata, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+      padding: 1 * $em;
+      overflow-x: auto;
+      font-size: 90%;
+      margin-bottom: 1 * $em;
+      line-height: 1.25 * $em;
+      &.python {
+        background-color: $body-background; } }
+    code {
+      font-family: Consolas, Inconsolata, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace; }
+    div.documentByLine {
+      font-size: 85%;
+      display: block;
+      color: $discreet-color; }
+    .visualHighlight {
+      background-color: #ffffbb; }
+    .pullquote {
+      margin: 0 1 * $em 0.5 * $em 0.5 * $em;
+      font-weight: bold;
+      line-height: 1.25 * $em;
+      float: right;
+      width: 35%;
+      clear: right;
+      color: #444444;
+      font-size: 1.6 * $em;
+      letter-spacing: -0.08 * $em !important; }
+    .callout {
+      background: #eeeeee;
+      padding: 1 * $em;
+      border-left: 1 * $em solid #cccccc;
+      clear: both; }
+    table {
+      text-align: left;
+      border-collapse: collapse;
+      border-spacing: 0px; }
+    .documentDescription, #description {
+      color: $discreet-color;
+      margin-left: 0;
+      font: bold 1.25 * $em "Helvetica Neue", Arial, FreeSans, sans-serif; }
+    img.tileImage,
+    div.newsImageContainer {
+      float: right;
+      margin: 0 1 * $em 0.5 * $em 1 * $em; }
+    div.newsImageContainer {
+      a {
+        border-bottom: none; }
+      p.discreet {
+        margin: 0;
+        padding: 0.5 * $em;
+        background-color: $discreet-color;
+        background-color: rgba(40, 40, 40, 0.7);
+        color: $body-background;
+        font-weight: bold;
+        position: relative;
+        width: 190px;
+        top: -3 * $em; } } }
+  #content .discreet, #sidebar .discreet {
+    color: $discreet-color;
+    font-size: 85%;
+    font-weight: normal; }
+  .eventDetails {
+    float: right;
+    clear: right;
+    margin: 0 0 0.5 * $em 1 * $em; } }
+
+@mixin _sunburst_tables {
+  /* =Tables */
+  table {
+    &.listing, &.plain {
+      border-spacing: 0;
+      border-collapse: collapse; }
+    &.invisible, &.plain, &.listing {
+      td, th {
+        padding: 0.5 * $em 1 * $em;
+        vertical-align: top; } }
+    &.plain {
+      th, td {
+        border: 1px solid $secondary-color; } }
+    &.listing {
+      td.listingCheckbox,
+      th.listingCheckbox {
+        text-align: center; }
+      border: {
+        left: 1px solid $secondary-color;
+        bottom: 1px solid $secondary-color; };
+      .top {
+        border: {
+          left: 1px solid $secondary-color;
+          top: 1px solid $secondary-color;
+          right: 1px solid $secondary-color; }; }
+      th {
+        text-align: left;
+        color: $discreet-color;
+        border: 0.1 * $em solid #e7e7e7;
+        border-style: solid solid none;
+        background: $secondary-color; }
+      tr.odd {
+        th {
+          border: 0.1 * $em solid white;
+          border-style: solid solid none none; } }
+      tbody {
+        th {
+          font-weight: bold; }
+        tr {
+          text-align: left;
+          .odd {
+            background: #eeeeee;
+            td {
+              background: #eeeeee; } }
+          td {
+            background: transparent; } } }
+      td {
+        border-right: 1px solid $secondary-color; }
+      a {
+        border: none;
+        display: inline-block;
+        border-bottom: none !important; }
+      td.draggable {
+        text-shadow: $body-background 1px 1px 1px;
+        background: $secondary-color !important;
+        border-bottom: 1px solid $body-background;
+        padding: 0.4 * $em 0.4 * $em 0 0.5 * $em; } }
+    /* Vertical table data listings */
+    &.vertical {
+      th {
+        text-align: right; }
+      td {
+        border-top: 0.1 * $em solid #e7e7e7;
+        padding: 0.5 * $em; } }
+    /* Grid table listings */
+    &.grid {
+      td, th {
+        border: 1px solid #e7e7e7;
+        padding: 0.5 * $em; } } }
+  .dragindicator {
+    outline: 2px solid #ffd700; }
+  #foldercontents-order-column {
+    padding: 0; }
+  div.listingBar {
+    font-size: $base-font-size;
+    margin: 1 * $em 0;
+    .next {
+      display: inline-block;
+      float: right; }
+    .previous {
+      display: inline-block; }
+    a {
+      display: inline-block;
+      padding: 0.25 * $em 0.5 * $em;
+      border: 0.1 * $em solid #cccccc;
+      &:hover {
+        color: $body-background;
+        background-color: #329fd7;
+        border-color: #329fd7; } } } }
+
+@mixin _sunburst_status-messages {
+  /* =Status messages */
+  dl.portalMessage {
+    margin: 1 * $em 0;
+    font-size: $base-font-size;
+    border: 1px solid #999966;
+    background-color: #ffffe3;
+    clear: both;
+    a,
+    #content & a {
+      color: black;
+      border-bottom: 1px solid #888888; }
+    dt {
+      background-color: #999966;
+      font-weight: bold;
+      float: left;
+      margin: 0 0.5 * $em 0 0;
+      padding: 0.5 * $em 0.75 * $em;
+      color: $body-background;
+      line-height: 1.25 * $em; }
+    dd {
+      padding: 0.5 * $em 0.5 * $em;
+      margin: 0;
+      line-height: 1.25 * $em; }
+    /* Additional specificity for when status is shown inside #content */
+    #content & {
+      font-size: 100%;
+      dt {
+        margin: 0 0.5 * $em 0 0;
+        padding: 0.5 * $em 0.75 * $em; }
+      dd {
+        margin: 0; } } }
+  dl.warning {
+    border-color: #dd8800;
+    dt {
+      background-color: #dd8800; }
+    dd {
+      background-color: #ffdd77; } }
+  dl.error {
+    border-color: red;
+    dt {
+      background-color: #dd0000; }
+    dd {
+      background-color: #ffddcc; } } }
+
+@mixin _sunburst_search-results-page {
+  /* =Search results page */
+  form.searchPage {
+    text-align: center; }
+  input.searchPage {
+    font-size: 200% !important; } }
+
+@mixin _sunburst_image-alignment-classes {
+  /* =Image alignment */
+  .image-left {
+    float: left;
+    margin: 0.5 * $em 1 * $em 0.5 * $em 0; }
+  .image-right {
+    float: right;
+    margin: 0.5 * $em; }
+  .image-inline {
+    float: none; }
+  /* note: the tricky thing here is that image-inline|image-left|image-right
+   * can both be on an image and a wrapper element e.g. a dl tag */
+  img.image-left,
+  img.image-right,
+  .captioned img {
+    border: 1px solid $secondary-color; }
+  dd.image-caption {
+    text-align: left;
+    padding: 0 0 0 3px;
+    /* image padding+border width */
+    margin: 0;
+    color: $discreet-color;
+    font-size: 85%; } }
+
+@mixin _sunburst_forms {
+  /* =Forms */
+  fieldset, .editionComment {
+    line-height: 1.5 * $em;
+    margin: 1 * $em 0;
+    padding: 0 1 * $em 1 * $em;
+    width: auto; }
+  /* Emulates the styling from the h1 tag */
+  #content .field input[type="text"][name$=".title"], #archetypes-fieldname-title input {
+    font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
+    line-height: 125%;
+    color: black;
+    letter-spacing: -0.05 * $em;
+    margin: inherit -0.05 * $em;
+    font-size: 2 * $em;
+    font-weight: bold; }
+  /* Emulates styling from the description's view */
+  #content .field textarea[name$=".description"], #archetypes-fieldname-description textarea#description {
+    font-family: Arial, FreeSans, sans-serif;
+    color: $discreet-color;
+    font-size: 1.25 * $em;
+    font-weight: bold; }
+  div.formControls {
+    margin: 1 * $em; }
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  textarea {
+    &:focus {
+      background-color: #ffffe0; } }
+  #content {
+    textarea {
+      font: 100% Monaco, "Courier New", Courier, monospace;
+      width: 100%; }
+    select {
+      vertical-align: top; }
+    fieldset {
+      border: 0.1 * $em solid #329fd7;
+      border-style: solid none none none; }
+    legend {
+      padding: 0.5 * $em;
+      font-size: 85%; }
+    optgroup {
+      font-style: normal;
+      font-weight: bold;
+      color: #999999;
+      padding-left: 0.25 * $em;
+      & > option {
+        padding: 0 0.25 * $em 0 1 * $em; } }
+    option {
+      color: black; } }
+  label {
+    font-weight: bold; }
+  dl.enableFormTabbing dd {
+    margin-left: 0;
+    padding-top: 2 * $em; }
+  .searchSection {
+    color: #76797c;
+    margin-top: 0.25 * $em;
+    label {
+      &:hover {
+        color: black; } } }
+  .field {
+    clear: both;
+    margin-bottom: 1 * $em;
+    input[type="text"] {
+      width: 20 * $em; }
+    input[type="text"][size] {
+      width: auto; } }
+  .field input[type="text"][name$=".title"], input#title {
+    width: 100%; }
+  .field.error input[type="text"][name$=".title"], .error input#title {
+    width: 99%; }
+  .fieldRequired {
+    background: url("/#{$static}/img/plone/required.png") center left no-repeat;
+    padding: 0 0 0 1 * $em;
+    color: $body-background; }
+  .fieldUploadFile {
+    text-align: right;
+    margin-right: 0.75 * $em;
+    display: none; }
+  .fieldTextFormat {
+    text-align: right;
+    margin-right: 0.75 * $em; }
+  .formHelp {
+    color: #555555;
+    margin: 0 0 0.2 * $em 0; }
+  div.field.error {
+    background-color: #ffddcc;
+    border: 1px solid red;
+    padding: 0.5 * $em;
+    margin: 1 * $em 0; }
+  .error .fieldRequired {
+    color: #dd0000; }
+  div.error.warning {
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+    input {
+      border: 2px solid red; } }
+  input.inputLabelActive {
+    color: #76797c; }
+  textarea#form\.description {
+    height: 6 * $em;
+    width: 99%; }
+  table.listing tbody tr.odd {
+    &.selected td, &.dragging td, {
+      tr.dragging,
+      tr.selected {
+        background-color: #ffffaa; } } }
+  table.listing tbody tr.odd.error td, tr.error {
+    background-color: #ffddcc; }
+  .multi-widget-field {
+    padding-left: 0.5 * $em;
+    border-left: 1.5 * $em solid $secondary-color; }
+  .multi-widget-checkbox {
+    margin-left: -2 * $em;
+    margin-right: 0.5 * $em;
+    width: 1.5 * $em;
+    display: inline-block; } }
+
+@mixin _sunburst_login-form {
+  /* =Login-form */
+  body.template-logged_out #content,
+  body.template-login_form #content,
+  .pb-ajax #login-form {
+    text-align: center; }
+  #fieldset-openid-login input, #login-form input {
+    font-size: 150%; }
+  body.template-register #content input,
+  body.template-new-user #content input {
+    font-size: 150%;
+    width: inherit; }
+  #fieldset-openid-login label, #login-form label {
+    margin-right: 0.5 * $em;
+    padding-top: 0.2 * $em;
+    text-align: right;
+    width: 10 * $em;
+    display: inline-block; }
+  #fieldset-openid-login .formControls input, #login-form .formControls input {
+    margin-left: 0.25 * $em; } }
+
+@mixin _sunburst_toc {
+  /* =TOC */
+  // Table of Contents styling - essentially a portlet with smaller fonts and aligned right + limited in width
+  dl.toc {
+    float: right;
+    width: 35%;
+    font-size: 100%;
+    margin: 1 * $em 0 0.5 * $em 1.5 * $em;
+    dt {
+      margin-left: 1 * $em;
+      font-weight: normal;
+      text-transform: uppercase; }
+    dd {
+      margin-bottom: 0;
+      padding-left: 2 * $em;
+      ol {
+        margin-left: 1.5 * $em; } } } }
+
+@mixin _sunburst_footer {
+  /* =Footer */
+  #{$portal-footer} {
+    font-size: 75%;
+    background: $secondary-color;
+    padding: 1 * $em;
+    margin: 1 * $em 0;
+    line-height: 2 * $em; }
+  #{$portal-colophon} {
+    font-size: 70%;
+    text-align: center;
+    margin-bottom: 1 * $em;
+    li {
+      padding: 0 0.75 * $em; }
+    a {
+      color: #444444; } } }
+
+@mixin _sunburst_sitemap {
+  /* =Sitemap */
+  #{$portal-sitemap} {
+    list-style: none;
+    margin-left: 0;
+    font-size: 130%;
+    font-weight: bold;
+    li {
+      list-style: none;
+      margin-left: 0; }
+    a {
+      border-bottom: none;
+      display: block; }
+    & > li {
+      border-bottom: 0.1 * $em dotted $secondary-color;
+      line-height: 1.8 * $em;
+      padding: 0.25 * $em 1 * $em;
+      margin-bottom: 0; }
+    .navTreeLevel2 {
+      &, & ul {
+        font-size: 85%;
+        font-weight: normal;
+        margin-bottom: 0;
+        padding: 0.25 * $em 0; } } } }
+
+@mixin _sunburst_album {
+  /* =Album */
+  .photoAlbumEntry {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    height: 185px;
+    width: 143px;
+    margin: 0 * $em;
+    padding: 0px 6px 0px 9px;
+    text-align: center;
+    background: {
+      image: url("/#{$static}/img/plone/polaroid-single.png");
+      repeat: no-repeat; };
+    img {
+      border: 1px solid #cccccc;
+      display: block;
+      margin: 0 auto; }
+    a {
+      display: block;
+      text-decoration: none;
+      font-size: 90%;
+      height: 169px;
+      width: 130px;
+      margin: 16px auto 0px; } }
+  .photoAlbumEntryWrapper {
+    height: 130px;
+    width: 128px;
+    margin-bottom: 7px; }
+  .photoAlbumFolder {
+    background: {
+      image: url("/#{$static}/img/plone/polaroid-multi.png");
+      repeat: no-repeat; }; }
+  .photoAlbumEntryTitle {
+    color: #76797c;
+    display: block;
+    width: 128px;
+    height: 3.6 * $em; } }
+
+@mixin _sunburst_invisibles {
+  /* =Invisibles */
+  .hiddenStructure {
+    display: block;
+    background-color: transparent !important;
+    background-image: none;
+    /* safari bug */
+    border: none;
+    height: 0.1 * $em;
+    overflow: hidden;
+    padding: 0;
+    margin: -0.1 * $em 0 0 -0.1 * $em;
+    width: 1px; }
+  #content {
+    .visualNoMarker {
+      list-style: none;
+      margin-left: 0; } }
+  .visualClear {
+    clear: both; } }
+
+@mixin _sunburst_acessibility {
+  /* =Acessibility */
+  body.largeText {
+    font-size: 125%; }
+  body.smallText {
+    font-size: 85%; } }
+
+@mixin _sunburst_overlay {
+  /* =Overlays */
+  // styling for overlays (popups)
+  div.overlay {
+    width: auto;
+    height: auto;
+    /* initially overlay is hidden */
+    display: none;
+    /* some padding to layout nested elements nicely */
+    margin: 1 * $em;
+    font-size: $base-font-size; }
+  div.overlay-iframe, div.overlay-ajax {
+    width: 60%;
+    min-height: 100px;
+    z-index: 99;
+    /* overlays should be above everything */ }
+  div.overlay-iframe {
+    height: 60%; }
+  /* default close button positioned on upper-left corner */
+  div.overlaybg div.close, div.overlay div.close {
+    background-image: url("/#{$static}/img/plone/pb_close.png");
+    position: absolute;
+    left: -14px;
+    top: -14px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px; }
+  .pb-ajax {
+    overflow-y: auto; }
+  .pb-ajax, .pb-image, .overlay iframe {
+    background-color: white;
+    border: 1px solid #999999;
+    white-space: normal;
+    @include box-shadow($discreet-color, 0, 0, 3 * $em, 0.5 * $em); }
+  .pb-ajax {
+    & > div {
+      width: 92%;
+      padding: 1 * $em; }
+    .documentActions {
+      display: none; } }
+  div.overlay {
+    div.close span {
+      display: block;
+      height: 1px;
+      margin: -1px 0 0 -1px;
+      overflow: hidden;
+      padding: 0;
+      width: 1px; }
+    textarea {
+      width: 100%; } }
+  /* Hide form elements that don't make sense within an overlay. */
+  div.overlay {
+    .link-parent, #createGroup legend {
+      display: none; }
+    #createGroup fieldset {
+      border: none; }
+    /* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed */
+    p {
+      margin-bottom: 1 * $em; }
+    label {
+      margin-bottom: 0.25 * $em; }
+    a {
+      &:hover {
+        color: $edit-color; }
+      &.selected {
+        color: black; } }
+    .formTab {
+      margin-right: 1 * $em;
+      font-weight: bold;
+      &.lastFormTab {
+        margin-right: 0 * $em; } }
+    .formControls a {
+      display: block;
+      margin: 0.75 * $em; } } }
+
+@mixin _sunburst_content-history {
+  /* =Content history */
+  #content-history {
+    div.historyRecord {
+      margin-bottom: 1 * $em; }
+    div.historyTools {
+      ul {
+        float: right;
+        margin: 0.5 * $em 1 * $em;
+        li {
+          display: inline;
+          padding: 0 0.015 * $em;
+          a {
+            border-bottom: none; } } }
+      form {
+        display: inline; } }
+    .historyByLine {
+      background: $secondary-color;
+      padding: 0.5 * $em;
+      @include border-top-radius($radius); }
+    div.historyLinks {
+      float: right;
+      clear: right;
+      margin: 0.5 * $em 1 * $em 0 0; }
+    div.historyComment {
+      padding: 0.5 * $em 1 * $em;
+      border: 1px solid $secondary-color;
+      p {
+        margin: 0;
+        padding-top: 1px; }
+      a.historyComparePrevious {
+        border-top: 1px dotted #cccccc;
+        display: block;
+        margin-top: 3 * $em;
+        text-align: center;
+        span {
+          background-color: $body-background;
+          position: relative;
+          top: -0.75 * $em;
+          padding: 0 0.5 * $em; } } } } }
+
+@mixin _sunburst_content-sprites {
+  /* =Content sprites */
+  // Generated using http: //spritegen.website-performance.org, with the following parameters:
+  //  - Build direction: Vertical
+  //  - Horizontal offset: (doesn't matter, but can't be 0)
+  //  - Vertical offset: 200px
+  //  - Compress image with OptiPNG: yes
+  //  - Class prefix: contenttype-
+  //  - Display width and height: no
+  // Then, add 4 px to the background-position to line up the icons to text.
+  //   .contenttype-document_icon
+  //     background-position: 0 0
+  //   .contenttype-event_icon
+  //     background-position: 0 -216px
+  //   .contenttype-file_icon
+  //     background-position: 0 -432px
+  //   .contenttype-folder_icon
+  //     background-position: 0 -648px
+  //   .contenttype-image_icon
+  //     background-position: 0 -864px
+  //   .contenttype-link_icon
+  //     background-position: 0 -1080px
+  //   .contenttype-newsitem_icon
+  //     background-position: 0 -1296px
+  //   .contenttype-site_icon
+  //     background-position: 0 -1512px
+  //   .contenttype-topic_icon
+  //     background-position: 0 -1728px
+  .icons-on {
+    .contenttype-document {
+      background: no-repeat transparent 0px 4px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    .contenttype-event {
+      background: no-repeat transparent 0px -212px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    .contenttype-folder {
+      background: no-repeat transparent 0px -644px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    .contenttype-link {
+      background: no-repeat transparent 0px -1076px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    .contenttype-news-item {
+      background: no-repeat transparent 0px -1292px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    .contenttype-plone-site {
+      background: no-repeat transparent 0px -1508px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    .contenttype-topic {
+      background: no-repeat transparent 0px -1724px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    /* These should only appear in the add menu */
+    #plone-contentmenu-factories .contenttype-file {
+      background: no-repeat transparent 0px -428px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    #plone-contentmenu-factories .contenttype-image {
+      background: no-repeat transparent 0px -860px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
+    .contenttype-document, .contenttype-event, .contenttype-folder, .contenttype-link, .contenttype-news-item, .contenttype-plone-site, .contenttype-topic, #plone-contentmenu-factories .contenttype-file, #plone-contentmenu-factories .contenttype-image {
+      line-height: 2 * $em;
+      display: inline-block;
+      *display: block;
+      padding-left: 20px !important; } } }
+
+@mixin _sunburst_jQuery-Tag-multiple-selector {
+  /* =Tag */
+  .optionsBox {
+    overflow-y: auto;
+    border: solid 1px #999999;
+    background: white;
+    height: 14 * $em;
+    width: 100%;
+    label {
+      padding: 2px 0 0 0;
+      display: block;
+      line-height: 1 * $em;
+      font-weight: normal;
+      &.checked {
+        background-color: #eeeeee; }
+      &.hover {
+        background-color: #777777;
+        color: white; } }
+    input {
+      vertical-align: middle;
+      margin: 1px 4px 4px 6px; } }
+  #archetypes-fieldname-subject .formHelp {
+    font-weight: normal; }
+  #existingTagsSection {
+    position: relative;
+    margin-left: 3 * $em; }
+  #existingTags {
+    float: left;
+    width: 50%; }
+  #content #existingTags dd {
+    margin-bottom: 1px;
+    margin-left: 0; }
+  #content #selectedTags, #content #newTags {
+    margin-bottom: 0;
+    margin-left: 0; }
+  #content #selectedTagsSection {
+    margin-left: 3 * $em;
+    float: left;
+    width: 43%;
+    margin-bottom: 0; }
+  #newTagsSection {
+    width: 48%;
+    margin-left: 3 * $em; }
+  #content p.selectedTag {
+    margin-bottom: 0.4 * $em; }
+  #existingTagsTitle, #newTagsTitle {
+    float: left; }
+  #existingTagsHelp, #newTagsHelp {
+    float: right; }
+  #noTagsSelected, #oneOrMoreTagsSelected {
+    display: none; } }
+
+@mixin _sunburst_calendar {
+  /* =Calendar */
+  .portletCalendar {
+    width: 100%;
+    margin: 1px 0 1 * $em 0;
+    dt {
+      background-color: #eeeeee;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.6 * $em;
+      border-bottom: none;
+      a#calendar-previous {
+        float: left;
+        padding: 0 1 * $em;
+        margin: 0 -0.5 * $em; }
+      a#calendar-next {
+        float: right;
+        padding: 0 1 * $em;
+        margin: 0 -0.5 * $em; } }
+    dd {
+      margin: 0;
+      padding: 0; }
+    a, a:focus, a:hover {
+      text-decoration: none; } }
+  #{$visual-portal-wrapper} dl.portletCalendar dd {
+    padding: 0; }
+  .ploneCalendar {
+    border-spacing: 0;
+    width: 100%;
+    a {
+      text-decoration: none;
+      border-bottom: none !important; }
+    td {
+      background-color: transparent;
+      width: 14%;
+      text-align: center;
+      padding: 2px; }
+    .weekdays {
+      th {
+        background-color: #eeeeee;
+        text-align: center;
+        padding: 2px;
+        font-weight: normal; } }
+    .event {
+      background-color: #eeeeee;
+      font-weight: bold; }
+    .todayevent {
+      background-color: #eeeeee;
+      border: 2px solid $main-color;
+      font-weight: bold; }
+    .todaynoevent {
+      border: 2px solid $main-color; } }
+  .portletItemDetails {
+    font-size: 85%;
+    padding-top: 0.5 * $em;
+    line-height: 1.5 * $em;
+    margin-left: 1 * $em;
+    display: block; } }
+
+@mixin _sunburst_editting {
+  @include _sunburst_edit-tabs;
+  @include _sunburst_edit-pulldown;
+  @include _sunburst_edit-control-panel;
+  @include _sunburst_edit-collapsible;
+  @include _sunburst_edit-comments;
+  @include _sunburst_edit-main;
+  @include _sunburst_edit-portlets;
+  @include _sunburst_edit-contentmenu-workflow;
+  @include _sunburst_dashboard; }
+
+@mixin _sunburst_edit-pulldown {
+  @include _sunburst_personal-tools-pulldown;
+  @include _sunburst_content-pulldowns; }
+
+@mixin _sunburst_edit-tabs {
+  /* Color differences between the two tab types */
+  #content ul.formTabs {
+    background-color: $secondary-color;
+    border: 0.3 * $em solid $secondary-color; }
+  #edit-bar {
+    background-color: $edit-color;
+    border: 0.25 * $em solid $edit-color;
+    font-size: $base-font-size;
+    min-height: 2 * $em;
+    margin-bottom: 1 * $em;
+    padding-top: 0.05 * $em; }
+  #content-views {
+    float: left;
+    background-color: $edit-color;
+    a {
+      color: $body-background; } }
+  /* Shared CSS between the two tab types */
+  #edit-bar,
+  #content ul.formTabs {
+    display: block;
+    border-style: solid solid none solid;
+    margin-left: 0;
+    @include border-top-radius($radius); }
+  #content li.formTab {
+    display: inline;
+    margin-right: 0.25 * $em; }
+  #content-views a,
+  #content li.formTab a {
+    /* this isn't supported by all browsers, so we keep it in a separate rule */
+    display: inline-block; }
+  #content-views, #content li.formTab {
+    a {
+      line-height: 2 * $em;
+      padding: 0 0.75 * $em;
+      text-decoration: none;
+      border: none;
+      margin: 0; } }
+  #content-views li.selected a,
+  #content li.formTab a.selected {
+    font-weight: bold; }
+  #content-views li.selected a,
+  #content-views li a:hover,
+  #content li.formTab a.selected,
+  #content li.formTab a:hover {
+    background: $body-background;
+    color: black;
+    @include border-top-radius($radius); }
+  #content li.formTab {
+    a.notify {
+      background-color: red;
+      color: $body-background; }
+    a.required span {
+      background: {
+        image: url("/#{$static}/img/plone/required.png");
+        position: center right;
+        repeat: no-repeat; };
+      padding-right: 1 * $em; } }
+  #content {
+    fieldset.formPanel {
+      border: none;
+      &.hidden {
+        display: none; } }
+    div.formControls {
+      input.hidden {
+        display: none; } } } }
+
+@mixin _sunburst_edit-control-panel {
+  #setup-link {
+    font-size: 90%; }
+  #content ul.configlets {
+    margin: 1 * $em 0;
+    list-style-image: none;
+    list-style: none;
+    li {
+      margin-bottom: 1 * $em;
+      list-style: none;
+      display: block;
+      a {
+        text-decoration: none;
+        border: none;
+        &:visited {
+          color: #436976;
+          background-color: transparent; }
+        &:active {
+          color: #436976;
+          background-color: transparent; } }
+      label {
+        font-weight: bold; } } }
+  #content ul.configletDetails {
+    margin: 0 * $em 1 * $em 1 * $em 4 * $em;
+    list-style-image: none;
+    list-style: none;
+    li {
+      margin-bottom: 1 * $em;
+      display: inline;
+      a {
+        text-decoration: none; }
+      li label {
+        font-weight: bold; }
+      &.configletDescription {
+        display: block;
+        color: #76797c;
+        margin: 0; } } }
+  .inlineDisplay {
+    display: inline; }
+  table.controlpanel-listing {
+    width: 100%;
+    td, th {
+      font-size: 120%; }
+    dl {
+      margin-top: 0;
+      dt a .trigger {
+        font-weight: normal; } }
+    dd {
+      margin-left: 1 * $em; }
+    td {
+      vertical-align: top;
+      &.checker {
+        text-align: center; } }
+    th.smallcolumn {
+      width: 1.5 * $em; } }
+  .chooser-right {
+    float: right;
+    margin-right: 0;
+    margin-bottom: 0; }
+  .rule-element {
+    background-color: #eef3f5;
+    margin: 0.5 * $em 0pt 0.5 * $em;
+    padding: 0.3 * $em 1 * $em 0.3 * $em 1 * $em;
+    width: auto;
+    dl {
+      dd {
+        margin-left: 1 * $em; } } }
+  .rule-updown, .rule-operations {
+    float: right;
+    padding-top: 0.8 * $em; } }
+
+@mixin _sunburst_edit-collapsible {
+  dl.collapsible {
+    border: 0.1 * $em solid #8cacbb;
+    margin: 1 * $em 0;
+    padding: 0;
+    dt.collapsibleHeader {
+      display: block;
+      float: left;
+      background: $body-background;
+      line-height: 1.2 * $em;
+      vertical-align: middle;
+      font-size: 90%;
+      position: relative;
+      top: -0.6 * $em;
+      width: auto;
+      margin: 0 0 -0.6 * $em 1 * $em;
+      padding: 0 0.5 * $em; }
+    dd.collapsibleContent {
+      margin: 0;
+      padding: 0 1 * $em 0.4 * $em;
+      clear: left;
+      /* for IE the following isn't needed, that's why the css2 selector is used */
+      & > dl {
+        margin: 0;
+        padding: 0; } } }
+  dl.collapsedBlockCollapsible {
+    border: none;
+    height: 1 * $em;
+    width: auto; }
+  dl.expandedInlineCollapsible, dl.expandedBlockCollapsible {
+    dt.collapsibleHeader {
+      padding: 0 0.5 * $em 0 2 * $em;
+      background: $body-background url("/#{$static}/img/plone/treeExpanded.png") no-repeat 0.5 * $em 50%;
+      cursor: pointer; } }
+  dl.collapsedInlineCollapsible, dl.collapsedBlockCollapsible {
+    dt.collapsibleHeader {
+      float: none;
+      position: relative;
+      margin: 0 0 0 1 * $em;
+      padding: 0 0.5 * $em 0 2 * $em;
+      line-height: 1.2 * $em;
+      cursor: pointer;
+      background: $body-background url("/#{$static}/img/plone/treeCollapsed.png") no-repeat 0.5 * $em 50%; }
+    dd.collapsibleContent {
+      display: none; } }
+  dl.collapsedInlineCollapsible {
+    border: none;
+    height: 1 * $em;
+    width: auto;
+    display: inline;
+    dt.collapsibleHeader {
+      position: static;
+      float: none;
+      margin: 0;
+      padding: 0 0 0 2 * $em;
+      line-height: 1 * $em;
+      cursor: pointer;
+      display: inline; } } }
+
+@mixin _sunburst_edit-comments {
+  .comment {
+    margin-top: 1.5 * $em;
+    font-size: $base-font-size;
+    .documentByLine {
+      margin-left: 1 * $em; }
+    .formControls {
+      margin-left: 0; }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: normal; } }
+  .commentTime {
+    color: $discreet-color; }
+  .commentBody {
+    padding: 1 * $em;
+    margin: 0.5 * $em 0;
+    @include border-radius($radius);
+    @include box-shadow(#888888, 0, 0, 0.5 * $em); } }
+
+@mixin _sunburst_edit-main {
+  .reviewHistory, .contentHistory {
+    display: inline;
+    color: black; }
+  .spacer {
+    margin: 1 * $em; }
+  .label {
+    font-weight: bold;
+    display: inline;
+    padding-right: 0.5 * $em; }
+  .optionsToggle {
+    border: 0.1 * $em solid #8cacbb;
+    color: black;
+    background-color: #dee7ec;
+    font-weight: normal;
+    font-size: 90%; }
+  /* for highlighting of search terms */
+  .highlightedSearchTerm {
+    background-color: #ffffaa;
+    dl.searchResults & {
+      background-color: transparent;
+      font-weight: bold; } }
+  /* for greying out inherited roles */
+  .noInheritedRoles {
+    color: #a0a0a0; }
+  /* for highlighting current items, like the language or today in the calendar */
+  .currentItem {
+    border-collapse: collapse;
+    border: 0.2 * $em solid #ffa500;
+    padding: 0.1 * $em; } }
+
+@mixin _sunburst_edit-portlets {
+  /* Portlet edit styles */
+  div.portletAssignments div.portletHeader {
+    padding: $portlet-header-padding;
+    background: $portlet-header-background;
+    line-height: normal; }
+  div.portletAssignments {
+    font-size: 0.8 * $em;
+    line-height: 2 * $em;
+    .managedPortletActions {
+      float: right;
+      a {
+        margin: 0 0.25 * $em;
+        border: none; } } }
+  div.managePortletsLink, a.managePortletsFallback {
+    text-align: center;
+    padding: 0.25 * $em 0.5 * $em;
+    font-size: $base-font-size;
+    margin: 0 auto 1 * $em;
+    background: $secondary-color;
+    @include border-radius($radius); }
+  a.managePortletsFallback {
+    display: inline-block;
+    /* in order for our vertical margins to work on inline element */ }
+  #content a.managePortletsFallback {
+    display: block;
+    border-bottom: none !important; }
+  #portlet-prefs a {
+    border: none;
+    line-height: 2 * $em; }
+  #{$visual-portal-wrapper} dl.portletCalendar dd {
+    padding: 0; }
+  .managedPortlet {
+    margin: 0.8 * $em 0; }
+  .blockedPortlet {
+    .portletHeader {
+      border: 1px dashed $secondary-color;
+      margin: -1px;
+      background: none !important;
+      a {
+        color: $discreet-color; } }
+    .portletBlockedMessage {
+      color: $body-background;
+      display: inline; } } }
+
+@mixin _sunburst_personal-tools-pulldown {
+  #{$portal-personaltools} {
+    dt {
+      font-weight: normal;
+      &.actionMenuHeader a:after {
+        content: " ▼"; } }
+    dd {
+      right: 0;
+      padding-top: 0.5 * $em;
+      background: #e3e3e3;
+      padding-bottom: 0.5 * $em;
+      a {
+        line-height: 2 * $em;
+        padding: 0 0.75 * $em;
+        &:hover {
+          background: $main-color;
+          color: $body-background; } } } } }
+
+@mixin _sunburst_content-pulldowns {
+  #contentActionMenus {
+    dl.actionMenu {
+      a, &.activated dd {
+        background-color: $edit-color;
+        color: $body-background;
+        z-index: 5; }
+      &.activated dd {
+        border-bottom: 0.5 * $em solid $edit-color;
+        right: -3px;
+        & a:hover, .actionMenuSelected {
+          background-color: $body-background !important;
+          color: $discreet-color; } }
+      line-height: 2 * $em;
+      float: right;
+      background: $edit-color;
+      margin: 0;
+      position: relative;
+      top: -0.23 * $em;
+      right: -0.24 * $em;
+      padding: 0.1 * $em 0.24 * $em 0 0;
+      @include border-radius($radius);
+      @include border-top-left-radius(0); } }
+  #folderHeader, #contextHeader {
+    border-bottom: 2px solid $body-background; }
+  #contextHeader {
+    margin-top: 5px; }
+  .actionMenuContent {
+    padding: 0 0.25 * $em; }
+  dl.actionMenu {
+    float: right;
+    white-space: nowrap;
+    position: relative;
+    margin-left: 0.5 * $em;
+    a, div {
+      display: block !important;
+      white-space: nowrap; }
+    dt {
+      font-weight: normal; }
+    &.deactivated {
+      dt {
+        margin: 0 0.25 * $em; }
+      dd {
+        display: none; } }
+    &.activated {
+      dd {
+        position: absolute;
+        width: auto;
+        min-width: 100%;
+        @include border-bottom-radius($radius); }
+      dt a, dd a, dd div {
+        margin: 0 0.25 * $em; } } }
+  span.arrowDownAlternative {
+    font-size: $base-font-size; } }
+
+@mixin _sunburst_edit-contentmenu-workflow {
+  /* Pulldown menu state indicators */
+  
+  /* Pulldown menu state indicators */
+  #plone-contentmenu-workflow {
+    .state-private {
+      @include border-radius($radius);
+      padding: 0 0.5 * $em;
+      background-color: $workflow-private;
+      border: 0.1 * $em solid $workflow-private;
+      @if $workflow-important == true {
+        color: $body-background !important; }
+      @else {
+        color: $body-background; } }
+    .state-visible {
+      @include border-radius($radius);
+      padding: 0 0.5 * $em;
+      background-color: $workflow-visible;
+      border: 0.1 * $em solid $workflow-visible;
+      @if $workflow-important == true {
+        color: $body-background !important; }
+      @else {
+        color: $body-background; } }
+    .state-published {
+      @include border-radius($radius);
+      padding: 0 0.5 * $em;
+      background-color: $workflow-published;
+      border: 0.1 * $em solid $workflow-published;
+      @if $workflow-important == true {
+        color: $body-background !important; }
+      @else {
+        color: $body-background; } }
+    .state-pending {
+      @include border-radius($radius);
+      padding: 0 0.5 * $em;
+      background-color: $workflow-pending;
+      border: 0.1 * $em solid $workflow-pending;
+      @if $workflow-important == true {
+        color: $body-background !important; }
+      @else {
+        color: $body-background; } } } }
+
+@mixin _sunburst_dashboard {
+  /* =Dashboard */
+  #dashboard-actions {
+    ul {
+      margin-left: 0;
+      li {
+        list-style: none; } } }
+  #dashboard {
+    font-size: 125%;
+    line-height: 1 * $em;
+    dd {
+      margin: 0; }
+    dl.portlet a:link {
+      border-bottom: none; } }
+  #dashboard-portlets1, #dashboard-portlets2, #dashboard-portlets3, #dashboard-portlets4 {
+    display: inline-block;
+    float: left;
+    width: 23%;
+    padding: 0.7 * $em 1.3 * $em 0 0;
+    dl.portlet {
+      margin-bottom: 1.5 * $em; } }
+  #dashboard-portlets4 {
+    padding-top: 0.7 * $em; } }
+
+// Other media
+@mixin _sunburst_mobile {
+  /*** =Mobile *** */
+  /* For devices with narrow screens, phones, tablets, etc. */
+  #{$portal-column-one}, #{$portal-column-two}, #{$portal-column-content} {
+    clear: both;
+    width: 97.75%;
+    margin-left: -98.875%; }
+  #{$portal-logo} {
+    display: none; }
+  #{$portal-top} {
+    font-size: 180%; }
+  #{$portal-personaltools} {
+    margin-bottom: 1em; }
+  #{$portal-globalnav} li a {
+    min-width: 3em !important;
+    padding: 0.5em 1.5em 1em 0.5em; }
+  #{$portal-searchbox} {
+    float: none !important;
+    margin: 1em 0;
+    text-align: center;
+    input {
+      font-size: 100% !important; } }
+  #content-views a {
+    font-size: 150%;
+    line-height: 2em !important;
+    padding: 0.5em; }
+  #content li.formTab a {
+    font-size: 140%;
+    line-height: 2em !important;
+    padding: 0.25em; }
+  #edit-bar {
+    min-height: 5em; }
+  #contentActionMenus a {
+    width: 100%;
+    line-height: 2em !important;
+    font-size: 150%; }
+  input, textarea {
+    font-size: 140% !important; }
+  div.managePortletsLink, a.managePortletsFallback {
+    font-size: 140%; }
+  div.overlay {
+    font-size: 120%; }
+  div.overlay-iframe, div.overlay-ajax {
+    width: 90%; } }
+
+@mixin _sunburst_print {
+  /* Removes certain elements when printing, and apply basic font styles
+   * for the remaining content. */
+  body {
+    font-family: "Helvetica Neue", Arial, FreeSans, sans-serif; }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
+    font-weight: bold;
+    line-height: 125%;
+    page-break-inside: avoid;
+    page-break-after: avoid; }
+  h1, h2 {
+    letter-spacing: -0.05em; }
+  a {
+    text-decoration: none;
+    border-bottom: 0.1em solid gray;
+    color: black; }
+  pre {
+    border: 1pt dotted black;
+    white-space: pre;
+    font-size: 8pt;
+    overflow: auto;
+    padding: 1em; }
+  table {
+    &.listing {
+      &, td {
+        border: 1pt solid black;
+        border-collapse: collapse; }
+      td, th {
+        padding: 6px; } } }
+  .documentDescription {
+    font-weight: bold; }
+  #{$portal-column-content} {
+    width: 95%; }
+  /* Page break class for use when printing */
+  div.pageBreak {
+    page-break-before: always; }
+  /* Basic styles for listing and document views */
+  #content {
+    dt {
+      margin: 1em 0 0.625em; }
+    p, table {
+      margin: {
+        bottom: 0.625em;
+        top: 0.625em; }; }
+    .documentDescription, #description {
+      margin: 0.5em 0 1.31em; }
+    /* Uncomment these if you want link addresses inserted along with the link
+     * text when you print. */
+    /* a:link:after, a:visited:after
+     *   content: " [" attr(href) "] " */ }
+  /* Hide all the elements that are irrelevant for printing */
+  div.top, #{$portal-logo}, #{$portal-siteactions}, .hiddenStructure,
+  #{$portal-searchbox}, #{$portal-globalnav}, #{$portal-personaltools},
+  #{$portal-breadcrumbs}, #edit-bar, #{$portal-column-one}, #{$portal-column-two},
+  #{$portal-languageselector}, .contentViews, .contentActions, .help, .legend,
+  .portalMessage, .documentActions, .netscape4, #viewlet-below-content .reply,
+  #viewlet-below-content .discussion,  #kss-spinner, #review-history,
+  #content-history, .listingBar, #{$portal-footer}, #{$portal-colophon},
+  .skipnav, #kss-spinner, #review-history, #content-history, .listingBar,
+  .link-presentation, input.standalone, .overlay, .managePortletsFallback,
+  .close, .link-parent, .draggingHook, #foldercontents-order-column,
+  input.context, .visualNoPrint {
+    display: none; }
+  /* Image alignment classes */
+  .image-left {
+    float: left;
+    clear: both;
+    margin: 0.5em 1em 0.5em 0;
+    border: 0.4pt solid black; }
+  .image-inline {
+    float: none; }
+  .image-right {
+    float: right;
+    clear: both;
+    margin: 0.5em;
+    border: 0.4pt solid black; }
+  dd.image-caption {
+    text-align: left;
+    padding: 0;
+    margin: 0; }
+  dl.captioned {
+    padding: 0.8em; }
+  .newsImageContainer {
+    float: right;
+    margin: 0 0 0.5em 1em;
+    width: 16em; } }

@@ -1,0 +1,4 @@
+@import "plonetheme/sunburst/base_mixins";
+
+@media print {
+  @include sunburst_print; }

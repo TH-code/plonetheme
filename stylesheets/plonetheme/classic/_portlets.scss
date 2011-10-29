@@ -1,0 +1,5 @@
+@import "plonetheme/classic/base_modules";
+
+@if $override-styles != true {
+  @include classic_portlets;
+}

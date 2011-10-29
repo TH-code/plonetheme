@@ -1,0 +1,15 @@
+// This is where you put the contents of the main stylesheet for the user's project.
+// It should import your sass stylesheets and demonstrate how to use them.
+/*
+ *  This is the file where you put your CSS changes. 
+ *  You should preferrably use this and override the 
+ *  relevant properties you want to change here instead 
+ *  of customizing plone.css to survive upgrades. Writing
+ *  your own plone.css only makes sense for very heavy 
+ *  customizations. Useful variables from Plone are 
+ *  documented at the bottom of this file.
+ */
+
+@import "plonetheme/classic/base_properties";
+@import "partials/properties";
+

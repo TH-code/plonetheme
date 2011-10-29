@@ -1,0 +1,57 @@
+@import "plonetheme/classic/base_mixins";
+
+@include _classic_classic_member {
+  @media screen {
+  	@include _classic_member }
+}
+@mixin classic_base {
+  @media screen {
+    @include _classic_base } }
+@mixin classic_public {
+  @media screen {
+    @include _classic_public } }
+@mixin classic_columns {
+  @media screen {
+    @include _classic_columns } }
+
+@mixin classic_authoring {
+  @media screen {
+    @include _classic_authoring } }
+
+@mixin classic_portlets {
+  @media screen {
+    @include _classic_portlets } }
+
+@mixin classic_plone-4 {
+  @media screen {
+    @include _classic_plone-4 } }
+
+@mixin classic_controlpanel {
+  @media screen {
+    @include _classic_controlpanel } }
+
+@mixin classic_deprecated {
+  @media screen {
+    @include _classic_deprecated } }
+
+@mixin classic_navtree {
+  @media screen {
+    @include _classic_navtree } }
+
+@mixin classic_invisibles {
+  @media screen {
+    @include _classic_invisibles } }
+
+@mixin classic_forms {
+  @media screen {
+    @include _classic_forms } }
+
+@mixin classic_print {
+  @media print {
+    @include _classic_print } }
+
+@mixin classic_mobile {
+  @media handheld, screen and (max-device-width: 480px) {
+    @include _classic_mobile } }
+
+

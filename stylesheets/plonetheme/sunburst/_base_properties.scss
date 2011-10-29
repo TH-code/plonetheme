@@ -1,0 +1,82 @@
+// Theme url
+$static: "++theme++static" !default;
+$custom: false !default;
+
+// Portal ids
+$visual-portal-wrapper: "#visual-portal-wrapper" !default;
+$portal-top: "#portal-top" !default;
+$portal-header: "#portal-header" !default;
+$portal-personaltools: "#portal-personaltools" !default;
+$portal-searchbox: "#portal-searchbox" !default;
+$portal-logo: "#portal-logo" !default;
+$portal-globalnav: "#portal-globalnav" !default;
+$portal-columns: "#portal-columns" !default;
+$portal-column-content: "#portal-column-content" !default;
+$portal-breadcrumbs: "#portal-breadcrumbs" !default;
+$portal-column-one: "#portal-column-one" !default;
+$portal-column-two: "#portal-column-two" !default;
+$portal-footer: "#portal-footer" !default;
+$portal-colophon: "#portal-colophon" !default;
+$portal-siteactions: "#portal-siteactions" !default;
+$portal-languageselector: "#portal-languageselector" !default;
+$portal-sitemap: "#portal-sitemap" !default;
+
+// Plone colors
+$plone-blue: #205c90 !default;
+$plone-green: #75ad0a !default;
+
+// Colors
+$body-background: white !default;
+$main-color: $plone-blue !default;
+$secondary-color: #dddddd !default;
+$discreet-color: #666666 !default;
+$edit-color: $plone-green !default;
+$link-color: $main-color !default;
+$hover-color: $plone-green !default;
+$active-color: $hover-color !default;
+$visited-color: $discreet-color !default;
+$focus-color: $hover-color !default;
+$link-colors: #{$link-color, $hover-color, $active-color, $visited-color, $focus-color} !default;
+$date-color: #76797c !default;
+$fieldset-color: #329fd7 !default;
+$portal-personaltools-background: #e3e3e3 !default;
+
+// Measures
+$factor: 1 !default;
+$em: $factor * 1em !default;
+$radius: 0.5 * $em !default;
+
+// Base
+$body-font-family: unquote("Arial, FreeSans, sans-serif") !default;
+$body-font-size: 100% !default;
+$body-line-height: 1.125 * $em !default;
+$body-width: auto !default;
+$body-margin: 0 !default;
+$base-font-family: $body-font-family;
+$base-line-height: $body-line-height;
+$base-font-size: 80% !default;
+$base-heading-font: unquote('"Helvetica Neue", Arial, FreeSans, sans-serif') !default;
+$base-form-font: unquote('"Lucida Grande", Arial, FreeSans') !default;
+$base-background: $body-background !default;
+$base-color: black !default;
+$base-heading-color: #444444 !default;
+$content-font-size: 80% !default;
+
+// Portlets
+$portlet-header-padding: 0.42 * $em 1 * $em !default;
+$portlet-header-background: $secondary-color !default;
+
+// Nav portlet
+$nav-portlet-background-color: $secondary-color !default;
+$nav-portlet-border-color: $secondary-color !default;
+$nav-portlet-border-width: 0 !default;
+$nav-portlet-border-style: solid !default;
+
+$nav-portlet-current-background-color: $nav-portlet-background-color !default;
+$nav-portlet-current-border-width: 0 0 0 1 * $em !default;
+$nav-portlet-current-border-style: $nav-portlet-border-style !default;
+$nav-portlet-current-border-color: $nav-portlet-border-color !default;
+
+$nav-portlet-border-bottom-width: 0.1 * $em !default;
+$nav-portlet-border-bottom-style: dotted !default;
+$nav-portlet-border-bottom-color: $nav-portlet-border-color !default;

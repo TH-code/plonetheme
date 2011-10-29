@@ -1,0 +1,44 @@
+@import "plonetheme/default/base_mixins";
+
+@mixin member {
+  @media screen {
+  	@include _member; } }
+@mixin invisibles {
+  @media all {
+    @include _invisibles; } }
+@mixin base {
+  @media screen {
+    @include _base; } }
+@mixin layout {
+  @media screen {
+    // @include _layout;
+	@include deco-gs; } }
+@mixin public {
+  @media screen {
+    @include _public; } }
+@mixin edit {
+  @media screen {
+    @include _edit; } }
+@mixin portlets {
+  @media screen {
+    @include _portlets; } }
+@mixin controlpanel {
+  @media screen {
+    @include _controlpanel; } }
+@mixin invisibles {
+  @media screen {
+    @include _invisibles; } }
+@mixin forms {
+  @media screen {
+    @include _forms; } }
+@mixin tables {
+  @media screen {
+    @include _tables; } }
+@mixin print {
+  @media print {
+    @include _print; } }
+@mixin mobile {
+  @media handheld, screen and (max-device-width: 480px) {
+    @include _mobile; } }
+
+

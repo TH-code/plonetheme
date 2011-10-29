@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xhtml="http://www.w3.org/1999/xhtml"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- HTML5 measures
+       Uncomment the next lines of xsl if you are using the HTML5 doctype
+	   This allows you to have validating html 
+  -->           
+  <!--
+  <xsl:template match="*[not(node())]">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:comment/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="area[not(node())]|base[not(node())]|br[not(node())]|
+                       col[not(node())]|command[not(node())]|embed[not(node())]|
+                       hr[not(node())]|img[not(node())]|input[not(node())]|
+                       keygen[not(node())]|link[not(node())]|meta[not(node())]|
+                       param[not(node())]|source[not(node())]">
+    <xsl:copy-of select="."/>
+  </xsl:template>
+
+  <xsl:template match="acronym">
+    <xsl:element name="abbr">
+      <xsl:copy-of select="@*"/>
+      <xsl:value-of select="."/>
+    </xsl:element>
+  </xsl:template>
+  -->  
+
+  <theme href="popup.html" />
+  <theme href="theme.html"  css:if-content="#visual-portal-wrapper"/>
+  <rules css:if-content="#visual-portal-wrapper">
+    <!-- The above condition makes sure that content is served in the plone 
+         main_template. This is necessary for functional edit popups in Tiny,
+         for example. -->
+    
+    <!-- Set language -->
+    <prepend theme="/html" content="/html/@lang"/>
+
+    <!-- Set title -->
+    <replace theme="/html/head/title" content="/html/head/title"/>
+
+    <!-- Base tag -->
+    <after theme="/html/head/title" content="/html/head/base"/>
+
+    <!-- Pull in Plone Meta -->
+    <after theme="/html/head/title" 
+		   content="/html/head/meta[
+		       not(@content='IE=edge' or
+		           @content='text/html; charset=utf-8')]" />
+
+    <!-- Scripts -->
+    <append css:theme="head" css:content="head script"/>
+
+    <!-- Add body classes -->
+    <prepend theme="/html/body" content="/html/body/@class"/>
+
+    <replace theme="/html/body" content='/html/body' />
+    
+  </rules>
+
+  <rules if-content='not(//*[@id="visual-portal-wrapper"])'>
+    <append theme="/html/head" content="/html/head/script"/>
+    <append theme="/html/head" content="/html/head/link"/>
+    <prepend theme="/html/body" content="/html/body/" attributes="class id"/>
+    <append theme="/html/body" content-children="/html/body"/>
+    <after  theme-content="/html/head">
+      <link rel="stylesheet" href="/++theme++plonetheme.hartvoorjestad/css/tinymce.css" type="text/css" charset="utf-8"  media="screen" />
+    </after>
+    <drop css:content=".configlets img" />
+  </rules>
+</rules>
