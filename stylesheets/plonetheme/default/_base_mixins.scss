@@ -1,10 +1,11 @@
+@import "plonetheme/sunburst/base_mixins";
 @import "plonetheme/default/base_properties";
 @import "plonetheme/utilities/deco-gs";
 @import "plonetheme/utilities/modular-scale";
 @import "plonetheme/utilities/members";
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
-@import "compass/typography";
+@import "compass/typography/lists";
 
 @mixin _default_members {
   @include members; }

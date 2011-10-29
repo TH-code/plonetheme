@@ -60,17 +60,28 @@ $line-height: 1.5 !default;
 $background: #fff !default;
 $margin: 0 0 1em !default;
 $radius: 5px !default;
-$em: $ideal-text-size !default;
+// $em: $ideal-text-size !default;
+
+// Plone colors
+$plone-blue: #205c90 !default;
+$plone-green: #75ad0a !default;
 
 // Colors
 $color: #666 !default; 
 $heading-color: $color !default;
-$main-color: #345 !default;
-$edit-color: #543 !default;
-$discreet-color: #999 !default;
-$secondary-color: #ddd !default;
+$main-color: $plone-blue !default;
+$secondary-color: #dddddd !default;
+$discreet-color: #666666 !default;
+$edit-color: $plone-green !default;
  
 // Link
+$link-color: $main-color !default;
+$hover-color: $plone-green !default;
+$active-color: $hover-color !default;
+$visited-color: $discreet-color !default;
+$focus-color: $hover-color !default;
+$link-colors: $link-color, $hover-color, $active-color, $visited-color, $focus-color !default;
+
 $link-normal: blue !default;
 $link-hover: green  !default;
 $link-active: red !default;
