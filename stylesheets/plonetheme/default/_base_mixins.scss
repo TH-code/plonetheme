@@ -6,10 +6,10 @@
 @import "compass/css3/box-shadow";
 @import "compass/typography";
 
-@mixin _default-members {
+@mixin _default_members {
   @include members; }
 
-@mixin _default-invisibles {
+@mixin _default_invisibles {
   /*** =Invisibles ***/
   .hiddenStructure {
     display: block !important;
@@ -29,7 +29,7 @@
   .visualClear {
     clear: both !important; } }
 
-@mixin _default-base {
+@mixin _default_base {
   @include modular-scale;
   /*** =Base ***/
   body {
@@ -61,7 +61,7 @@
   q {
     quotes: "“" "”" "‘" "’"; } }
 
-@mixin _default-layout {
+@mixin _default_layout {
   @include deco-gs;
   .left { float: left; }
   .right { float: right; }
@@ -77,35 +77,35 @@
     margin: $margin; }
   #content { clear: both; } }
 
-@mixin _default-public { }
+@mixin _default_public { }
 
-@mixin _default-portlets { }
+@mixin _default_portlets { }
 
-@mixin _default-controlpanel {  
+@mixin _default_controlpanel {  
   .inlineDisplay {
     display: inline; } }
 
-@mixin _default-deprecated { }
+@mixin _default_deprecated { }
 
-@mixin _default-navtree { }
+@mixin _default_navtree { }
 
-@mixin _default-forms { }
+@mixin _default_forms { }
 
-@mixin _default-edit {
-  @include _default-edit-tabs;
-  @include _default-edit-pulldown;
-  @include _default-edit-control-panel;
-  @include _default-edit-collapsible;
-  @include _default-edit-comments;
-  @include _default-edit-main;
-  @include _default-edit-portlets;
-  @include _default-dashboard; }
+@mixin _default_edit {
+  @include _default_edit-tabs;
+  @include _default_edit-pulldown;
+  @include _default_edit-control-panel;
+  @include _default_edit-collapsible;
+  @include _default_edit-comments;
+  @include _default_edit-main;
+  @include _default_edit-portlets;
+  @include _default_dashboard; }
 
-@mixin _default-edit-pulldown {
-  @include _default-personal-tools-pulldown;
-  @include _default-content-pulldowns; }
+@mixin _default_edit-pulldown {
+  @include _default_personal-tools-pulldown;
+  @include _default_content-pulldowns; }
 
-@mixin _default-edit-tabs {
+@mixin _default_edit-tabs {
   /* Color differences between the two tab types */
   #content ul.formTabs {
     background-color: $secondary-color;
@@ -172,7 +172,7 @@
       input.hidden {
         display: none; } } } }
 
-@mixin _default-edit-control-panel {
+@mixin _default_edit-control-panel {
   #setup-link {
     font-size: 90%; }
   #content ul.configlets {
@@ -243,7 +243,7 @@
     float: right;
     padding-top: 0.8em; } }
 
-@mixin _default-edit-collapsible {
+@mixin _default_edit-collapsible {
   dl.collapsible {
     border: 0.1em solid #8cacbb;
     margin: 1em 0;
@@ -302,7 +302,7 @@
       cursor: pointer;
       display: inline; } } }
 
-@mixin _default-edit-comments {
+@mixin _default_edit-comments {
   .comment {
     margin-top: 1.5em;
     font-size: $base-font-size;
@@ -320,7 +320,7 @@
     @include border-radius($radius);
     @include box-shadow(#888888, 0, 0, 0.5em); } }
 
-@mixin _default-edit-main {
+@mixin _default_edit-main {
     #edit-bar
   .reviewHistory, .contentHistory {
     display: inline;
@@ -352,7 +352,7 @@
     border: 0.2em solid #ffa500;
     padding: 0.1em; } }
 
-@mixin _default-edit-portlets {
+@mixin _default_edit-portlets {
   /* Portlet edit styles */
   div.portletAssignments div.portletHeader {
 /*
@@ -399,7 +399,7 @@
       color: $background;
       display: inline; } } }
 
-@mixin _default-personal-tools-pulldown {
+@mixin _default_personal-tools-pulldown {
   #{$portal-personaltools} {
     float: right;
     background: $secondary-color;
@@ -428,7 +428,7 @@
           background: $main-color;
           color: $background; } } } } }
 
-@mixin _default-content-pulldowns {
+@mixin _default_content-pulldowns {
   #contentActionMenus {
     margin: 0;
     dl.actionMenu {
@@ -484,7 +484,7 @@
   span.arrowDownAlternative {
     font-size: $base-font-size; } }
 
-@mixin _default-dashboard {
+@mixin _default_dashboard {
   /* =Dashboard */
   #dashboard-actions {
     ul {
@@ -509,7 +509,7 @@
     padding-top: 0.7em; } }
 
 
-@mixin _default-print {
+@mixin _default_print {
   @media print {
     body {
       font-family: Baskerville, Georgia, Garamond, Times, serif;
@@ -577,4 +577,4 @@
     .discussion .documentByLine {
       display: block; } } }
 
-@mixin _default-mobile { }
+@mixin _default_mobile { }

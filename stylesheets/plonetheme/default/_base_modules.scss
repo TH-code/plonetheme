@@ -2,43 +2,53 @@
 
 @mixin default-members {
   @media screen {
-  	@include _default-members; } }
+    @include _default_members; } }
+
 @mixin default-invisibles {
   @media all {
-    @include _default-invisibles; } }
+    @include _default_invisibles; } }
+
 @mixin default-base {
   @media screen {
-    @include _default-base; } }
+    @include _default_base; } }
+
 @mixin default-layout {
   @media screen {
     // @include _layout;
-	@include deco-gs; } }
+    @include deco-gs; } }
+
 @mixin default-public {
   @media screen {
-    @include _default-public; } }
+    @include _default_public; } }
+
 @mixin default-edit {
   @media screen {
-    @include _default-edit; } }
+    @include _default_edit; } }
+
 @mixin default-portlets {
   @media screen {
-    @include _default-portlets; } }
+    @include _default_portlets; } }
+
 @mixin default-controlpanel {
   @media screen {
-    @include _default-controlpanel; } }
+    @include _default_controlpanel; } }
+
 @mixin default-invisibles {
   @media screen {
-    @include _default-invisibles; } }
+    @include _default_invisibles; } }
+
 @mixin default-forms {
   @media screen {
-    @include _default-forms; } }
+    @include _default_forms; } }
+
 @mixin default-tables {
   @media screen {
-    @include _default-tables; } }
+    @include _default_tables; } }
+
 @mixin default-print {
   @media print {
-    @include _default-print; } }
+    @include _default_print; } }
+
 @mixin default-mobile {
   @media handheld, screen and (max-device-width: 480px) {
-    @include _default-mobile; } }
-
-
+    @include _default_mobile; } }
