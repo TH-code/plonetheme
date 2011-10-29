@@ -36,20 +36,18 @@ $hover-color: $plone-green !default;
 $active-color: $hover-color !default;
 $visited-color: $discreet-color !default;
 $focus-color: $hover-color !default;
-$link-colors: #{$link-color, $hover-color, $active-color, $visited-color, $focus-color} !default;
+$link-colors: $link-color, $hover-color, $active-color, $visited-color, $focus-color !default;
 $date-color: #76797c !default;
 $fieldset-color: #329fd7 !default;
 $portal-personaltools-background: #e3e3e3 !default;
 
 // Measures
-$factor: 1 !default;
-$em: $factor * 1em !default;
-$radius: 0.5 * $em !default;
+$radius: 0.5em !default;
 
 // Base
 $body-font-family: unquote("Arial, FreeSans, sans-serif") !default;
 $body-font-size: 100% !default;
-$body-line-height: 1.125 * $em !default;
+$body-line-height: 1.125em !default;
 $body-width: auto !default;
 $body-margin: 0 !default;
 $base-font-family: $body-font-family;
@@ -63,7 +61,7 @@ $base-heading-color: #444444 !default;
 $content-font-size: 80% !default;
 
 // Portlets
-$portlet-header-padding: 0.42 * $em 1 * $em !default;
+$portlet-header-padding: 0.42em 1em !default;
 $portlet-header-background: $secondary-color !default;
 
 // Nav portlet
@@ -73,10 +71,10 @@ $nav-portlet-border-width: 0 !default;
 $nav-portlet-border-style: solid !default;
 
 $nav-portlet-current-background-color: $nav-portlet-background-color !default;
-$nav-portlet-current-border-width: 0 0 0 1 * $em !default;
+$nav-portlet-current-border-width: 0 0 0 1em !default;
 $nav-portlet-current-border-style: $nav-portlet-border-style !default;
 $nav-portlet-current-border-color: $nav-portlet-border-color !default;
 
-$nav-portlet-border-bottom-width: 0.1 * $em !default;
+$nav-portlet-border-bottom-width: 0.1em !default;
 $nav-portlet-border-bottom-style: dotted !default;
 $nav-portlet-border-bottom-color: $nav-portlet-border-color !default;

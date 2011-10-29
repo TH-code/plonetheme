@@ -109,14 +109,14 @@
   /* Color differences between the two tab types */
   #content ul.formTabs {
     background-color: $secondary-color;
-    border: 0.3 * $em solid $secondary-color; }
+    border: 0.3em solid $secondary-color; }
   #edit-bar {
     background-color: $edit-color;
-    border: 0.25 * $em solid $edit-color;
+    border: 0.25em solid $edit-color;
     font-size: $base-font-size;
-    min-height: 2 * $em - .25 * $em;
-    margin-bottom: 1 * $em;
-    padding-top: 0.05 * $em; }
+    min-height: 2em - .25em;
+    margin-bottom: 1em;
+    padding-top: 0.05em; }
   #content-views {
     @include horizontal-list;
     float: left;
@@ -131,15 +131,15 @@
     @include border-top-radius($radius); }
   #content li.formTab {
     display: inline;
-    margin-right: 0.25 * $em; }
+    margin-right: 0.25em; }
   #content-views a,
   #content li.formTab a {
     /* this isn't supported by all browsers, so we keep it in a separate rule */
     display: inline-block; }
   #content-views, #content li.formTab {
     a {
-      line-height: 2 * $em;
-      padding: 0 0.75 * $em;
+      line-height: 2em;
+      padding: 0 0.75em;
       text-decoration: none;
       border: none;
       margin: 0; } }
@@ -162,7 +162,7 @@
         image: url("/#{$static}/img/plone/required.png");
         position: center right;
         repeat: no-repeat; };
-      padding-right: 1 * $em; } }
+      padding-right: 1em; } }
   #content {
     fieldset.formPanel {
       border: none;
@@ -176,11 +176,11 @@
   #setup-link {
     font-size: 90%; }
   #content ul.configlets {
-    margin: 1 * $em 0;
+    margin: 1em 0;
     list-style-image: none;
     list-style: none;
     li {
-      margin-bottom: 1 * $em;
+      margin-bottom: 1em;
       list-style: none;
       display: block;
       a {
@@ -195,11 +195,11 @@
       label {
         font-weight: bold; } } }
   #content ul.configletDetails {
-    margin: 0 * $em 1 * $em 1 * $em 4 * $em;
+    margin: 0em 1em 1em 4em;
     list-style-image: none;
     list-style: none;
     li {
-      margin-bottom: 1 * $em;
+      margin-bottom: 1em;
       display: inline;
       a {
         text-decoration: none; }
@@ -220,49 +220,49 @@
       dt a .trigger {
         font-weight: normal; } }
     dd {
-      margin-left: 1 * $em; }
+      margin-left: 1em; }
     td {
       vertical-align: top;
       &.checker {
         text-align: center; } }
     th.smallcolumn {
-      width: 1.5 * $em; } }
+      width: 1.5em; } }
   .chooser-right {
     float: right;
     margin-right: 0;
     margin-bottom: 0; }
   .rule-element {
     background-color: #eef3f5;
-    margin: 0.5 * $em 0pt 0.5 * $em;
-    padding: 0.3 * $em 1 * $em 0.3 * $em 1 * $em;
+    margin: 0.5em 0pt 0.5em;
+    padding: 0.3em 1em 0.3em 1em;
     width: auto;
     dl {
       dd {
-        margin-left: 1 * $em; } } }
+        margin-left: 1em; } } }
   .rule-updown, .rule-operations {
     float: right;
-    padding-top: 0.8 * $em; } }
+    padding-top: 0.8em; } }
 
 @mixin _default-edit-collapsible {
   dl.collapsible {
-    border: 0.1 * $em solid #8cacbb;
-    margin: 1 * $em 0;
+    border: 0.1em solid #8cacbb;
+    margin: 1em 0;
     padding: 0;
     dt.collapsibleHeader {
       display: block;
       float: left;
       background: $background;
-      line-height: 1.2 * $em;
+      line-height: 1.2em;
       vertical-align: middle;
       font-size: 90%;
       position: relative;
-      top: -0.6 * $em;
+      top: -0.6em;
       width: auto;
-      margin: 0 0 -0.6 * $em 1 * $em;
-      padding: 0 0.5 * $em; }
+      margin: 0 0 -0.6em 1em;
+      padding: 0 0.5em; }
     dd.collapsibleContent {
       margin: 0;
-      padding: 0 1 * $em 0.4 * $em;
+      padding: 0 1em 0.4em;
       clear: left;
       /* for IE the following isn't needed, that's why the css2 selector is used */
       & > dl {
@@ -270,44 +270,44 @@
         padding: 0; } } }
   dl.collapsedBlockCollapsible {
     border: none;
-    height: 1 * $em;
+    height: 1em;
     width: auto; }
   dl.expandedInlineCollapsible, dl.expandedBlockCollapsible {
     dt.collapsibleHeader {
-      padding: 0 0.5 * $em 0 2 * $em;
-      background: $background url("/#{$static}/img/plone/treeExpanded.png") no-repeat 0.5 * $em 50%;
+      padding: 0 0.5em 0 2em;
+      background: $background url("/#{$static}/img/plone/treeExpanded.png") no-repeat 0.5em 50%;
       cursor: pointer; } }
   dl.collapsedInlineCollapsible, dl.collapsedBlockCollapsible {
     dt.collapsibleHeader {
       float: none;
       position: relative;
-      margin: 0 0 0 1 * $em;
-      padding: 0 0.5 * $em 0 2 * $em;
-      line-height: 1.2 * $em;
+      margin: 0 0 0 1em;
+      padding: 0 0.5em 0 2em;
+      line-height: 1.2em;
       cursor: pointer;
-      background: $background url("/#{$static}/img/plone/treeCollapsed.png") no-repeat 0.5 * $em 50%; }
+      background: $background url("/#{$static}/img/plone/treeCollapsed.png") no-repeat 0.5em 50%; }
     dd.collapsibleContent {
       display: none; } }
   dl.collapsedInlineCollapsible {
     border: none;
-    height: 1 * $em;
+    height: 1em;
     width: auto;
     display: inline;
     dt.collapsibleHeader {
       position: static;
       float: none;
       margin: 0;
-      padding: 0 0 0 2 * $em;
-      line-height: 1 * $em;
+      padding: 0 0 0 2em;
+      line-height: 1em;
       cursor: pointer;
       display: inline; } } }
 
 @mixin _default-edit-comments {
   .comment {
-    margin-top: 1.5 * $em;
+    margin-top: 1.5em;
     font-size: $base-font-size;
     .documentByLine {
-      margin-left: 1 * $em; }
+      margin-left: 1em; }
     .formControls {
       margin-left: 0; }
     h1, h2, h3, h4, h5, h6 {
@@ -315,10 +315,10 @@
   .commentTime {
     color: $discreet-color; }
   .commentBody {
-    padding: 1 * $em;
-    margin: 0.5 * $em 0;
+    padding: 1em;
+    margin: 0.5em 0;
     @include border-radius($radius);
-    @include box-shadow(#888888, 0, 0, 0.5 * $em); } }
+    @include box-shadow(#888888, 0, 0, 0.5em); } }
 
 @mixin _default-edit-main {
     #edit-bar
@@ -326,13 +326,13 @@
     display: inline;
     color: black; }
   .spacer {
-    margin: 1 * $em; }
+    margin: 1em; }
   .label {
     font-weight: bold;
     display: inline;
-    padding-right: 0.5 * $em; }
+    padding-right: 0.5em; }
   .optionsToggle {
-    border: 0.1 * $em solid #8cacbb;
+    border: 0.1em solid #8cacbb;
     color: black;
     background-color: #dee7ec;
     font-weight: normal;
@@ -349,8 +349,8 @@
   /* for highlighting current items, like the language or today in the calendar */
   .currentItem {
     border-collapse: collapse;
-    border: 0.2 * $em solid #ffa500;
-    padding: 0.1 * $em; } }
+    border: 0.2em solid #ffa500;
+    padding: 0.1em; } }
 
 @mixin _default-edit-portlets {
   /* Portlet edit styles */
@@ -361,18 +361,18 @@
 */
     line-height: normal; }
   div.portletAssignments {
-    font-size: 0.8 * $em;
-    line-height: 2 * $em;
+    font-size: 0.8em;
+    line-height: 2em;
     .managedPortletActions {
       float: right;
       a {
-        margin: 0 0.25 * $em;
+        margin: 0 0.25em;
         border: none; } } }
   div.managePortletsLink, a.managePortletsFallback {
     text-align: center;
-    padding: 0.25 * $em 0.5 * $em;
+    padding: 0.25em 0.5em;
     font-size: $base-font-size;
-    margin: 0 auto 1 * $em;
+    margin: 0 auto 1em;
     background: $secondary-color;
     @include border-radius($radius); }
   a.managePortletsFallback {
@@ -383,11 +383,11 @@
     border-bottom: none !important; }
   #portlet-prefs a {
     border: none;
-    line-height: 2 * $em; }
+    line-height: 2em; }
   #{$visual-portal-wrapper} dl.portletCalendar dd {
     padding: 0; }
   .managedPortlet {
-    margin: 0.8 * $em 0; }
+    margin: 0.8em 0; }
   .blockedPortlet {
     .portletHeader {
       border: 1px dashed $secondary-color;
@@ -405,25 +405,25 @@
     background: $secondary-color;
     position: relative;
     z-index: 3;
-    padding: 0.42 * $em 1 * $em;
+    padding: 0.42em 1em;
     top: 0;
     right: 0;
     @include border-bottom-radius($radius);
     #anon-personalbar a {
       float: left;
-      margin-right: 0.5 * $em; }
+      margin-right: 0.5em; }
     dt {
       font-weight: normal;
       &.actionMenuHeader a:after {
         content: " ▼"; } }
     dd {
       right: 0;
-      padding-top: 0.5 * $em;
+      padding-top: 0.5em;
       background: $secondary-color;
-      padding-bottom: 0.5 * $em;
+      padding-bottom: 0.5em;
       a {
-        line-height: 2 * $em;
-        padding: 0 0.75 * $em;
+        line-height: 2em;
+        padding: 0 0.75em;
         &:hover {
           background: $main-color;
           color: $background; } } } } }
@@ -437,19 +437,19 @@
         color: $background;
         z-index: 5; }
       &.activated dd {
-        border-bottom: 0.5 * $em solid $edit-color;
+        border-bottom: 0.5em solid $edit-color;
         right: -3px;
         & a:hover, .actionMenuSelected {
           background-color: $background !important;
           color: $discreet-color; } }
-      line-height: 2 * $em;
+      line-height: 2em;
       float: right;
       background: $edit-color;
       margin: 0;
       position: relative;
-      top: -0.23 * $em;
-      right: -0.24 * $em;
-      padding: 0.1 * $em 0.24 * $em 0 0;
+      top: -0.23em;
+      right: -0.24em;
+      padding: 0.1em 0.24em 0 0;
       @include border-radius($radius);
       @include border-top-left-radius(0); } }
   #folderHeader, #contextHeader {
@@ -457,12 +457,12 @@
   #contextHeader {
     margin-top: 5px; }
   .actionMenuContent {
-    padding: 0 0.25 * $em; }
+    padding: 0 0.25em; }
   dl.actionMenu {
     float: right;
     white-space: nowrap;
     position: relative;
-    margin-left: 0.5 * $em;
+    margin-left: 0.5em;
     a, div {
       display: block !important;
       white-space: nowrap; }
@@ -470,7 +470,7 @@
       font-weight: normal; }
     &.deactivated {
       dt {
-        margin: 0 0.25 * $em; }
+        margin: 0 0.25em; }
       dd {
         display: none; } }
     &.activated {
@@ -480,7 +480,7 @@
         min-width: 100%;
         @include border-bottom-radius($radius); }
       dt a, dd a, dd div {
-        margin: 0 0.25 * $em; } } }
+        margin: 0 0.25em; } } }
   span.arrowDownAlternative {
     font-size: $base-font-size; } }
 
@@ -493,7 +493,7 @@
         list-style: none; } } }
   #dashboard {
     font-size: 125%;
-    line-height: 1 * $em;
+    line-height: 1em;
     dd {
       margin: 0; }
     dl.portlet a:link {
@@ -502,11 +502,11 @@
     display: inline-block;
     float: left;
     width: 23%;
-    padding: 0.7 * $em 1.3 * $em 0 0;
+    padding: 0.7em 1.3em 0 0;
     dl.portlet {
-      margin-bottom: 1.5 * $em; } }
+      margin-bottom: 1.5em; } }
   #dashboard-portlets4 {
-    padding-top: 0.7 * $em; } }
+    padding-top: 0.7em; } }
 
 
 @mixin _default-print {

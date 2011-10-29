@@ -38,7 +38,7 @@
 
 $base-heading-font-weight: bold !default;
 $base-dt-font-weight: bold !default;
-$base-heading-line-height: 1.5 * $em !default;
+$base-heading-line-height: 1.5em !default;
 
 @mixin _sunburst_base-clean {
   /* =Base */
@@ -54,17 +54,17 @@ $base-heading-line-height: 1.5 * $em !default;
     color: $base-color;
     line-height: $base-heading-line-height; }
   h1 {
-    font-size: 2 * $em; }
+    font-size: 2em; }
   h2 {
-    font-size: 1.75 * $em; }
+    font-size: 1.75em; }
   h3 {
-    font-size: 1.25 * $em; }
+    font-size: 1.25em; }
   h4 {
-    font-size: 1.25 * $em; }
+    font-size: 1.25em; }
   h5 {
-    font-size: 1 * $em; }
+    font-size: 1em; }
   h6 {
-    font-size: 0.8 * $em; }
+    font-size: 0.8em; }
   h2, h3, h4, h5, h6 {
     color: $base-heading-color;
     a {
@@ -96,19 +96,19 @@ $base-heading-line-height: 1.5 * $em !default;
     color: $base-color;
     line-height: $base-heading-line-height; }
   h1, h2 {
-    letter-spacing: -0.05 * $em; }
+    letter-spacing: -0.05em; }
   h1 {
-    font-size: 2 * $em; }
+    font-size: 2em; }
   h2 {
-    font-size: 1.75 * $em; }
+    font-size: 1.75em; }
   h3 {
-    font-size: 1.25 * $em; }
+    font-size: 1.25em; }
   h4 {
-    font-size: 1.25 * $em; }
+    font-size: 1.25em; }
   h5 {
-    font-size: 1 * $em; }
+    font-size: 1em; }
   h6 {
-    font-size: 0.8 * $em; }
+    font-size: 0.8em; }
   h2, h3, h4, h5, h6 {
     color: $base-heading-color;
     a {
@@ -125,7 +125,7 @@ $base-heading-line-height: 1.5 * $em !default;
   q {
     quotes: "“" "”" "‘" "’"; } }
 
-$portal-header-padding: 0.25 * $em 0.5 * $em !default;
+$portal-header-padding: 0.25em 0.5em !default;
 $portal-header-background: #e3e3e3 !default;
 
 @mixin _sunburst_header-clean {
@@ -149,7 +149,7 @@ $portal-header-background: #e3e3e3 !default;
       font-weight: normal;
 	  a {
 	    float: left;
-	    margin-right: 0.5 * $em; } } }
+	    margin-right: 0.5em; } } }
   #{$portal-languageselector} {
     float: right;
     background: $portal-header-background;
@@ -169,23 +169,23 @@ $portal-header-background: #e3e3e3 !default;
     z-index: 2; }
   #{$portal-logo} {
     display: inline-block;
-    margin: 1.375 * $em 0; }
+    margin: 1.375em 0; }
   #{$portal-globalnav} {
     clear: both;
     font-size: $base-font-size;
     background: $secondary-color;
     /* ensure top navigation doesnt touch portlets, content etc.. #10491 */
-    margin: 0 0 1 * $em 0;
+    margin: 0 0 1em 0;
     li {
       a {
         display: inline-block;
-        padding: 0.5 * $em 1 * $em 2 * $em 1 * $em;
+        padding: 0.5em 1em 2em 1em;
         background: $secondary-color;
-        min-width: 6 * $em;
+        min-width: 6em;
         white-space: normal;
         /* TODO: Once we have removed the whitespace from the nav template, this can be put back */
-        /* border-bottom: 0.1 * $em solid $body-background */
-        border-right: 0.1 * $em solid $body-background; } }
+        /* border-bottom: 0.1em solid $body-background */
+        border-right: 0.1em solid $body-background; } }
     .selected a, a:hover {
       background: $main-color;
       color: $body-background; }
@@ -207,7 +207,7 @@ $portal-header-background: #e3e3e3 !default;
       font-weight: normal;
       a {
         float: left;
-        margin-right: 0.5 * $em; } } }
+        margin-right: 0.5em; } } }
   #{$portal-languageselector} {
     float: right;
     background: $portal-header-background;
@@ -227,14 +227,14 @@ $portal-header-background: #e3e3e3 !default;
     float: right;
     text-align: left;
     clear: right;
-    margin: 1.2 * $em 0;
+    margin: 1.2em 0;
     font-size: $base-font-size;
     form {
       white-space: nowrap; }
     label {
       font-weight: normal; } }
   #content input.searchField {
-    margin-bottom: 1 * $em; }
+    margin-bottom: 1em; }
   /* Collapsible elements in search_form */
   .collapsible .collapser {
     &.collapsed {
@@ -250,22 +250,22 @@ $portal-header-background: #e3e3e3 !default;
     position: absolute;
     right: 0;
     background: $body-background;
-    margin: -1.5 * $em 0 0 -7 * $em;
+    margin: -1.5em 0 0 -7em;
     fieldset {
-      padding: 1 * $em 0 0;
-      border: 0.1 * $em solid #cccccc; }
+      padding: 1em 0 0;
+      border: 0.1em solid #cccccc; }
     .LSDescr {
       font-size: 85%;
       color: $discreet-color; } }
   #livesearchLegend {
     background-color: #cccccc;
-    padding: 0.3 * $em; }
+    padding: 0.3em; }
   .LSRow,
   #LSNothingFound {
     display: block;
-    padding: 0.5 * $em 1 * $em;
+    padding: 0.5em 1em;
     white-space: normal;
-    width: 28 * $em; }
+    width: 28em; }
   .LSHighlight {
     background: $secondary-color; } }
 
@@ -281,8 +281,8 @@ $portal-header-background: #e3e3e3 !default;
   /* =Breadcrumbs */
   #{$portal-breadcrumbs} {
     font-size: $base-font-size;
-    margin-bottom: 1 * $em;
-    margin-left: 0.25 * $em;
+    margin-bottom: 1em;
+    margin-left: 0.25em;
     a {
       border-bottom: none;
       display: inline-block; } } }
@@ -302,11 +302,11 @@ $portal-header-background: #e3e3e3 !default;
   /* =Site actions */
   #{$portal-siteactions} {
     font-size: 85%;
-    padding-bottom: 2 * $em;
+    padding-bottom: 2em;
     text-align: center;
     clear: left;
     li {
-      margin-right: 0.5 * $em;
+      margin-right: 0.5em;
       a {
         &:hover {
           color: $edit-color; } } } } }
@@ -326,14 +326,14 @@ $portal-header-background: #e3e3e3 !default;
     span.summary a {
       border: none !important; } } }
 
-$portlet-padding: 1 * $em !default;
+$portlet-padding: 1em !default;
 $portlet-dt-link-color: black !default;
 
 @mixin _sunburst_portlets-clean {
   /* =Portlets */
   dl {
     &.portlet {
-      margin: 0 0 1 * $em;
+      margin: 0 0 1em;
       font-size: $base-font-size;
       dt {
         padding: $portlet-header-padding;
@@ -359,7 +359,7 @@ $portlet-dt-link-color: black !default;
   /* =Portlets */
   dl {
     &.portlet {
-      margin: 0 0 1 * $em;
+      margin: 0 0 1em;
       font-size: $base-font-size;
       dt {
         padding: $portlet-header-padding;
@@ -372,11 +372,11 @@ $portlet-dt-link-color: black !default;
             border: none; } } }
       dd.portletItem,
       dd.portletFooter {
-        padding: 1 * $em; } }
+        padding: 1em; } }
     &.portletError {
       background-color: #ffa500;
       dd {
-        padding: 1 * $em; } }
+        padding: 1em; } }
     &.portlet dt.hiddenStructure {
       padding: 0; } } }
 
@@ -392,12 +392,12 @@ $portlet-dt-link-color: black !default;
               display: block;
               zoom: 1; } } }
         &.navTreeLevel0 > .navTreeItem {
-          padding: 0.25 * $em 1 * $em;
+          padding: 0.25em 1em;
           border-bottom: $nav-portlet-border-bottom-width $nav-portlet-border-bottom-style $nav-portlet-border-bottom-color;
-          line-height: 2 * $em; }
+          line-height: 2em; }
         &.navTreeLevel1 .navTreeItem {
-          padding-left: 0.5 * $em;
-          line-height: 2 * $em;
+          padding-left: 0.5em;
+          line-height: 2em;
           border: {
             width: $nav-portlet-border-width;
             style: $nav-portlet-border-style;
@@ -408,32 +408,32 @@ $portlet-dt-link-color: black !default;
             width: $nav-portlet-current-border-width;
             style: $nav-portlet-current-border-style;
             color: $nav-portlet-current-border-color; };
-          margin-left: -1 * $em;
-          margin-right: -1 * $em; } } }
+          margin-left: -1em;
+          margin-right: -1em; } } }
     &.portletNavigationTree dd.portletItem {
       padding: 0; } } }
 
 @mixin _sunburst_content-area {
   /* =Content area */
   #content {
-    line-height: 1.5 * $em;
+    line-height: 1.5em;
     clear: both;
     font-size: $base-font-size;
-    margin: 1 * $em 0.25 * $em 2 * $em 0.25 * $em;
+    margin: 1em 0.25em 2em 0.25em;
     h1 {
-      margin-top: 0.5 * $em;
+      margin-top: 0.5em;
       &.documentFirstHeading {
         margin-top: 0; } }
     p, table, dl {
-      margin-bottom: 1 * $em; } }
+      margin-bottom: 1em; } }
   dl.portlet p, dl.portlet {
-    margin-bottom: 1 * $em; }
+    margin-bottom: 1em; }
   /* Special case of #content - TinyMCE */
   body#content {
-    margin: 1 * $em; }
+    margin: 1em; }
   #content, dl.portlet {
     a {
-      border-bottom: 0.1 * $em solid #cccccc;
+      border-bottom: 0.1em solid #cccccc;
       @include link-colors($link-color, $hover-color, $active-color, $visited-color, $focus-color);
       &:target {
         background-color: #ffffbb; } }
@@ -442,12 +442,12 @@ $portlet-dt-link-color: black !default;
       padding: 1px 0px 1px 16px; } }
   #category {
     font-size: 75%;
-    margin-bottom: 1 * $em;
+    margin-bottom: 1em;
     color: $discreet-color;
     text-align: right;
     a.link-category, span.selectedTag {
       color: black;
-      padding: 0.25 * $em 0.5 * $em;
+      padding: 0.25em 0.5em;
       background: $secondary-color;
       @include border-radius($radius); }
     a.link-category:hover {
@@ -459,14 +459,14 @@ $portlet-dt-link-color: black !default;
   #content {
     ul {
       list-style-type: disc;
-      margin-left: 2 * $em; } }
+      margin-left: 2em; } }
   #content, dl.portlet {
     ol {
       list-style-type: decimal;
-      margin-left: 2 * $em; }
+      margin-left: 2em; }
     li {
-      margin-bottom: 0.25 * $em;
-      line-height: 1.5 * $em;
+      margin-bottom: 0.25em;
+      line-height: 1.5em;
       display: list-item; } }
   #content {
     dt {
@@ -474,16 +474,16 @@ $portlet-dt-link-color: black !default;
       margin-bottom: 0;
       margin-right: 0; }
     dd {
-      margin: 0 0 1 * $em 2 * $em; }
+      margin: 0 0 1em 2em; }
     pre {
       background-color: #222222;
       color: $body-background;
       font-family: Consolas, Inconsolata, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-      padding: 1 * $em;
+      padding: 1em;
       overflow-x: auto;
       font-size: 90%;
-      margin-bottom: 1 * $em;
-      line-height: 1.25 * $em;
+      margin-bottom: 1em;
+      line-height: 1.25em;
       &.python {
         background-color: $body-background; } }
     code {
@@ -495,19 +495,19 @@ $portlet-dt-link-color: black !default;
     .visualHighlight {
       background-color: #ffffbb; }
     .pullquote {
-      margin: 0 1 * $em 0.5 * $em 0.5 * $em;
+      margin: 0 1em 0.5em 0.5em;
       font-weight: bold;
-      line-height: 1.25 * $em;
+      line-height: 1.25em;
       float: right;
       width: 35%;
       clear: right;
       color: #444444;
-      font-size: 1.6 * $em;
-      letter-spacing: -0.08 * $em !important; }
+      font-size: 1.6em;
+      letter-spacing: -0.08em !important; }
     .callout {
       background: #eeeeee;
-      padding: 1 * $em;
-      border-left: 1 * $em solid #cccccc;
+      padding: 1em;
+      border-left: 1em solid #cccccc;
       clear: both; }
     table {
       text-align: left;
@@ -516,24 +516,24 @@ $portlet-dt-link-color: black !default;
     .documentDescription, #description {
       color: $discreet-color;
       margin-left: 0;
-      font: bold 1.25 * $em "Helvetica Neue", Arial, FreeSans, sans-serif; }
+      font: bold 1.25em "Helvetica Neue", Arial, FreeSans, sans-serif; }
     img.tileImage,
     div.newsImageContainer {
       float: right;
-      margin: 0 1 * $em 0.5 * $em 1 * $em; }
+      margin: 0 1em 0.5em 1em; }
     div.newsImageContainer {
       a {
         border-bottom: none; }
       p.discreet {
         margin: 0;
-        padding: 0.5 * $em;
+        padding: 0.5em;
         background-color: $discreet-color;
         background-color: rgba(40, 40, 40, 0.7);
         color: $body-background;
         font-weight: bold;
         position: relative;
         width: 190px;
-        top: -3 * $em; } } }
+        top: -3em; } } }
   #content .discreet, #sidebar .discreet {
     color: $discreet-color;
     font-size: 85%;
@@ -541,7 +541,7 @@ $portlet-dt-link-color: black !default;
   .eventDetails {
     float: right;
     clear: right;
-    margin: 0 0 0.5 * $em 1 * $em; } }
+    margin: 0 0 0.5em 1em; } }
 
 @mixin _sunburst_tables {
   /* =Tables */
@@ -551,7 +551,7 @@ $portlet-dt-link-color: black !default;
       border-collapse: collapse; }
     &.invisible, &.plain, &.listing {
       td, th {
-        padding: 0.5 * $em 1 * $em;
+        padding: 0.5em 1em;
         vertical-align: top; } }
     &.plain {
       th, td {
@@ -571,12 +571,12 @@ $portlet-dt-link-color: black !default;
       th {
         text-align: left;
         color: $discreet-color;
-        border: 0.1 * $em solid #e7e7e7;
+        border: 0.1em solid #e7e7e7;
         border-style: solid solid none;
         background: $secondary-color; }
       tr.odd {
         th {
-          border: 0.1 * $em solid white;
+          border: 0.1em solid white;
           border-style: solid solid none none; } }
       tbody {
         th {
@@ -599,26 +599,26 @@ $portlet-dt-link-color: black !default;
         text-shadow: $body-background 1px 1px 1px;
         background: $secondary-color !important;
         border-bottom: 1px solid $body-background;
-        padding: 0.4 * $em 0.4 * $em 0 0.5 * $em; } }
+        padding: 0.4em 0.4em 0 0.5em; } }
     /* Vertical table data listings */
     &.vertical {
       th {
         text-align: right; }
       td {
-        border-top: 0.1 * $em solid #e7e7e7;
-        padding: 0.5 * $em; } }
+        border-top: 0.1em solid #e7e7e7;
+        padding: 0.5em; } }
     /* Grid table listings */
     &.grid {
       td, th {
         border: 1px solid #e7e7e7;
-        padding: 0.5 * $em; } } }
+        padding: 0.5em; } } }
   .dragindicator {
     outline: 2px solid #ffd700; }
   #foldercontents-order-column {
     padding: 0; }
   div.listingBar {
     font-size: $base-font-size;
-    margin: 1 * $em 0;
+    margin: 1em 0;
     .next {
       display: inline-block;
       float: right; }
@@ -626,8 +626,8 @@ $portlet-dt-link-color: black !default;
       display: inline-block; }
     a {
       display: inline-block;
-      padding: 0.25 * $em 0.5 * $em;
-      border: 0.1 * $em solid #cccccc;
+      padding: 0.25em 0.5em;
+      border: 0.1em solid #cccccc;
       &:hover {
         color: $body-background;
         background-color: #329fd7;
@@ -636,7 +636,7 @@ $portlet-dt-link-color: black !default;
 @mixin _sunburst_status-messages {
   /* =Status messages */
   dl.portalMessage {
-    margin: 1 * $em 0;
+    margin: 1em 0;
     font-size: $base-font-size;
     border: 1px solid #999966;
     background-color: #ffffe3;
@@ -649,20 +649,20 @@ $portlet-dt-link-color: black !default;
       background-color: #999966;
       font-weight: bold;
       float: left;
-      margin: 0 0.5 * $em 0 0;
-      padding: 0.5 * $em 0.75 * $em;
+      margin: 0 0.5em 0 0;
+      padding: 0.5em 0.75em;
       color: $body-background;
-      line-height: 1.25 * $em; }
+      line-height: 1.25em; }
     dd {
-      padding: 0.5 * $em 0.5 * $em;
+      padding: 0.5em 0.5em;
       margin: 0;
-      line-height: 1.25 * $em; }
+      line-height: 1.25em; }
     /* Additional specificity for when status is shown inside #content */
     #content & {
       font-size: 100%;
       dt {
-        margin: 0 0.5 * $em 0 0;
-        padding: 0.5 * $em 0.75 * $em; }
+        margin: 0 0.5em 0 0;
+        padding: 0.5em 0.75em; }
       dd {
         margin: 0; } } }
   dl.warning {
@@ -689,10 +689,10 @@ $portlet-dt-link-color: black !default;
   /* =Image alignment */
   .image-left {
     float: left;
-    margin: 0.5 * $em 1 * $em 0.5 * $em 0; }
+    margin: 0.5em 1em 0.5em 0; }
   .image-right {
     float: right;
-    margin: 0.5 * $em; }
+    margin: 0.5em; }
   .image-inline {
     float: none; }
   /* note: the tricky thing here is that image-inline|image-left|image-right
@@ -712,27 +712,27 @@ $portlet-dt-link-color: black !default;
 @mixin _sunburst_forms {
   /* =Forms */
   fieldset, .editionComment {
-    line-height: 1.5 * $em;
-    margin: 1 * $em 0;
-    padding: 0 1 * $em 1 * $em;
+    line-height: 1.5em;
+    margin: 1em 0;
+    padding: 0 1em 1em;
     width: auto; }
   /* Emulates the styling from the h1 tag */
   #content .field input[type="text"][name$=".title"], #archetypes-fieldname-title input {
     font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
     line-height: 125%;
     color: black;
-    letter-spacing: -0.05 * $em;
-    margin: inherit -0.05 * $em;
-    font-size: 2 * $em;
+    letter-spacing: -0.05em;
+    margin: inherit -0.05em;
+    font-size: 2em;
     font-weight: bold; }
   /* Emulates styling from the description's view */
   #content .field textarea[name$=".description"], #archetypes-fieldname-description textarea#description {
     font-family: Arial, FreeSans, sans-serif;
     color: $discreet-color;
-    font-size: 1.25 * $em;
+    font-size: 1.25em;
     font-weight: bold; }
   div.formControls {
-    margin: 1 * $em; }
+    margin: 1em; }
   input[type="text"]:focus,
   input[type="password"]:focus,
   textarea {
@@ -745,36 +745,36 @@ $portlet-dt-link-color: black !default;
     select {
       vertical-align: top; }
     fieldset {
-      border: 0.1 * $em solid #329fd7;
+      border: 0.1em solid #329fd7;
       border-style: solid none none none; }
     legend {
-      padding: 0.5 * $em;
+      padding: 0.5em;
       font-size: 85%; }
     optgroup {
       font-style: normal;
       font-weight: bold;
       color: #999999;
-      padding-left: 0.25 * $em;
+      padding-left: 0.25em;
       & > option {
-        padding: 0 0.25 * $em 0 1 * $em; } }
+        padding: 0 0.25em 0 1em; } }
     option {
       color: black; } }
   label {
     font-weight: bold; }
   dl.enableFormTabbing dd {
     margin-left: 0;
-    padding-top: 2 * $em; }
+    padding-top: 2em; }
   .searchSection {
     color: #76797c;
-    margin-top: 0.25 * $em;
+    margin-top: 0.25em;
     label {
       &:hover {
         color: black; } } }
   .field {
     clear: both;
-    margin-bottom: 1 * $em;
+    margin-bottom: 1em;
     input[type="text"] {
-      width: 20 * $em; }
+      width: 20em; }
     input[type="text"][size] {
       width: auto; } }
   .field input[type="text"][name$=".title"], input#title {
@@ -783,23 +783,23 @@ $portlet-dt-link-color: black !default;
     width: 99%; }
   .fieldRequired {
     background: url("/#{$static}/img/plone/required.png") center left no-repeat;
-    padding: 0 0 0 1 * $em;
+    padding: 0 0 0 1em;
     color: $body-background; }
   .fieldUploadFile {
     text-align: right;
-    margin-right: 0.75 * $em;
+    margin-right: 0.75em;
     display: none; }
   .fieldTextFormat {
     text-align: right;
-    margin-right: 0.75 * $em; }
+    margin-right: 0.75em; }
   .formHelp {
     color: #555555;
-    margin: 0 0 0.2 * $em 0; }
+    margin: 0 0 0.2em 0; }
   div.field.error {
     background-color: #ffddcc;
     border: 1px solid red;
-    padding: 0.5 * $em;
-    margin: 1 * $em 0; }
+    padding: 0.5em;
+    margin: 1em 0; }
   .error .fieldRequired {
     color: #dd0000; }
   div.error.warning {
@@ -812,7 +812,7 @@ $portlet-dt-link-color: black !default;
   input.inputLabelActive {
     color: #76797c; }
   textarea#form\.description {
-    height: 6 * $em;
+    height: 6em;
     width: 99%; }
   table.listing tbody tr.odd {
     &.selected td, &.dragging td, {
@@ -822,12 +822,12 @@ $portlet-dt-link-color: black !default;
   table.listing tbody tr.odd.error td, tr.error {
     background-color: #ffddcc; }
   .multi-widget-field {
-    padding-left: 0.5 * $em;
-    border-left: 1.5 * $em solid $secondary-color; }
+    padding-left: 0.5em;
+    border-left: 1.5em solid $secondary-color; }
   .multi-widget-checkbox {
-    margin-left: -2 * $em;
-    margin-right: 0.5 * $em;
-    width: 1.5 * $em;
+    margin-left: -2em;
+    margin-right: 0.5em;
+    width: 1.5em;
     display: inline-block; } }
 
 @mixin _sunburst_login-form {
@@ -843,13 +843,13 @@ $portlet-dt-link-color: black !default;
     font-size: 150%;
     width: inherit; }
   #fieldset-openid-login label, #login-form label {
-    margin-right: 0.5 * $em;
-    padding-top: 0.2 * $em;
+    margin-right: 0.5em;
+    padding-top: 0.2em;
     text-align: right;
-    width: 10 * $em;
+    width: 10em;
     display: inline-block; }
   #fieldset-openid-login .formControls input, #login-form .formControls input {
-    margin-left: 0.25 * $em; } }
+    margin-left: 0.25em; } }
 
 @mixin _sunburst_toc {
   /* =TOC */
@@ -858,31 +858,31 @@ $portlet-dt-link-color: black !default;
     float: right;
     width: 35%;
     font-size: 100%;
-    margin: 1 * $em 0 0.5 * $em 1.5 * $em;
+    margin: 1em 0 0.5em 1.5em;
     dt {
-      margin-left: 1 * $em;
+      margin-left: 1em;
       font-weight: normal;
       text-transform: uppercase; }
     dd {
       margin-bottom: 0;
-      padding-left: 2 * $em;
+      padding-left: 2em;
       ol {
-        margin-left: 1.5 * $em; } } } }
+        margin-left: 1.5em; } } } }
 
 @mixin _sunburst_footer {
   /* =Footer */
   #{$portal-footer} {
     font-size: 75%;
     background: $secondary-color;
-    padding: 1 * $em;
-    margin: 1 * $em 0;
-    line-height: 2 * $em; }
+    padding: 1em;
+    margin: 1em 0;
+    line-height: 2em; }
   #{$portal-colophon} {
     font-size: 70%;
     text-align: center;
-    margin-bottom: 1 * $em;
+    margin-bottom: 1em;
     li {
-      padding: 0 0.75 * $em; }
+      padding: 0 0.75em; }
     a {
       color: #444444; } } }
 
@@ -900,16 +900,16 @@ $portlet-dt-link-color: black !default;
       border-bottom: none;
       display: block; }
     & > li {
-      border-bottom: 0.1 * $em dotted $secondary-color;
-      line-height: 1.8 * $em;
-      padding: 0.25 * $em 1 * $em;
+      border-bottom: 0.1em dotted $secondary-color;
+      line-height: 1.8em;
+      padding: 0.25em 1em;
       margin-bottom: 0; }
     .navTreeLevel2 {
       &, & ul {
         font-size: 85%;
         font-weight: normal;
         margin-bottom: 0;
-        padding: 0.25 * $em 0; } } } }
+        padding: 0.25em 0; } } } }
 
 @mixin _sunburst_album {
   /* =Album */
@@ -919,7 +919,7 @@ $portlet-dt-link-color: black !default;
     overflow: hidden;
     height: 185px;
     width: 143px;
-    margin: 0 * $em;
+    margin: 0em;
     padding: 0px 6px 0px 9px;
     text-align: center;
     background: {
@@ -948,7 +948,7 @@ $portlet-dt-link-color: black !default;
     color: #76797c;
     display: block;
     width: 128px;
-    height: 3.6 * $em; } }
+    height: 3.6em; } }
 
 @mixin _sunburst_invisibles {
   /* =Invisibles */
@@ -958,10 +958,10 @@ $portlet-dt-link-color: black !default;
     background-image: none;
     /* safari bug */
     border: none;
-    height: 0.1 * $em;
+    height: 0.1em;
     overflow: hidden;
     padding: 0;
-    margin: -0.1 * $em 0 0 -0.1 * $em;
+    margin: -0.1em 0 0 -0.1em;
     width: 1px; }
   #content {
     .visualNoMarker {
@@ -986,7 +986,7 @@ $portlet-dt-link-color: black !default;
     /* initially overlay is hidden */
     display: none;
     /* some padding to layout nested elements nicely */
-    margin: 1 * $em;
+    margin: 1em;
     font-size: $base-font-size; }
   div.overlay-iframe, div.overlay-ajax {
     width: 60%;
@@ -1010,11 +1010,11 @@ $portlet-dt-link-color: black !default;
     background-color: white;
     border: 1px solid #999999;
     white-space: normal;
-    @include box-shadow($discreet-color, 0, 0, 3 * $em, 0.5 * $em); }
+    @include box-shadow($discreet-color, 0, 0, 3em, 0.5em); }
   .pb-ajax {
     & > div {
       width: 92%;
-      padding: 1 * $em; }
+      padding: 1em; }
     .documentActions {
       display: none; } }
   div.overlay {
@@ -1035,49 +1035,49 @@ $portlet-dt-link-color: black !default;
       border: none; }
     /* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed */
     p {
-      margin-bottom: 1 * $em; }
+      margin-bottom: 1em; }
     label {
-      margin-bottom: 0.25 * $em; }
+      margin-bottom: 0.25em; }
     a {
       &:hover {
         color: $edit-color; }
       &.selected {
         color: black; } }
     .formTab {
-      margin-right: 1 * $em;
+      margin-right: 1em;
       font-weight: bold;
       &.lastFormTab {
-        margin-right: 0 * $em; } }
+        margin-right: 0em; } }
     .formControls a {
       display: block;
-      margin: 0.75 * $em; } } }
+      margin: 0.75em; } } }
 
 @mixin _sunburst_content-history {
   /* =Content history */
   #content-history {
     div.historyRecord {
-      margin-bottom: 1 * $em; }
+      margin-bottom: 1em; }
     div.historyTools {
       ul {
         float: right;
-        margin: 0.5 * $em 1 * $em;
+        margin: 0.5em 1em;
         li {
           display: inline;
-          padding: 0 0.015 * $em;
+          padding: 0 0.015em;
           a {
             border-bottom: none; } } }
       form {
         display: inline; } }
     .historyByLine {
       background: $secondary-color;
-      padding: 0.5 * $em;
+      padding: 0.5em;
       @include border-top-radius($radius); }
     div.historyLinks {
       float: right;
       clear: right;
-      margin: 0.5 * $em 1 * $em 0 0; }
+      margin: 0.5em 1em 0 0; }
     div.historyComment {
-      padding: 0.5 * $em 1 * $em;
+      padding: 0.5em 1em;
       border: 1px solid $secondary-color;
       p {
         margin: 0;
@@ -1085,13 +1085,13 @@ $portlet-dt-link-color: black !default;
       a.historyComparePrevious {
         border-top: 1px dotted #cccccc;
         display: block;
-        margin-top: 3 * $em;
+        margin-top: 3em;
         text-align: center;
         span {
           background-color: $body-background;
           position: relative;
-          top: -0.75 * $em;
-          padding: 0 0.5 * $em; } } } } }
+          top: -0.75em;
+          padding: 0 0.5em; } } } } }
 
 @mixin _sunburst_content-sprites {
   /* =Content sprites */
@@ -1142,7 +1142,7 @@ $portlet-dt-link-color: black !default;
     #plone-contentmenu-factories .contenttype-image {
       background: no-repeat transparent 0px -860px url("/#{$static}/img/plone/contenttypes-sprite.png"); }
     .contenttype-document, .contenttype-event, .contenttype-folder, .contenttype-link, .contenttype-news-item, .contenttype-plone-site, .contenttype-topic, #plone-contentmenu-factories .contenttype-file, #plone-contentmenu-factories .contenttype-image {
-      line-height: 2 * $em;
+      line-height: 2em;
       display: inline-block;
       *display: block;
       padding-left: 20px !important; } } }
@@ -1153,12 +1153,12 @@ $portlet-dt-link-color: black !default;
     overflow-y: auto;
     border: solid 1px #999999;
     background: white;
-    height: 14 * $em;
+    height: 14em;
     width: 100%;
     label {
       padding: 2px 0 0 0;
       display: block;
-      line-height: 1 * $em;
+      line-height: 1em;
       font-weight: normal;
       &.checked {
         background-color: #eeeeee; }
@@ -1172,7 +1172,7 @@ $portlet-dt-link-color: black !default;
     font-weight: normal; }
   #existingTagsSection {
     position: relative;
-    margin-left: 3 * $em; }
+    margin-left: 3em; }
   #existingTags {
     float: left;
     width: 50%; }
@@ -1183,15 +1183,15 @@ $portlet-dt-link-color: black !default;
     margin-bottom: 0;
     margin-left: 0; }
   #content #selectedTagsSection {
-    margin-left: 3 * $em;
+    margin-left: 3em;
     float: left;
     width: 43%;
     margin-bottom: 0; }
   #newTagsSection {
     width: 48%;
-    margin-left: 3 * $em; }
+    margin-left: 3em; }
   #content p.selectedTag {
-    margin-bottom: 0.4 * $em; }
+    margin-bottom: 0.4em; }
   #existingTagsTitle, #newTagsTitle {
     float: left; }
   #existingTagsHelp, #newTagsHelp {
@@ -1203,21 +1203,21 @@ $portlet-dt-link-color: black !default;
   /* =Calendar */
   .portletCalendar {
     width: 100%;
-    margin: 1px 0 1 * $em 0;
+    margin: 1px 0 1em 0;
     dt {
       background-color: #eeeeee;
       font-weight: bold;
       text-align: center;
-      line-height: 1.6 * $em;
+      line-height: 1.6em;
       border-bottom: none;
       a#calendar-previous {
         float: left;
-        padding: 0 1 * $em;
-        margin: 0 -0.5 * $em; }
+        padding: 0 1em;
+        margin: 0 -0.5em; }
       a#calendar-next {
         float: right;
-        padding: 0 1 * $em;
-        margin: 0 -0.5 * $em; } }
+        padding: 0 1em;
+        margin: 0 -0.5em; } }
     dd {
       margin: 0;
       padding: 0; }
@@ -1253,9 +1253,9 @@ $portlet-dt-link-color: black !default;
       border: 2px solid $main-color; } }
   .portletItemDetails {
     font-size: 85%;
-    padding-top: 0.5 * $em;
-    line-height: 1.5 * $em;
-    margin-left: 1 * $em;
+    padding-top: 0.5em;
+    line-height: 1.5em;
+    margin-left: 1em;
     display: block; } }
 
 @mixin _sunburst_editting {
@@ -1277,14 +1277,14 @@ $portlet-dt-link-color: black !default;
   /* Color differences between the two tab types */
   #content ul.formTabs {
     background-color: $secondary-color;
-    border: 0.3 * $em solid $secondary-color; }
+    border: 0.3em solid $secondary-color; }
   #edit-bar {
     background-color: $edit-color;
-    border: 0.25 * $em solid $edit-color;
+    border: 0.25em solid $edit-color;
     font-size: $base-font-size;
-    min-height: 2 * $em;
-    margin-bottom: 1 * $em;
-    padding-top: 0.05 * $em; }
+    min-height: 2em;
+    margin-bottom: 1em;
+    padding-top: 0.05em; }
   #content-views {
     float: left;
     background-color: $edit-color;
@@ -1299,15 +1299,15 @@ $portlet-dt-link-color: black !default;
     @include border-top-radius($radius); }
   #content li.formTab {
     display: inline;
-    margin-right: 0.25 * $em; }
+    margin-right: 0.25em; }
   #content-views a,
   #content li.formTab a {
     /* this isn't supported by all browsers, so we keep it in a separate rule */
     display: inline-block; }
   #content-views, #content li.formTab {
     a {
-      line-height: 2 * $em;
-      padding: 0 0.75 * $em;
+      line-height: 2em;
+      padding: 0 0.75em;
       text-decoration: none;
       border: none;
       margin: 0; } }
@@ -1330,7 +1330,7 @@ $portlet-dt-link-color: black !default;
         image: url("/#{$static}/img/plone/required.png");
         position: center right;
         repeat: no-repeat; };
-      padding-right: 1 * $em; } }
+      padding-right: 1em; } }
   #content {
     fieldset.formPanel {
       border: none;
@@ -1344,11 +1344,11 @@ $portlet-dt-link-color: black !default;
   #setup-link {
     font-size: 90%; }
   #content ul.configlets {
-    margin: 1 * $em 0;
+    margin: 1em 0;
     list-style-image: none;
     list-style: none;
     li {
-      margin-bottom: 1 * $em;
+      margin-bottom: 1em;
       list-style: none;
       display: block;
       a {
@@ -1363,11 +1363,11 @@ $portlet-dt-link-color: black !default;
       label {
         font-weight: bold; } } }
   #content ul.configletDetails {
-    margin: 0 * $em 1 * $em 1 * $em 4 * $em;
+    margin: 0em 1em 1em 4em;
     list-style-image: none;
     list-style: none;
     li {
-      margin-bottom: 1 * $em;
+      margin-bottom: 1em;
       display: inline;
       a {
         text-decoration: none; }
@@ -1388,49 +1388,49 @@ $portlet-dt-link-color: black !default;
       dt a .trigger {
         font-weight: normal; } }
     dd {
-      margin-left: 1 * $em; }
+      margin-left: 1em; }
     td {
       vertical-align: top;
       &.checker {
         text-align: center; } }
     th.smallcolumn {
-      width: 1.5 * $em; } }
+      width: 1.5em; } }
   .chooser-right {
     float: right;
     margin-right: 0;
     margin-bottom: 0; }
   .rule-element {
     background-color: #eef3f5;
-    margin: 0.5 * $em 0pt 0.5 * $em;
-    padding: 0.3 * $em 1 * $em 0.3 * $em 1 * $em;
+    margin: 0.5em 0pt 0.5em;
+    padding: 0.3em 1em 0.3em 1em;
     width: auto;
     dl {
       dd {
-        margin-left: 1 * $em; } } }
+        margin-left: 1em; } } }
   .rule-updown, .rule-operations {
     float: right;
-    padding-top: 0.8 * $em; } }
+    padding-top: 0.8em; } }
 
 @mixin _sunburst_edit-collapsible {
   dl.collapsible {
-    border: 0.1 * $em solid #8cacbb;
-    margin: 1 * $em 0;
+    border: 0.1em solid #8cacbb;
+    margin: 1em 0;
     padding: 0;
     dt.collapsibleHeader {
       display: block;
       float: left;
       background: $body-background;
-      line-height: 1.2 * $em;
+      line-height: 1.2em;
       vertical-align: middle;
       font-size: 90%;
       position: relative;
-      top: -0.6 * $em;
+      top: -0.6em;
       width: auto;
-      margin: 0 0 -0.6 * $em 1 * $em;
-      padding: 0 0.5 * $em; }
+      margin: 0 0 -0.6em 1em;
+      padding: 0 0.5em; }
     dd.collapsibleContent {
       margin: 0;
-      padding: 0 1 * $em 0.4 * $em;
+      padding: 0 1em 0.4em;
       clear: left;
       /* for IE the following isn't needed, that's why the css2 selector is used */
       & > dl {
@@ -1438,44 +1438,44 @@ $portlet-dt-link-color: black !default;
         padding: 0; } } }
   dl.collapsedBlockCollapsible {
     border: none;
-    height: 1 * $em;
+    height: 1em;
     width: auto; }
   dl.expandedInlineCollapsible, dl.expandedBlockCollapsible {
     dt.collapsibleHeader {
-      padding: 0 0.5 * $em 0 2 * $em;
-      background: $body-background url("/#{$static}/img/plone/treeExpanded.png") no-repeat 0.5 * $em 50%;
+      padding: 0 0.5em 0 2em;
+      background: $body-background url("/#{$static}/img/plone/treeExpanded.png") no-repeat 0.5em 50%;
       cursor: pointer; } }
   dl.collapsedInlineCollapsible, dl.collapsedBlockCollapsible {
     dt.collapsibleHeader {
       float: none;
       position: relative;
-      margin: 0 0 0 1 * $em;
-      padding: 0 0.5 * $em 0 2 * $em;
-      line-height: 1.2 * $em;
+      margin: 0 0 0 1em;
+      padding: 0 0.5em 0 2em;
+      line-height: 1.2em;
       cursor: pointer;
-      background: $body-background url("/#{$static}/img/plone/treeCollapsed.png") no-repeat 0.5 * $em 50%; }
+      background: $body-background url("/#{$static}/img/plone/treeCollapsed.png") no-repeat 0.5em 50%; }
     dd.collapsibleContent {
       display: none; } }
   dl.collapsedInlineCollapsible {
     border: none;
-    height: 1 * $em;
+    height: 1em;
     width: auto;
     display: inline;
     dt.collapsibleHeader {
       position: static;
       float: none;
       margin: 0;
-      padding: 0 0 0 2 * $em;
-      line-height: 1 * $em;
+      padding: 0 0 0 2em;
+      line-height: 1em;
       cursor: pointer;
       display: inline; } } }
 
 @mixin _sunburst_edit-comments {
   .comment {
-    margin-top: 1.5 * $em;
+    margin-top: 1.5em;
     font-size: $base-font-size;
     .documentByLine {
-      margin-left: 1 * $em; }
+      margin-left: 1em; }
     .formControls {
       margin-left: 0; }
     h1, h2, h3, h4, h5, h6 {
@@ -1483,23 +1483,23 @@ $portlet-dt-link-color: black !default;
   .commentTime {
     color: $discreet-color; }
   .commentBody {
-    padding: 1 * $em;
-    margin: 0.5 * $em 0;
+    padding: 1em;
+    margin: 0.5em 0;
     @include border-radius($radius);
-    @include box-shadow(#888888, 0, 0, 0.5 * $em); } }
+    @include box-shadow(#888888, 0, 0, 0.5em); } }
 
 @mixin _sunburst_edit-main {
   .reviewHistory, .contentHistory {
     display: inline;
     color: black; }
   .spacer {
-    margin: 1 * $em; }
+    margin: 1em; }
   .label {
     font-weight: bold;
     display: inline;
-    padding-right: 0.5 * $em; }
+    padding-right: 0.5em; }
   .optionsToggle {
-    border: 0.1 * $em solid #8cacbb;
+    border: 0.1em solid #8cacbb;
     color: black;
     background-color: #dee7ec;
     font-weight: normal;
@@ -1516,8 +1516,8 @@ $portlet-dt-link-color: black !default;
   /* for highlighting current items, like the language or today in the calendar */
   .currentItem {
     border-collapse: collapse;
-    border: 0.2 * $em solid #ffa500;
-    padding: 0.1 * $em; } }
+    border: 0.2em solid #ffa500;
+    padding: 0.1em; } }
 
 @mixin _sunburst_edit-portlets {
   /* Portlet edit styles */
@@ -1526,18 +1526,18 @@ $portlet-dt-link-color: black !default;
     background: $portlet-header-background;
     line-height: normal; }
   div.portletAssignments {
-    font-size: 0.8 * $em;
-    line-height: 2 * $em;
+    font-size: 0.8em;
+    line-height: 2em;
     .managedPortletActions {
       float: right;
       a {
-        margin: 0 0.25 * $em;
+        margin: 0 0.25em;
         border: none; } } }
   div.managePortletsLink, a.managePortletsFallback {
     text-align: center;
-    padding: 0.25 * $em 0.5 * $em;
+    padding: 0.25em 0.5em;
     font-size: $base-font-size;
-    margin: 0 auto 1 * $em;
+    margin: 0 auto 1em;
     background: $secondary-color;
     @include border-radius($radius); }
   a.managePortletsFallback {
@@ -1548,11 +1548,11 @@ $portlet-dt-link-color: black !default;
     border-bottom: none !important; }
   #portlet-prefs a {
     border: none;
-    line-height: 2 * $em; }
+    line-height: 2em; }
   #{$visual-portal-wrapper} dl.portletCalendar dd {
     padding: 0; }
   .managedPortlet {
-    margin: 0.8 * $em 0; }
+    margin: 0.8em 0; }
   .blockedPortlet {
     .portletHeader {
       border: 1px dashed $secondary-color;
@@ -1572,12 +1572,12 @@ $portlet-dt-link-color: black !default;
         content: " ▼"; } }
     dd {
       right: 0;
-      padding-top: 0.5 * $em;
+      padding-top: 0.5em;
       background: #e3e3e3;
-      padding-bottom: 0.5 * $em;
+      padding-bottom: 0.5em;
       a {
-        line-height: 2 * $em;
-        padding: 0 0.75 * $em;
+        line-height: 2em;
+        padding: 0 0.75em;
         &:hover {
           background: $main-color;
           color: $body-background; } } } } }
@@ -1590,19 +1590,19 @@ $portlet-dt-link-color: black !default;
         color: $body-background;
         z-index: 5; }
       &.activated dd {
-        border-bottom: 0.5 * $em solid $edit-color;
+        border-bottom: 0.5em solid $edit-color;
         right: -3px;
         & a:hover, .actionMenuSelected {
           background-color: $body-background !important;
           color: $discreet-color; } }
-      line-height: 2 * $em;
+      line-height: 2em;
       float: right;
       background: $edit-color;
       margin: 0;
       position: relative;
-      top: -0.23 * $em;
-      right: -0.24 * $em;
-      padding: 0.1 * $em 0.24 * $em 0 0;
+      top: -0.23em;
+      right: -0.24em;
+      padding: 0.1em 0.24em 0 0;
       @include border-radius($radius);
       @include border-top-left-radius(0); } }
   #folderHeader, #contextHeader {
@@ -1610,12 +1610,12 @@ $portlet-dt-link-color: black !default;
   #contextHeader {
     margin-top: 5px; }
   .actionMenuContent {
-    padding: 0 0.25 * $em; }
+    padding: 0 0.25em; }
   dl.actionMenu {
     float: right;
     white-space: nowrap;
     position: relative;
-    margin-left: 0.5 * $em;
+    margin-left: 0.5em;
     a, div {
       display: block !important;
       white-space: nowrap; }
@@ -1623,7 +1623,7 @@ $portlet-dt-link-color: black !default;
       font-weight: normal; }
     &.deactivated {
       dt {
-        margin: 0 0.25 * $em; }
+        margin: 0 0.25em; }
       dd {
         display: none; } }
     &.activated {
@@ -1633,7 +1633,7 @@ $portlet-dt-link-color: black !default;
         min-width: 100%;
         @include border-bottom-radius($radius); }
       dt a, dd a, dd div {
-        margin: 0 0.25 * $em; } } }
+        margin: 0 0.25em; } } }
   span.arrowDownAlternative {
     font-size: $base-font-size; } }
 
@@ -1644,36 +1644,36 @@ $portlet-dt-link-color: black !default;
   #plone-contentmenu-workflow {
     .state-private {
       @include border-radius($radius);
-      padding: 0 0.5 * $em;
+      padding: 0 0.5em;
       background-color: $workflow-private;
-      border: 0.1 * $em solid $workflow-private;
+      border: 0.1em solid $workflow-private;
       @if $workflow-important == true {
         color: $body-background !important; }
       @else {
         color: $body-background; } }
     .state-visible {
       @include border-radius($radius);
-      padding: 0 0.5 * $em;
+      padding: 0 0.5em;
       background-color: $workflow-visible;
-      border: 0.1 * $em solid $workflow-visible;
+      border: 0.1em solid $workflow-visible;
       @if $workflow-important == true {
         color: $body-background !important; }
       @else {
         color: $body-background; } }
     .state-published {
       @include border-radius($radius);
-      padding: 0 0.5 * $em;
+      padding: 0 0.5em;
       background-color: $workflow-published;
-      border: 0.1 * $em solid $workflow-published;
+      border: 0.1em solid $workflow-published;
       @if $workflow-important == true {
         color: $body-background !important; }
       @else {
         color: $body-background; } }
     .state-pending {
       @include border-radius($radius);
-      padding: 0 0.5 * $em;
+      padding: 0 0.5em;
       background-color: $workflow-pending;
-      border: 0.1 * $em solid $workflow-pending;
+      border: 0.1em solid $workflow-pending;
       @if $workflow-important == true {
         color: $body-background !important; }
       @else {
@@ -1688,7 +1688,7 @@ $portlet-dt-link-color: black !default;
         list-style: none; } } }
   #dashboard {
     font-size: 125%;
-    line-height: 1 * $em;
+    line-height: 1em;
     dd {
       margin: 0; }
     dl.portlet a:link {
@@ -1697,11 +1697,11 @@ $portlet-dt-link-color: black !default;
     display: inline-block;
     float: left;
     width: 23%;
-    padding: 0.7 * $em 1.3 * $em 0 0;
+    padding: 0.7em 1.3em 0 0;
     dl.portlet {
-      margin-bottom: 1.5 * $em; } }
+      margin-bottom: 1.5em; } }
   #dashboard-portlets4 {
-    padding-top: 0.7 * $em; } }
+    padding-top: 0.7em; } }
 
 // Other media
 @mixin _sunburst_mobile {
