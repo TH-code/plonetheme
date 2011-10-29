@@ -1,8 +1,7 @@
 @import "plonetheme/default/base_modules";
 
 @import "compass/reset";
-@include member;
-@include invisibles;
-@include base;
-@include layout;
-/* Huh? */
+@include default-members;
+@include default-invisibles;
+@include default-base;
+@include default-layout;

@@ -1,44 +1,44 @@
 @import "plonetheme/default/base_mixins";
 
-@mixin member {
+@mixin default-members {
   @media screen {
-  	@include _member; } }
-@mixin invisibles {
+  	@include _default-members; } }
+@mixin default-invisibles {
   @media all {
-    @include _invisibles; } }
-@mixin base {
+    @include _default-invisibles; } }
+@mixin default-base {
   @media screen {
-    @include _base; } }
-@mixin layout {
+    @include _default-base; } }
+@mixin default-layout {
   @media screen {
     // @include _layout;
 	@include deco-gs; } }
-@mixin public {
+@mixin default-public {
   @media screen {
-    @include _public; } }
-@mixin edit {
+    @include _default-public; } }
+@mixin default-edit {
   @media screen {
-    @include _edit; } }
-@mixin portlets {
+    @include _default-edit; } }
+@mixin default-portlets {
   @media screen {
-    @include _portlets; } }
-@mixin controlpanel {
+    @include _default-portlets; } }
+@mixin default-controlpanel {
   @media screen {
-    @include _controlpanel; } }
-@mixin invisibles {
+    @include _default-controlpanel; } }
+@mixin default-invisibles {
   @media screen {
-    @include _invisibles; } }
-@mixin forms {
+    @include _default-invisibles; } }
+@mixin default-forms {
   @media screen {
-    @include _forms; } }
-@mixin tables {
+    @include _default-forms; } }
+@mixin default-tables {
   @media screen {
-    @include _tables; } }
-@mixin print {
+    @include _default-tables; } }
+@mixin default-print {
   @media print {
-    @include _print; } }
-@mixin mobile {
+    @include _default-print; } }
+@mixin default-mobile {
   @media handheld, screen and (max-device-width: 480px) {
-    @include _mobile; } }
+    @include _default-mobile; } }
 
 
