@@ -1,0 +1,4 @@
+TODO
+====
+- remove as much redundant code from default by reusing sunburst
+- get icons to work with compass spriting
