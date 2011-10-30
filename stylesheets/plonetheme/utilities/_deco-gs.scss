@@ -1,7 +1,7 @@
 $deco-columns: 12 !default;
 $deco-width: 100% !default;
 $deco-margin: 1.125% !default;
-$deco-side: $deco-margin;
+$deco-side: $deco-margin !default;
 $deco-base: true !default;
 $deco-convenience: true !default;
 $deco-min-convenience: 6 !default;
@@ -27,6 +27,7 @@ $deco-faux-columns-padding-bottom: 2000px !default;
     /* =Deco.gs */
     $_space: $deco-width - ($deco-columns - 1) * $deco-margin - 2 * $deco-side;
     $_column: $_space / $deco-columns;
+    
     div {
       &.row {
         display: block;
@@ -53,6 +54,7 @@ $deco-faux-columns-padding-bottom: 2000px !default;
           $_size: $_i * $_column + $_n * $deco-margin;
           &.position-#{$_n} {
             margin-left: $deco-side + $_n * $_column + $_n * $deco-margin - $deco-width; } } }
+            
       @if $deco-convenience == true {
         &.position-leftmost {
           margin-left: $deco-side - $deco-width; }
