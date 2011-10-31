@@ -1,3 +1,4 @@
 TODO
 ====
 - get icons to work with compass spriting
+- add some sort of unit sensitivity to modular-scale
