@@ -1,3 +1,6 @@
+
+
+@import "plonetheme/sunburst/base_mixins";
 @import "plonetheme/default/base_properties";
 @import "plonetheme/utilities/deco-gs";
 @import "plonetheme/utilities/modular-scale";
@@ -8,6 +11,26 @@
 
 @mixin _default_members {
   @include members; }
+
+@mixin _default_invisibles {
+  /*** =Invisibles ***/
+  .hiddenStructure {
+    display: block !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    /* safari bug */
+    border: none !important;
+    height: 0.1em !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: -0.1em 0 0 -0.1em !important;
+    width: 1px !important; }
+  #content {
+    .visualNoMarker {
+      list-style: none !important;
+      margin-left: 0 !important; } }
+  .visualClear {
+    clear: both !important; } }
 
 @mixin _default_base {
   @include modular-scale;
@@ -36,14 +59,54 @@
       font-size: 1em; } }
   a {
     @include link-colors($link-normal, $link-hover, $link-active, $link-visited, $link-focus); 
-	@if $hover-links == true { @include hover-link; }
+	@if $hover-links == true { @include hover-link }
     &:focus img { outline: thin dotted; } }  
   q {
     quotes: "“" "”" "‘" "’"; } }
 
+@mixin _default_layout {
+  @include deco-gs;
+  .left { float: left; }
+  .right { float: right; }
+  #{$portal-logo}, #{$portal-globalnav} {
+    @extend .left; 
+	clear: left; }
+  #{$portal-searchbox}, #{$portal-personaltools}, #{$portal-personaltools-wrapper} {
+    @extend .right; 
+    clear: right;  }
+  #{$portal-globalnav}, #{$portal-siteactions} {
+  	@include horizontal-list;
+	overflow: hidden;
+    margin: $margin; }
+  #content { clear: both; } }
+
+@mixin _default_public { }
+
+@mixin _default_portlets { }
+
 @mixin _default_edit-controlpanel {  
   .inlineDisplay {
     display: inline; } }
+
+@mixin _default_deprecated { }
+
+@mixin _default_navtree { }
+
+@mixin _default_forms { }
+
+@mixin _default_edit {
+  @include _default_edit-tabs;
+  @include _default_edit-pulldown;
+  @include _default_edit-control-panel;
+  @include _default_edit-collapsible;
+  @include _default_edit-comments;
+  @include _default_edit-main;
+  @include _default_edit-portlets;
+  @include _default_dashboard; }
+
+@mixin _default_edit-pulldown {
+  @include _default_personal-tools-pulldown;
+  @include _default_content-pulldowns; }
 
 @mixin _default_edit-tabs {
   /* Color differences between the two tab types */
@@ -111,6 +174,233 @@
     div.formControls {
       input.hidden {
         display: none; } } } }
+
+@mixin _default_edit-control-panel {
+  #setup-link {
+    font-size: 90%; }
+  #content ul.configlets {
+    margin: 1em 0;
+    list-style-image: none;
+    list-style: none;
+    li {
+      margin-bottom: 1em;
+      list-style: none;
+      display: block;
+      a {
+        text-decoration: none;
+        border: none;
+        &:visited {
+          color: #436976;
+          background-color: transparent; }
+        &:active {
+          color: #436976;
+          background-color: transparent; } }
+      label {
+        font-weight: bold; } } }
+  #content ul.configletDetails {
+    margin: 0em 1em 1em 4em;
+    list-style-image: none;
+    list-style: none;
+    li {
+      margin-bottom: 1em;
+      display: inline;
+      a {
+        text-decoration: none; }
+      li label {
+        font-weight: bold; }
+      &.configletDescription {
+        display: block;
+        color: #76797c;
+        margin: 0; } } }
+  .inlineDisplay {
+    display: inline; }
+  table.controlpanel-listing {
+    width: 100%;
+    td, th {
+      font-size: 120%; }
+    dl {
+      margin-top: 0;
+      dt a .trigger {
+        font-weight: normal; } }
+    dd {
+      margin-left: 1em; }
+    td {
+      vertical-align: top;
+      &.checker {
+        text-align: center; } }
+    th.smallcolumn {
+      width: 1.5em; } }
+  .chooser-right {
+    float: right;
+    margin-right: 0;
+    margin-bottom: 0; }
+  .rule-element {
+    background-color: #eef3f5;
+    margin: 0.5em 0pt 0.5em;
+    padding: 0.3em 1em 0.3em 1em;
+    width: auto;
+    dl {
+      dd {
+        margin-left: 1em; } } }
+  .rule-updown, .rule-operations {
+    float: right;
+    padding-top: 0.8em; } }
+
+@mixin _default_edit-collapsible {
+  dl.collapsible {
+    border: 0.1em solid #8cacbb;
+    margin: 1em 0;
+    padding: 0;
+    dt.collapsibleHeader {
+      display: block;
+      float: left;
+      background: $background;
+      line-height: 1.2em;
+      vertical-align: middle;
+      font-size: 90%;
+      position: relative;
+      top: -0.6em;
+      width: auto;
+      margin: 0 0 -0.6em 1em;
+      padding: 0 0.5em; }
+    dd.collapsibleContent {
+      margin: 0;
+      padding: 0 1em 0.4em;
+      clear: left;
+      /* for IE the following isn't needed, that's why the css2 selector is used */
+      & > dl {
+        margin: 0;
+        padding: 0; } } }
+  dl.collapsedBlockCollapsible {
+    border: none;
+    height: 1em;
+    width: auto; }
+  dl.expandedInlineCollapsible, dl.expandedBlockCollapsible {
+    dt.collapsibleHeader {
+      padding: 0 0.5em 0 2em;
+      background: $background url("/#{$static}/img/plone/treeExpanded.png") no-repeat 0.5em 50%;
+      cursor: pointer; } }
+  dl.collapsedInlineCollapsible, dl.collapsedBlockCollapsible {
+    dt.collapsibleHeader {
+      float: none;
+      position: relative;
+      margin: 0 0 0 1em;
+      padding: 0 0.5em 0 2em;
+      line-height: 1.2em;
+      cursor: pointer;
+      background: $background url("/#{$static}/img/plone/treeCollapsed.png") no-repeat 0.5em 50%; }
+    dd.collapsibleContent {
+      display: none; } }
+  dl.collapsedInlineCollapsible {
+    border: none;
+    height: 1em;
+    width: auto;
+    display: inline;
+    dt.collapsibleHeader {
+      position: static;
+      float: none;
+      margin: 0;
+      padding: 0 0 0 2em;
+      line-height: 1em;
+      cursor: pointer;
+      display: inline; } } }
+
+@mixin _default_edit-comments {
+  .comment {
+    margin-top: 1.5em;
+    font-size: $base-font-size;
+    .documentByLine {
+      margin-left: 1em; }
+    .formControls {
+      margin-left: 0; }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: normal; } }
+  .commentTime {
+    color: $discreet-color; }
+  .commentBody {
+    padding: 1em;
+    margin: 0.5em 0;
+    @include border-radius($radius);
+    @include box-shadow(#888888, 0, 0, 0.5em); } }
+
+@mixin _default_edit-main {
+    #edit-bar
+  .reviewHistory, .contentHistory {
+    display: inline;
+    color: black; }
+  .spacer {
+    margin: 1em; }
+  .label {
+    font-weight: bold;
+    display: inline;
+    padding-right: 0.5em; }
+  .optionsToggle {
+    border: 0.1em solid #8cacbb;
+    color: black;
+    background-color: #dee7ec;
+    font-weight: normal;
+    font-size: 90%; }
+  /* for highlighting of search terms */
+  .highlightedSearchTerm {
+    background-color: #ffffaa;
+    dl.searchResults & {
+      background-color: transparent;
+      font-weight: bold; } }
+  /* for greying out inherited roles */
+  .noInheritedRoles {
+    color: #a0a0a0; }
+  /* for highlighting current items, like the language or today in the calendar */
+  .currentItem {
+    border-collapse: collapse;
+    border: 0.2em solid #ffa500;
+    padding: 0.1em; } }
+
+@mixin _default_edit-portlets {
+  /* Portlet edit styles */
+  div.portletAssignments div.portletHeader {
+/*
+    padding: $portlet-header-padding;
+    background: $portlet-header-background;
+*/
+    line-height: normal; }
+  div.portletAssignments {
+    font-size: 0.8em;
+    line-height: 2em;
+    .managedPortletActions {
+      float: right;
+      a {
+        margin: 0 0.25em;
+        border: none; } } }
+  div.managePortletsLink, a.managePortletsFallback {
+    text-align: center;
+    padding: 0.25em 0.5em;
+    font-size: $base-font-size;
+    margin: 0 auto 1em;
+    background: $secondary-color;
+    @include border-radius($radius); }
+  a.managePortletsFallback {
+    display: inline-block;
+    /* in order for our vertical margins to work on inline element */ }
+  #content a.managePortletsFallback {
+    display: block;
+    border-bottom: none !important; }
+  #portlet-prefs a {
+    border: none;
+    line-height: 2em; }
+  #{$visual-portal-wrapper} dl.portletCalendar dd {
+    padding: 0; }
+  .managedPortlet {
+    margin: 0.8em 0; }
+  .blockedPortlet {
+    .portletHeader {
+      border: 1px dashed $secondary-color;
+      margin: -1px;
+      background: none !important;
+      a {
+        color: $discreet-color; } }
+    .portletBlockedMessage {
+      color: $background;
+      display: inline; } } }
 
 @mixin _default_personal-tools-pulldown {
   #{$portal-personaltools} {
