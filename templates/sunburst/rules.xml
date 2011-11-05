@@ -4,41 +4,13 @@
        xmlns:xhtml="http://www.w3.org/1999/xhtml"
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-  <!-- HTML5 measures
-       Uncomment the next lines of xsl if you are using the HTML5 doctype
-	   This allows you to have validating html 
-  -->           
-  <!--
-  <xsl:template match="*[not(node())]">
-    <xsl:copy>
-      <xsl:copy-of select="@*"/>
-      <xsl:comment/>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="area[not(node())]|base[not(node())]|br[not(node())]|
-                       col[not(node())]|command[not(node())]|embed[not(node())]|
-                       hr[not(node())]|img[not(node())]|input[not(node())]|
-                       keygen[not(node())]|link[not(node())]|meta[not(node())]|
-                       param[not(node())]|source[not(node())]">
-    <xsl:copy-of select="."/>
-  </xsl:template>
-
-  <xsl:template match="acronym">
-    <xsl:element name="abbr">
-      <xsl:copy-of select="@*"/>
-      <xsl:value-of select="."/>
-    </xsl:element>
-  </xsl:template>
-  -->  
-
   <theme href="popup.html" />
   <theme href="theme.html"  css:if-content="#visual-portal-wrapper"/>
   <rules css:if-content="#visual-portal-wrapper">
     <!-- The above condition makes sure that content is served in the plone 
          main_template. This is necessary for functional edit popups in Tiny,
          for example. -->
-    
+
     <!-- Set language -->
     <prepend theme="/html" content="/html/@lang"/>
 
