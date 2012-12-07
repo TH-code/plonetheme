@@ -1,0 +1,461 @@
+=_sunburst_content_area()
+  /* @group Content Area
+
+  /* Special case of #content - TinyMCE
+  body#content
+    margin: 1em
+
+  #content
+    line-height: 1.5em
+    clear: both
+    font-size: 80%
+    margin: 1em 0.25em 2em 0.25em
+    h1
+      margin-top: 0.5em
+      &.documentFirstHeading
+        margin-top: 0
+    p, table, dl
+      margin-bottom: 1em
+    ul
+      list-style-type: disc
+      margin-left: 2em
+    li
+      margin-bottom: 0.25em
+      line-height: 1.5em
+      display: list-item
+    a
+      &:link
+        color: #205c90
+        border-bottom: 0.1em solid #ccc
+      &:target
+        background-color: #ffb
+    span.link-external a
+      background: transparent url(link_icon.png) 0px 1px no-repeat
+      padding: 1px 0px 1px 16px
+    dt
+      font-weight: bold
+      margin-bottom: 0
+      margin-right: 0
+    dd
+      margin: 0 0 1em 2em
+    pre
+      background-color: #222
+      color: White
+      font-family: Consolas, Inconsolata, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace
+      padding: 1em
+      overflow-x: auto
+      font-size: 90%
+      margin-bottom: 1em
+      line-height: 1.25em
+      &.python
+        background-color: White
+    code
+      font-family: Consolas, Inconsolata, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace
+    div.documentByLine
+      font-size: 85%
+      display: block
+      color: #666
+    .discreet
+      color: #666
+      font-size: 85%
+      font-weight: normal
+    .visualHighlight
+      background-color: #ffb
+    .pullquote
+      margin: 0 1em 0.5em 0.5em
+      font-weight: bold
+      line-height: 1.25em
+      float: right
+      width: 35%
+      clear: right
+      color: #444
+      font-size: 1.6em
+      letter-spacing: -0.08em !important
+    .callout
+      background: #eee
+      padding: 1em
+      border-left: 1em solid #ccc
+      clear: both
+    table
+      text-align: left
+      border-collapse: collapse
+      border-spacing: 0px
+    .documentDescription, #description
+      color: #666
+      margin-left: 0
+      font: bold 1.25em "Helvetica Neue", Arial, FreeSans, sans-serif
+    img.tileImage
+      float: right
+      margin: 0 1em 0.5em 1em
+    div.newsImageContainer
+      float: right
+      margin: 0 1em 0.5em 1em
+      a
+        border-bottom: none
+      p.discreet
+        margin: 0
+        padding: 0.5em
+        background-color: #666
+        background-color: rgba(40, 40, 40, 0.7)
+        color: White
+        font-weight: bold
+        position: relative
+        width: 190px
+        top: -3em
+
+  dl.portlet
+    &, p
+      margin-bottom: 1em
+    a
+      &:link
+        color: #205c90
+        border-bottom: 0.1em solid #ccc
+
+  #content, dl.portlet
+    a
+      &:visited
+        color: #427597
+        border-bottom: 0.1em solid #ccc
+      &:hover
+        color: #75ad0a !important
+        /* This one gets an !important because it should always activate in the content area,
+         * even when state coloring is active
+    ol
+      list-style-type: decimal
+      margin-left: 2em
+
+  #category
+    font-size: 75%
+    margin-bottom: 1em
+    color: #666
+    text-align: right
+    a.link-category
+      color: black
+      padding: 0.25em 0.5em
+      background: #ddd
+      border-radius: 0.5em
+      -webkit-border-radius: 0.5em
+      -moz-border-radius: 0.5em
+    a.link-category:hover
+      background: #205c90
+      color: White
+      border-color: #205c90
+    .separator
+      display: none
+
+  span.selectedTag
+    color: black
+    padding: 0.25em 0.5em
+    background: #ddd
+    border-radius: 0.5em
+    -webkit-border-radius: 0.5em
+    -moz-border-radius: 0.5em
+
+  #sidebar .discreet
+    color: #666
+    font-size: 85%
+    font-weight: normal
+
+  .eventDetails
+    float: right
+    clear: right
+    margin: 0 0 0.5em 1em
+  /* @end
+
+=_sunburst_data_tables()
+  /* @group Data tables
+  table
+    &.listing, &.plain
+      border-spacing: 0
+      border-collapse: collapse
+    &.invisible, &.plain, &.listing
+      td, th
+        padding: 0.5em 1em
+        vertical-align: top
+    &.plain
+      th, td
+        border: 1px solid #ddd
+    &.listing
+      border-left: 1px solid #ddd
+      border-bottom: 1px solid #ddd
+      td.listingCheckbox, th.listingCheckbox
+        text-align: center
+      .top
+        border-left: 1px solid #ddd
+        border-top: 1px solid #ddd
+        border-right: 1px solid #ddd
+      th
+        text-align: left
+        color: #666
+        border: 0.1em solid #e7e7e7
+        border-style: solid solid none
+        background: #ddd
+      tr.odd th
+        border: 0.1em solid #fff
+        border-style: solid solid none none
+      tbody
+        th
+          font-weight: bold
+        tr
+          text-align: left
+          &.odd
+            background: #eee
+          td
+            background: transparent
+          &.odd td
+            background: #eee
+      td
+        border-right: 1px solid #ddd
+      a
+        border: none
+        display: inline-block
+        border-bottom: none !important
+      td.draggable
+        text-shadow: White 1px 1px 1px
+        background: #ddd !important
+        border-bottom: 1px solid white
+        padding: 0.4em 0.4em 0 0.5em
+    /* Vertical table data listings
+    &.vertical
+      th
+        text-align: right
+      td
+        border-top: 0.1em solid #e7e7e7
+        padding: 0.5em
+    /* Grid table listings
+    &.grid
+      td, th
+        border: 1px solid #e7e7e7
+        padding: 0.5em
+
+  .dragindicator
+    outline: 2px solid #FFD700
+
+  #foldercontents-order-column
+    padding: 0
+
+  div.listingBar
+    font-size: 80%
+    margin: 1em 0
+    .next
+      display: inline-block
+      float: right
+    .previous
+      display: inline-block
+    a
+      display: inline-block
+      padding: 0.25em 0.5em
+      border: 0.1em solid #ccc
+      &:hover
+        color: White
+        background-color: #329fd7
+        border-color: #329fd7
+  /* @end
+
+=_sunburst_status_messages()
+  /* @group Status messages
+  dl
+    &.portalMessage
+      margin: 1em 0
+      font-size: 80%
+      border: 1px solid #996
+      background-color: #ffffe3
+      clear: both
+      a
+        color: black
+        border-bottom: 1px solid #888
+      #content & a
+        color: black
+        border-bottom: 1px solid #888
+      dt
+        background-color: #996
+        font-weight: bold
+        float: left
+        margin: 0 0.5em 0 0
+        padding: 0.5em 0.75em
+        color: White
+        line-height: 1.25em
+      dd
+        padding: 0.5em 0.5em
+        margin: 0
+        line-height: 1.25em
+      /* Additional specificity for when status is shown inside #content
+      #content &
+        font-size: 100%
+        dt
+          margin: 0 0.5em 0 0
+          padding: 0.5em 0.75em
+        dd
+          margin: 0
+    &.warning
+      border-color: #d80
+      dd
+        background-color: #fd7
+    &.error
+      border-color: red
+      dd
+        background-color: #fdc
+  /* @end
+
+=_sunburst_comments()
+  /* @group Comments
+  .comment
+    margin-top: 1.5em
+    font-size: 80%
+    h1, h2, h3, h4, h5, h6
+      font-weight: normal
+    .documentByLine
+      margin-left: 1em
+    .formControls
+      margin-left: 0
+
+  .commentTime
+    color: #666
+
+  .commentBody
+    padding: 1em
+    margin: 0.5em 0
+    border-radius: 0.5em
+    -webkit-border-radius: 0.5em
+    -moz-border-radius: 0.5em
+    box-shadow: 0 0 1em 0 #888
+    -moz-box-shadow: 0 0 0.5em 0 #888
+    -webkit-box-shadow: 0 0 0.5em #888
+  /* @end
+
+=_sunburst_search_results_page
+  /* @group Search results page
+  fieldset#search-field
+    border: none !important
+    text-align: center
+
+  input.searchPage
+    font-size: 200% !important
+
+  #rss-subscription
+    float: left
+    line-height: 3em
+
+  #search-results-bar .actionMenuContent
+    margin-top: 1em
+    padding: 0
+
+  #search-filter
+    background: #ddd
+    margin: 0
+    padding: 0
+    .field
+      background: #eee
+      padding: 1em 1.5em
+      margin: 0
+      label
+        font-weight: normal
+    .formControls
+      text-align: center
+    #content &
+      fieldset
+        border: none !important
+        position: relative
+        padding: 0
+        margin: 0
+      legend
+        background: transparent
+        font-size: 1.1em
+        padding: 0.5em 0.9em
+        font-weight: bold
+
+  #search-results-wrapper
+    margin-top: 1em
+
+  form.searchPage h1.documentFirstHeading
+    font-weight: normal
+    letter-spacing: 0
+    float: left
+    margin-right: 0.8em
+    .highlightedSearchTerm
+      background: transparent !important
+
+  #searchResultsSort
+    float: right
+
+  #search-results-bar
+    position: relative
+    z-index: 1
+    float: left
+    width: 100%
+    border-top: 1px solid #DDD
+    border-bottom: 1px solid #DDD
+    padding: 1em 0
+    dl.actionMenu
+      margin-bottom: 0
+    dd.actionMenuContent
+      margin-left: 0
+      padding-left: 0
+    dt.actionMenuHeader a
+      border-bottom: none
+      &::after
+        content: " ▼"
+    & > *
+      float: left
+
+  #search-results
+    padding: 1em
+
+  .searchResults
+    margin-top: 0
+
+  #ajax-search-res
+    display: none
+  /* @end
+
+=_sunburst_image_alignment_classes()
+  /* @group Image alignment classes
+  .image-left
+    float: left
+    margin: 0.5em 1em 0.5em 0
+
+  .image-right
+    float: right
+    margin: 0.5em
+
+  .image-inline
+    float: none
+
+  /*note: the tricky thing here is that image-inline|image-left|image-right
+   *can both be on an image and a wrapper element e.g. a dl tag
+  img
+    &.image-left, &.image-right
+      border: 1px solid #ddd
+
+  .captioned img
+    border: 1px solid #ddd
+
+  dd.image-caption
+    text-align: left
+    padding: 0 0 0 3px
+    /*image padding+border with
+    margin: 0
+    color: #666
+    font-size: 85%
+  /* @end
+
+=_sunburst_toc()
+  /* @group Table of Contents
+  /* Table of Contents styling
+   * - essentially a portlet with smaller fonts and aligned right + limited in width
+  dl.toc
+    float: right
+    width: 35%
+    font-size: 100%
+    margin: 1em 0 0.5em 1.5em
+    dt
+      margin-left: 1em
+      font-weight: normal
+      text-transform: uppercase
+    dd
+      margin-bottom: 0
+      padding-left: 2em
+      ol
+        margin-left: 1.5em
+  /* @end
+

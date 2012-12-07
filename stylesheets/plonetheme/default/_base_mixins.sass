@@ -1,0 +1,285 @@
+@import plonetheme/default/base_properties
+@import plonetheme/utilities/deco-gs
+@import plonetheme/utilities/modular-scale
+@import plonetheme/utilities/members
+@import compass/css3/border-radius
+@import compass/css3/box-shadow
+@import compass/typography
+
+=_default_members
+  +members
+
+=_default_base
+  +modular-scale
+  /*** =Base **
+  body
+    font-family: $fontFamily
+    line-height: $lineHeight
+    background: $backgroundColor
+    color: $fontColor
+  h1, h2, h3, h4, h5, h6
+    font-family: $headingFontFamily
+  h1
+    @extend .ms-4
+  h2
+    @extend .ms-3
+  h3
+    @extend .ms-2
+  h4
+    @extend .ms-1
+  h5
+    @extend .ms-1
+  h6
+    @extend .ms-0
+  h2, h3, h4, h5, h6
+    color: $headingFontColor
+    a
+      +link-colors($headingFontColor)
+  p, ul, ol, dl, address, blockquote, pre, form, table, .documentDescription, #{$portal-breadcrumbs}
+    @extend .ms-1
+    margin: $margin
+    p, ul, ol, dl, address, blockquote, pre, form, table
+      font-size: 1em
+  a
+    +link-colors($link-normal, $link-hover, $link-active, $link-visited, $link-focus)
+    @if $hover-links == true
+      +hover-link
+    &:focus img
+      outline: thin dotted
+  q
+    quotes: "“" "”" "‘" "’"
+
+=_default_edit-controlpanel
+  .inlineDisplay
+    display: inline
+
+=_default_edit-tabs
+  /* Color differences between the two tab types
+  #content ul.formTabs
+    background-color: $secondary-color
+    border: 0.3em solid $secondary-color
+  #edit-bar
+    background-color: $edit-color
+    border: 0.25em solid $edit-color
+    font-size: $fontBaseSize
+    min-height: 2em - 0.25em
+    margin-bottom: 1em
+    padding-top: 0.05em
+  #content-views
+    +horizontal-list
+    float: left
+    background-color: $edit-color
+    a
+      color: $background
+  /* Shared CSS between the two tab types
+  #edit-bar, #content ul.formTabs
+    display: block
+    border-style: solid solid none solid
+    margin-left: 0
+    +border-top-radius($radius)
+  #content li.formTab
+    display: inline
+    margin-right: 0.25em
+  #content-views a,
+  #content li.formTab a
+    /* this isn't supported by all browsers, so we keep it in a separate rule
+    display: inline-block
+  #content-views, #content li.formTab
+    a
+      line-height: 2em
+      padding: 0 0.75em
+      text-decoration: none
+      border: none
+      margin: 0
+  #content-views li.selected a,
+  #content li.formTab a.selected
+    font-weight: bold
+  #content-views li.selected a,
+  #content-views li a:hover,
+  #content li.formTab a.selected,
+  #content li.formTab a:hover
+    background: $background
+    color: black
+    +border-top-radius($radius)
+  #content li.formTab
+    a.notify
+      background-color: red
+      color: $background
+    a.required span
+      background:
+        image: image-url("required.png")
+        position: center right
+        repeat: no-repeat
+      padding-right: 1em
+  #content
+    fieldset.formPanel
+      border: none
+      &.hidden
+        display: none
+    div.formControls
+      input.hidden
+        display: none
+
+=_default_personal-tools-pulldown
+  #{$portal-personaltools}
+    float: right
+    background: $secondary-color
+    position: relative
+    z-index: 3
+    padding: 0.42em 1em
+    top: 0
+    right: 0
+    +border-bottom-radius($radius)
+    #anon-personalbar a
+      float: left
+      margin-right: 0.5em
+    dt
+      font-weight: normal
+      &.actionMenuHeader a:after
+        content: " ▼"
+    dd
+      right: 0
+      padding-top: 0.5em
+      background: $secondary-color
+      padding-bottom: 0.5em
+      a
+        line-height: 2em
+        padding: 0 0.75em
+        &:hover
+          background: $main-color
+          color: $background
+
+=_default_content-pulldowns
+  #contentActionMenus
+    margin: 0
+    dl.actionMenu
+      a, &.activated dd
+        background-color: $edit-color
+        color: $background
+        z-index: 5
+      &.activated dd
+        border-bottom: 0.5em solid $edit-color
+        right: -3px
+        & a:hover, .actionMenuSelected
+          background-color: $background !important
+          color: $discreet-color
+      line-height: 2em
+      float: right
+      background: $edit-color
+      margin: 0
+      position: relative
+      top: -0.23em
+      right: -0.24em
+      padding: 0.1em 0.24em 0 0
+      +border-radius($radius)
+      +border-top-left-radius(0)
+  #folderHeader, #contextHeader
+    border-bottom: 2px solid $background
+  #contextHeader
+    margin-top: 5px
+  .actionMenuContent
+    padding: 0 0.25em
+  dl.actionMenu
+    float: right
+    white-space: nowrap
+    position: relative
+    margin-left: 0.5em
+    a, div
+      display: block !important
+      white-space: nowrap
+    dt
+      font-weight: normal
+    &.deactivated
+      dt
+        margin: 0 0.25em
+      dd
+        display: none
+    &.activated
+      dd
+        position: absolute
+        width: auto
+        min-width: 100%
+        +border-bottom-radius($radius)
+      dt a, dd a, dd div
+        margin: 0 0.25em
+  span.arrowDownAlternative
+    font-size: $fontBaseSize
+
+=_default_dashboard
+  /* =Dashboard
+  #dashboard-actions
+    ul
+      margin-left: 0
+      li
+        list-style: none
+  #dashboard
+    font-size: 125%
+    line-height: 1em
+    dd
+      margin: 0
+    dl.portlet a:link
+      border-bottom: none
+  #dashboard-portlets1, #dashboard-portlets2, #dashboard-portlets3, #dashboard-portlets4
+    display: inline-block
+    float: left
+    width: 23%
+    padding: 0.7em 1.3em 0 0
+    dl.portlet
+      margin-bottom: 1.5em
+  #dashboard-portlets4
+    padding-top: 0.7em
+
+=_default_print
+  @media print
+    body
+      font-family: Baskerville, Georgia, Garamond, Times, serif
+      font-size: 11pt !important
+    h1, h2, h3, h4, h5, h6
+      border: none
+      font-family: Baskerville, Georgia, Garamond, Times, serif
+    div, p, ul, dl, ol
+      width: auto
+    ul, ol, dl
+      padding-right: 0.5em
+    ul
+      list-style-type: square
+    .documentDescription
+      font-weight: bold
+    pre
+      border: 1pt dotted black
+      white-space: pre
+      font-size: 8pt
+      overflow: auto
+      padding: 1em 0
+    table.listing
+      border: 1pt solid black
+      border-collapse: collapse
+      td
+        border: 1pt solid black
+        border-collapse: collapse
+    a
+      color: Black !important
+      padding: 0 !important
+      text-decoration: none !important
+      &:link, &:visited
+        color: #520
+        background: transparent
+    /* Page break class for use when printing
+    div
+      &.pageBreak
+        page-break-before: always
+      &.top
+        display: none
+    /* Uncomment these to get link addresses inserted along with the link text
+     *   when you print.
+     *#content a:link:after, 
+     *#content a:visited:after {
+     *   content: " [" attr(href) "] ";
+     *}
+    /* Hide all the elements that are irrelevant for printing
+    #{$portal-logo}, #{$portal-siteactions}, .hiddenStructure, #{$portal-searchbox}, #{$portal-globalnav}, #{$portal-personaltools}, #{$portal-breadcrumbs}, #{$portal-column-one}, #{$portal-column-two}, #{$portal-languageselector}, .contentViews, .contentActions, .help, .legend, .portalMessage, .documentActions, .documentByLine, .netscape4, #kss-spinner, #review-history, #content-history, .listingBar, #{$portal-footer}, #{$portal-colophon}, .skipnav, #kss-spinner, #review-history, #content-history, .listingBar, .discussion input, .overlay, .close, .visualNoPrint
+      display: none
+    .discussion .documentByLine
+      display: block
+
+=_default_mobile

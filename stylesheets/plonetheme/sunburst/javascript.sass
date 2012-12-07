@@ -1,0 +1,273 @@
+=_sunburst_accessibility()
+  /* @group Accessibility elements, applied by JS
+  body
+    &.largeText
+      font-size: 125%
+    &.smallText
+      font-size: 85%
+  /* @end
+
+=_sunburst_overlay_windows()
+  /* @group Overlay windows
+  div
+    &.overlay
+      width: auto
+      height: auto
+      /* initially overlay is hidden
+      display: none
+      /* some padding to layout nested elements nicely
+      margin: 1em
+      font-size: 80%
+      div.close span
+        display: block
+        height: 1px
+        margin: -1px 0 0 -1px
+        overflow: hidden
+        padding: 0
+        width: 1px
+      textarea
+        width: 100%
+      .link-parent
+        display: none
+      /* Hide form elements that don't make sense within an overlay.
+      #createGroup
+        legend
+          display: none
+        fieldset
+          border: none
+      /* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed
+      p
+        margin-bottom: 1em
+      label
+        margin-bottom: 0.25em
+      a
+        &:hover
+          color: #75ad0a
+        &.selected
+          color: #000000
+      .formTab
+        margin-right: 1em
+        font-weight: bold
+        &.lastFormTab
+          margin-right: 0em
+      .formControls a
+        display: block
+        margin: 0.75em
+    &.overlay-iframe, &.overlay-ajax
+      width: 60%
+      min-height: 100px
+      z-index: 99
+      /* overlays should be above everything
+    &.overlay-iframe
+      height: 60%
+    &.overlaybg div.close, &.overlay div.close
+      background-image: url(pb_close.png)
+      position: absolute
+      left: -14px
+      top: -14px
+      cursor: pointer
+      height: 30px
+      width: 30px
+
+  /* default close button positioned on upper-left corner
+  .pb-ajax
+    overflow-y: auto
+    background-color: #fff
+    border: 1px solid #999
+    white-space: normal
+    box-shadow: 0 0 3em 0.5em #666
+    -moz-box-shadow: 0 0 3em 0.5em #666
+    -webkit-box-shadow: 0 0 3em #666
+    > div
+      width: 92%
+      padding: 1em
+    .documentActions
+      display: none
+
+  .pb-image, .overlay iframe
+    background-color: #fff
+    border: 1px solid #999
+    white-space: normal
+    box-shadow: 0 0 3em 0.5em #666
+    -moz-box-shadow: 0 0 3em 0.5em #666
+    -webkit-box-shadow: 0 0 3em #666
+  /* @end
+
+=_sunburst_content_type_sprites()
+  /* @group Core content type sprites
+
+  // Generated using http://spritegen.website-performance.org, with the following
+  //   parameters:
+  //   - Build direction: Vertical
+  //   - Horizontal offset: (doesn't matter, but can't be 0)
+  //   - Vertical offset: 200px
+  //   - Compress image with OptiPNG: yes
+  //   - Class prefix: contenttype-
+  //   - Display width and height: no
+  //  Then, add 4 px to the background-position to line up the icons to text.
+  //
+  //.contenttype-document_icon { background-position: 0 0;  }
+  //.contenttype-event_icon { background-position: 0 -216px;  }
+  //.contenttype-file_icon { background-position: 0 -432px;  }
+  //.contenttype-folder_icon { background-position: 0 -648px;  }
+  //.contenttype-image_icon { background-position: 0 -864px;  }
+  //.contenttype-link_icon { background-position: 0 -1080px;  }
+  //.contenttype-newsitem_icon { background-position: 0 -1296px;  }
+  //.contenttype-site_icon { background-position: 0 -1512px;  }
+  //.contenttype-topic_icon { background-position: 0 -1728px;  }
+
+  .icons-on
+    .contenttype-document
+      background: no-repeat transparent 0px 4px url(contenttypes-sprite.png)
+    .contenttype-event
+      background: no-repeat transparent 0px -212px url(contenttypes-sprite.png)
+    .contenttype-folder
+      background: no-repeat transparent 0px -644px url(contenttypes-sprite.png)
+    .contenttype-link
+      background: no-repeat transparent 0px -1076px url(contenttypes-sprite.png)
+    .contenttype-news-item
+      background: no-repeat transparent 0px -1292px url(contenttypes-sprite.png)
+    .contenttype-plone-site
+      background: no-repeat transparent 0px -1508px url(contenttypes-sprite.png)
+    .contenttype-collection, .contenttype-topic
+      background: no-repeat transparent 0px -1724px url(contenttypes-sprite.png)
+    /* These should only appear in the add menu
+    #plone-contentmenu-factories
+      .contenttype-file
+        background: no-repeat transparent 0px -428px url(contenttypes-sprite.png)
+      .contenttype-image
+        background: no-repeat transparent 0px -860px url(contenttypes-sprite.png)
+    .contenttype-document, .contenttype-event, .contenttype-folder, .contenttype-link, .contenttype-news-item, .contenttype-plone-site, .contenttype-collection, .contenttype-topic
+      line-height: 2em
+      display: inline-block
+      *display: block
+      padding-left: 20px !important
+    #plone-contentmenu-factories
+      .contenttype-file, .contenttype-image
+        line-height: 2em
+        display: inline-block
+        *display: block
+        padding-left: 20px !important
+  /* @end
+
+=_sunburst_content_history()
+  /* @group Content History
+  #content-history
+    #history dd
+    div
+      &.historyRecord
+        margin-bottom: 1em
+      &.historyTools
+        ul
+          float: right
+          margin: 0.5em 1em
+          li
+            display: inline
+            padding: 0 0.015em
+            a
+              border-bottom: none
+        form
+          display: inline
+    .historyAction
+    .historyByLine
+      background: #ddd
+      padding: 0.5em
+      border-top-right-radius: 0.5em
+      border-top-left-radius: 0.5em
+      -webkit-border-top-right-radius: 0.5em
+      -webkit-border-top-left-radius: 0.5em
+      -moz-border-radius-topleft: 0.5em
+      -moz-border-radius-topright: 0.5em
+    div
+      &.historyLinks
+        float: right
+        clear: right
+        margin: 0.5em 1em 0 0
+      &.historyComment
+        padding: 0.5em 1em
+        border: 1px solid #ddd
+        p
+          margin: 0
+          padding-top: 1px
+    a.historyComparePrevious
+      border-top: 1px dotted #ccc
+      display: block
+      margin-top: 3em
+      text-align: center
+      span
+        background-color: white
+        position: relative
+        top: -0.75em
+        padding: 0 0.5em
+  /* @end
+
+=_sunburst_tag_multiple_selector
+  /* @group jQuery Tag multiple selector
+  .optionsBox
+    overflow-y: auto
+    border: solid 1px #999999
+    background: #FFFFFF
+    height: 14em
+    width: 100%
+    label
+      padding: 2px 0 0 0
+      display: block
+      line-height: 1em
+      font-weight: normal
+      &.checked
+        background-color: #EEEEEE
+      &.hover
+        background-color: #777777
+        color: #FFFFFF
+    input
+      vertical-align: middle
+      margin: 1px 4px 4px 6px
+
+  #archetypes-fieldname-subject .formHelp
+    font-weight: normal
+
+  #existingTagsSection
+    position: relative
+    margin-left: 3em
+
+  #existingTags
+    float: left
+    width: 50%
+
+  #content
+    #existingTags dd
+      margin-bottom: 1px
+      margin-left: 0
+    #selectedTags, #newTags
+      margin-bottom: 0
+      margin-left: 0
+    #selectedTagsSection
+      margin-left: 3em
+      float: left
+      width: 43%
+      margin-bottom: 0
+    p.selectedTag
+      margin-bottom: .4em
+
+  #newTagsSection
+    width: 48%
+    margin-left: 3em
+
+  #existingTagsTitle, #newTagsTitle
+    float: left
+
+  #existingTagsHelp, #newTagsHelp
+    float: right
+
+  #noTagsSelected, #oneOrMoreTagsSelected
+    display: none
+
+  /* IE7: fixes super-wide div for JavaScript Tag selector
+  /* .ie7 is set on <html> by Modernizr library
+  .ie7
+    .optionsBox
+      div&
+        width: 50%
+      input
+        margin: 0px
+  /* @end

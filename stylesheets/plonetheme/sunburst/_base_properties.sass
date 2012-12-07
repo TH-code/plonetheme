@@ -1,0 +1,159 @@
+// DOCUMENTATION ON PRE-DEFINED PROPERTIES FROM PLONE
+// You can generate your own elements that use Plone's defaults,
+// and respect any customizations people have done. See base_properties for
+// the default values.
+
+// $title: "Plone's color, font, logo and border defaults" !default
+// $plone_skin: Plone Default !default
+
+// $override-styles: false !default
+// $plone-4: true !default
+// $RTL: false !default
+
+// logoName - the file name of the portal logo
+   $logoName: "logo.png" !default
+
+// fontFamily - the font family used for all text that is not headers
+// fontBaseSize - the base font size that everything is calculated from
+// lineHeight - the base line height
+// fontColor - the main font color
+// fontSmallSize - used for various elements like buttons and discreet text
+// bodyWidth - the width of the body element
+// bodyMargin - the margin on the body element
+// borderRadius - the base border radius
+$fontFamily: unquote('Arial, FreeSans, sans-serif') !default
+$fontBaseSize: 100% !default
+$lineHeight: 1.125em !default
+$fontColor: Black !default
+$fontSmallSize: 80% !default
+$bodyWidth: auto !default
+$bodyMargin: 0 !default
+$em: 1em !default
+$borderRadius: 0.5 * $em !default
+
+// backgroundColor - the background color
+// secondaryColor - the secondary color
+// tertiaryColor - the tertiary color
+$backgroundColor: #fff !default
+$secondaryColor: #e3e3e3 !default
+$tertiaryColor: #ddd !default
+
+// linkColor - the color used on normal links
+// linkHoverColor - the color used on hovered links
+// linkActiveColor - color used on active links
+// linkVisitedColor - color used on visited links
+// linkFocusColor - the color used on focused links
+$linkColor: #436976 !default
+$linkHoverColor: Red !default
+$linkActiveColor: Red !default
+$linkVisitedColor: Purple !default
+$linkFocusColor: Red !default
+$linkBorderColor: #ccc !default
+
+// borderWidth - the width of most borders in Plone
+// borderStyle - the style of the border lines, normally solid
+// borderStyleAnnotations - style of border lines on comments etc
+$borderWidth: 0.1em !default
+$borderStyle: solid !default
+$borderStyleAnnotations: solid !default
+
+// globalBorderColor - the border color used on the main tabs, the portlets etc
+// globalBackgroundColor - background color for the selected tabs, portlet headings etc
+// globalFontColor - the color of the font in the tabs and in portlet headings
+$globalBorderColor: #fff !default
+$globalBackgroundColor: #ddd !default
+$globalFontColor: #436976 !default
+$globalActiveColor: #205c90 !default
+
+// headingFontFamily - font family for h1/h2/h3/h4/h5/h6 headlines
+$headingFontFamily: unquote('"Helvetica Neue", Arial, FreeSans, sans-serif') !default
+$headingFontWeight: bold !default
+$headingFontColor: #444 !default
+$headingLinkColor: #444 !default
+$headingOneFontSize: 2em !default
+$headingTwoFontSize: 1.75em !default
+$headingThreeFontSize: 1.25em !default
+$headingFourFontSize: 1.25em !default
+$headingFiveFontSize: 1em !default
+$headingSixFontSize: 0.8em !default
+$headingLineHeight: 1.5 !default
+$headingLetterSpacing: -0.05em !default
+
+// contentViewBorderColor - the content view tabs border color
+// contentViewBackgroundColor - the content view tabs background color
+// contentViewFontColor - the font color used in the content view tabs
+$contentViewBorderColor: #75ad0a !default
+$contentViewBackgroundColor: #75ad0a !default
+$contentViewFontColor: #fff !default
+
+// formFontColor - the font color used for form elements
+// formFontFamily - the font family used for form elements
+$formFontColor: Black !default
+$formFontFamily: unquote('"Lucida Grande", Arial, FreeSans') !default
+
+// textTransform - whether to lowercase text in portlets, tabs etc.
+$textTransform: none !default
+
+// monoSpaceFamily - the font family used for all monospaced text
+$monoSpaceFamily: unquote('Consolas, Inconsolata, Menlo, "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace')
+
+// evenRowBackgroundColor - the background color of even rows in listings
+// oddRowBackgroundColor - the background color of even rows in listings
+$evenRowBackgroundColor: transparent !default
+$oddRowBackgroundColor: #eee !default
+
+// notifyBorderColor - border color of notification elements like the status message, the calendar focus
+// notifyBackgroundColor - background color of notification elements like the status message, the calendar focus
+$notifyBorderColor: #996 !default
+$notifyBackgroundColor: #ffffe3 !default
+
+// discreetColor - the font color of discreet text
+// helpBackgroundColor - background color of information pop-ups (currently not used)
+$discreetColor: #666 !default
+$helpBackgroundColor: #ffffe3 !default
+
+// Workflow colors
+$statePrivateColor: Red !default
+$stateVisibleColor: #74AE0B !default
+$statePublishedColor: #436976 !default
+$statePendingColor: #FFA500 !default
+$stateExpiredColor: Red !default
+$syndicatedColor: #008000 !default
+
+// Icon defaults
+$offset-y: 4px
+$contenttype-spacing: 200px !default
+$contenttype-repeat: no-repeat !default
+
+// Deco defaults
+$deco-columns: 16 !default
+$deco-width: 100% !default
+$deco-margin: 1.125% !default
+$deco-side: $deco-margin !default
+$deco-base: true !default
+$deco-convenience: true !default
+$deco-min-convenience: 4 !default
+$deco-faux-columns: false !default
+$deco-faux-columns-margin-bottom: -2000px !default
+$deco-faux-columns-padding-bottom: 2000px !default
+
+// Portal ids
+$visual-portal-wrapper: "#visual-portal-wrapper" !default
+$portal-top: "#portal-top" !default
+$portal-personaltools: "#portal-personaltools" !default
+$portal-searchbox: "#portal-searchbox" !default
+$portal-logo: "#portal-logo" !default
+$portal-globalnav: "#portal-globalnav" !default
+$portal-columns: "#portal-columns" !default
+$portal-column-content: "#portal-column-content" !default
+$portal-breadcrumbs: "#portal-breadcrumbs" !default
+$portal-column-one: "#portal-column-one" !default
+$portal-column-two: "#portal-column-two" !default
+$portal-footer: "#portal-footer" !default
+$portal-colophon: "#portal-colophon" !default
+$portal-siteactions: "#portal-siteactions" !default
+$portal-languageselector: "#portal-languageselector" !default
+$portal-sitemap: "#portal-sitemap" !default
+$portal-skinswitcher: "#portal-skinswitcher" !default
+$portal-advanced-search: "#portal-advanced-search" !default
+

@@ -1,0 +1,276 @@
+/* @override
+ *  http://localhost:8080/4/portal_css/Sunburst%20Theme/public.css
+ *  http://localhost:8080/sprites/portal_css/Sunburst%20Theme/public.css
+
+=_sunburst_navigation_search()
+  /* @group Navigation/search
+  #portal-header
+    position: relative
+    z-index: 2
+
+  #portal-logo
+    display: inline-block
+    margin: 1.375em 0
+
+  /* removes extra space above logo in IE6 and IE7
+  /* .ie6 and .ie7 is set on <html> by Modernizr library
+  .ie6 #portal-logo, .ie7 #portal-logo
+    margin-top: 0
+
+  #portal-globalnav
+    clear: both
+    font-size: 80%
+    background: #ddd
+    /* ensure top navigation dont touches portlets, content etc.. #10491
+    margin: 0 0 1em 0
+    li a
+      display: inline-block
+      padding: 0.5em 1em 2em 1em
+      background: #ddd
+      min-width: 6em
+      white-space: normal
+      /*TODO: Once we have removed the whitespace from the nav template, this can be put back
+      /*border-bottom: 0.1em solid White;
+      border-right: 0.1em solid white
+    .selected a, a:hover
+      background: #205c90
+      color: White
+    .selected a:hover
+      background: #ddd
+      color: #205c90
+
+  #portal-personaltools
+    float: right
+    background: #e3e3e3
+    position: relative
+    z-index: 3
+    /* personaltools should be above #portal-header (with z-index: 2)
+    top: 0
+    right: 0
+    padding: 0.25em 0.5em
+    font-size: 80%
+    border-bottom-right-radius: 0.5em
+    border-bottom-left-radius: 0.5em
+    -webkit-border-bottom-right-radius: 0.5em
+    -webkit-border-bottom-left-radius: 0.5em
+    -moz-border-radius-bottomleft: 0.5em
+    -moz-border-radius-bottomright: 0.5em
+    #anon-personalbar a
+      float: left
+      margin-right: 0.5em
+
+  #portal-languageselector
+    float: right
+    background: #e3e3e3
+    position: relative
+    top: 0
+    right: 1px
+    z-index: 3
+    /* portal-header has 2 and we need to be above to be clickable
+    padding: 0.25em 0.5em
+    font-size: 80%
+    border-bottom-right-radius: 0.5em
+    border-bottom-left-radius: 0.5em
+    -webkit-border-bottom-right-radius: 0.5em
+    -webkit-border-bottom-left-radius: 0.5em
+    -moz-border-radius-bottomleft: 0.5em
+    -moz-border-radius-bottomright: 0.5em
+    max-width: 50%
+
+  #portal-searchbox
+    float: right
+    text-align: left
+    clear: right
+    margin: 1.2em 0
+    font-size: 80%
+    form
+      white-space: nowrap
+    label
+      font-weight: normal
+
+  #searchGadget
+    width: 13em
+
+  .LSBox
+    input.searchButton, .searchSection
+
+  #content input.searchField
+    margin-bottom: 1em
+
+  input.searchField
+    /*  -webkit-appearance: searchfield;
+    -moz-appearance: searchfield
+
+  /* Collapsible elements in search_form
+  .collapsible .collapser
+    &.collapsed
+      padding-right: 14px
+      background: url('arrowRight.png') center right no-repeat
+    &.expanded
+      padding-right: 14px
+      background: url('arrowDown.png') center right no-repeat
+  /* @end
+
+=_sunburst_livesearch()
+  /* @group LiveSearch
+  #LSResult
+    position: absolute
+    right: 0
+    background: White
+    margin: -1.5em 0 0 -7em
+    fieldset
+      padding: 1em 0 0
+      border: 0.1em solid #ccc
+    .LSDescr
+      font-size: 85%
+      color: #666
+
+  #livesearchLegend
+    background-color: #ccc
+    padding: 0.3em
+
+
+  .LSRow, #LSNothingFound
+    display: block
+    padding: 0.5em 1em
+    white-space: normal
+    width: 28em
+
+  .LSHighlight
+    background: #ddd
+  /* @end
+
+=_sunburst_path_indicator()
+  /* @group Path indicator (breadcrumbs)
+  #portal-breadcrumbs
+    font-size: 80%
+    margin-bottom: 1em
+    margin-left: 0.25em
+    a
+      border-bottom: none
+      display: inline-block
+  /* @end
+
+=_sunburst_site_actions()
+  /* @group Site actions
+  #portal-siteactions
+    font-size: 85%
+    padding-bottom: 2em
+    text-align: center
+    clear: left
+    li
+      margin-right: 0.5em
+      a:hover
+        color: #75ad0a
+  /* @end
+
+=_sunburst_listings
+  /* @group Listings
+  a
+    &.link-parent
+    &.link-anchor
+      border: none !important
+      color: Black !important
+      cursor: default !important
+
+  #content a.link-overlay
+    border-bottom: 1px dotted #205c90 !important
+
+  dl dt
+    .documentByLine
+      font-weight: normal
+    span.summary a
+      border: none !important
+  /* @end
+
+=_sunburst_footer()
+  /* @group Footer
+  #portal-footer
+    font-size: 75%
+    background: #ddd
+    padding: 1em
+    margin: 1em 0
+    line-height: 2em
+
+  #portal-colophon
+    font-size: 70%
+    text-align: center
+    margin-bottom: 1em
+    li
+      padding: 0 0.75em
+    a
+      color: #444
+  /* @end
+
+=_sunburst_sitemap()
+  /* @group Sitemap
+  #portal-sitemap
+    list-style: none
+    margin-left: 0
+    font-size: 130%
+    font-weight: bold
+    li
+      list-style: none
+      margin-left: 0
+    a
+      border-bottom: none
+      display: block
+    > li
+      border-bottom: 0.1em dotted #ddd
+      line-height: 1.8em
+      padding: 0.25em 1em
+      margin-bottom: 0
+    .navTreeLevel2
+      font-size: 85%
+      font-weight: normal
+      margin-bottom: 0
+      padding: 0.25em 0
+      ul
+        font-size: 85%
+        font-weight: normal
+        margin-bottom: 0
+        padding: 0.25em 0
+  /* @end
+
+=_sunburst_album_view_classes()
+  /* @group Album view classes
+  .photoAlbumEntry
+    float: left
+    position: relative
+    overflow: hidden
+    height: 185px
+    width: 143px
+    margin: 0em
+    padding: 0px 6px 0px 9px
+    text-align: center
+    background-image: url('polaroid-single.png')
+    background-repeat: no-repeat
+    img
+      border: 1px solid #ccc
+      display: block
+      margin: 0 auto
+    a
+      display: block
+      text-decoration: none
+      font-size: 90%
+      height: 169px
+      width: 130px
+      margin: 16px auto 0px
+
+  .photoAlbumEntryWrapper
+    /*display: block;
+    height: 130px
+    width: 128px
+    margin-bottom: 7px
+
+  .photoAlbumFolder
+    background-image: url('polaroid-multi.png')
+    background-repeat: no-repeat
+
+  .photoAlbumEntryTitle
+    color: #76797c
+    display: block
+    width: 128px
+    height: 3.6em
+  /* @end
+

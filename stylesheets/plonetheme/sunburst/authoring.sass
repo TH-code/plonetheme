@@ -1,0 +1,449 @@
+=_sunburst_authoring()
+  +_sunburst_editting()
+  +_sunburst_dashboard()
+
+=_sunburst_editting()
+  /* @group Editing
+  +_sunburst_tabs()
+  +_sunburst_pulldown_menus()
+  +_sunburst_control_panel()
+  +_sunburst_collapsible
+
+  .reviewHistory, .contentHistory
+    display: inline
+    color: Black
+
+  .spacer
+    margin: 1em
+
+  .label
+    font-weight: bold
+    display: inline
+    padding-right: 0.5em
+
+  .optionsToggle
+    border: 0.1em solid #8cacbb
+    color: Black
+    background-color: #dee7ec
+    font-weight: normal
+    font-size: 90%
+
+  /* for highlighting of search terms
+  .highlightedSearchTerm
+    background-color: #ffa
+    dl.searchResults &
+      background-color: transparent
+      font-weight: bold
+
+  /* for greying out inherited roles
+  .noInheritedRoles
+    color: #a0a0a0
+
+  /* for highlighting current items, like the language or today in the calendar
+  .currentItem
+    border-collapse: collapse
+    border: 0.2em solid #ffa500
+    padding: 0.1em
+  /* @end
+
+=_sunburst_tabs()
+  /* @group Tabs
+  /* Color differences between the two tab types
+  #content ul.formTabs
+    background-color: #ddd
+    border: 0.3em solid #ddd
+
+  #edit-bar
+    background-color: #75ad0a
+    border: 0.25em solid #75ad0a
+    font-size: 80%
+    min-height: 2em
+    margin-bottom: 1em
+    padding-top: 0.05em
+
+  #content-views
+    float: left
+    background-color: #75ad0a
+    /* fix shift on content views list under ie6
+    /* .ie6 is set on <html> by Modernizr library
+    .ie6 ul&
+      margin: -2px -3px 0px -3px
+    a
+      color: White
+
+  /* Shared CSS between the two tab types
+  #edit-bar
+    display: block
+    border-style: solid solid none solid
+    margin-left: 0
+    border-top-right-radius: 0.5em
+    border-top-left-radius: 0.5em
+    -webkit-border-top-right-radius: 0.5em
+    -webkit-border-top-left-radius: 0.5em
+    -moz-border-radius-topleft: 0.5em
+    -moz-border-radius-topright: 0.5em
+
+  #content
+    ul.formTabs
+      display: block
+      border-style: solid solid none solid
+      margin-left: 0
+      border-top-right-radius: 0.5em
+      border-top-left-radius: 0.5em
+      -webkit-border-top-right-radius: 0.5em
+      -webkit-border-top-left-radius: 0.5em
+      -moz-border-radius-topleft: 0.5em
+      -moz-border-radius-topright: 0.5em
+    li.formTab
+      display: inline
+      margin-right: 0.25em
+
+  #content-views a, #content li.formTab a
+    /* this isn't supported by all browsers, so we keep it in a separate rule
+    display: inline-block
+
+  #content-views a, #content li.formTab a
+    line-height: 2em
+    padding: 0 0.75em
+    text-decoration: none
+    border: none
+    margin: 0
+
+  #content-views li.selected a, #content li.formTab a.selected
+    font-weight: bold
+
+  #content-views li
+    &.selected a, a:hover
+      background: White
+      color: Black
+
+  #content li.formTab a
+    &.selected, &:hover
+      background: White
+      color: Black
+
+  #content-views li
+    &.selected a, a:hover
+      border-top-right-radius: 0.5em
+      border-top-left-radius: 0.5em
+      -webkit-border-top-right-radius: 0.5em
+      -webkit-border-top-left-radius: 0.5em
+      -moz-border-radius-topleft: 0.5em
+      -moz-border-radius-topright: 0.5em
+
+  #content
+    li.formTab a
+      &.selected, &:hover
+        border-top-right-radius: 0.5em
+        border-top-left-radius: 0.5em
+        -webkit-border-top-right-radius: 0.5em
+        -webkit-border-top-left-radius: 0.5em
+        -moz-border-radius-topleft: 0.5em
+        -moz-border-radius-topright: 0.5em
+      &.notify
+        background-color: red
+        color: White
+      &.required span
+        background-image: url(required.png)
+        background-position: center right
+        background-repeat: no-repeat
+        padding-right: 1em
+    fieldset.formPanel
+      border: none
+      &.hidden
+        display: none
+    div.formControls input.hidden
+      display: none
+  /* @end
+
+=_sunburst_pulldown_menus()
+  /* @group Pulldown menus
+  +_sunburst_personal_tools_pulldown()
+  +_sunburst_content_pulldowns
+  #contentActionMenus
+    float: right
+    background: #75ad0a
+    margin: 0
+    position: relative
+    top: -0.23em
+    right: -0.24em
+    padding: 0.1em 0.24em 0 0
+    border-radius: 0.5em
+    border-top-left-radius: 0
+    -webkit-border-radius: 0.5em
+    -webkit-border-top-left-radius: 0
+    -moz-border-radius: 0.5em
+    -moz-border-radius-topleft: 0
+
+  .actionMenuContent
+    padding: 0 0.25em
+
+  dl.actionMenu
+    float: right
+    white-space: nowrap
+    position: relative
+    margin-left: 0.5em
+    a, div
+      display: block !important
+      white-space: nowrap
+    dt
+      font-weight: normal
+    &.deactivated
+      dt
+        margin: 0 0.25em
+      dd
+        display: none
+    &.activated
+      dd
+        position: absolute
+        width: auto
+        min-width: 100%
+        border-bottom-right-radius: 0.5em
+        border-bottom-left-radius: 0.5em
+        -webkit-border-bottom-right-radius: 0.5em
+        -webkit-border-bottom-left-radius: 0.5em
+        -moz-border-radius-bottomleft: 0.5em
+        -moz-border-radius-bottomright: 0.5em
+      dt a
+        margin: 0 0.25em
+      dd
+        a, div
+          margin: 0 0.25em
+
+  span.arrowDownAlternative
+    font-size: 80%
+  /* @end
+
+=_sunburst_personal_tools_pulldown()
+  /* @group Personal tools pulldown
+  #portal-personaltools
+    float: right
+    background: #e3e3e3
+    position: relative
+    z-index: 3
+    /* personaltools should be above #portal-header (with z-index: 2)
+    top: 0
+    right: 0
+    padding: 0.25em 0.5em
+    font-size: 80%
+    border-bottom-right-radius: 0.5em
+    border-bottom-left-radius: 0.5em
+    -webkit-border-bottom-right-radius: 0.5em
+    -webkit-border-bottom-left-radius: 0.5em
+    -moz-border-radius-bottomleft: 0.5em
+    -moz-border-radius-bottomright: 0.5em
+    #anon-personalbar a
+      float: left
+      margin-right: 0.5em
+    dl
+    dt
+      font-weight: normal
+      &.actionMenuHeader a:after
+        content: " ▼"
+    dd
+      right: 0
+      padding-top: 0.5em
+      background: #e3e3e3
+      padding-bottom: 0.5em
+      a
+        line-height: 2em
+        padding: 0 0.75em
+        &:hover
+          background: #205c90
+          color: White
+  /* @end
+
+=_sunburst_content_pulldowns
+  /* @group Content pulldowns
+  #contentActionMenus dl.actionMenu
+    a
+      background-color: #75ad0a
+      color: White
+      z-index: 5
+    &.activated dd
+      background-color: #75ad0a
+      color: White
+      z-index: 5
+      border-bottom: 0.5em solid #75ad0a
+      right: -3px
+      a:hover, .actionMenuSelected
+        background-color: White !important
+        color: #666
+    line-height: 2em
+
+  #folderHeader
+    border-bottom: 2px solid white
+
+  #contextHeader
+    border-bottom: 2px solid white
+    margin-top: 5px
+  /* @end
+
+=_sunburst_collapsible
+  /* @group Collapsible
+  dl
+    &.collapsible
+      border: 0.1em solid #8cacbb
+      margin: 1em 0
+      padding: 0
+      dt.collapsibleHeader
+        display: block
+        float: left
+        background: White
+        line-height: 1.2em
+        vertical-align: middle
+        font-size: 90%
+        position: relative
+        top: -0.6em
+        width: auto
+        margin: 0 0 -0.6em 1em
+        padding: 0 0.5em
+      dd.collapsibleContent
+        margin: 0
+        padding: 0 1em 0.4em
+        clear: left
+        > dl
+          /* for IE this isn't needed, that's why the css2 selector is used
+          margin: 0
+          padding: 0
+    &.expandedInlineCollapsible dt.collapsibleHeader, &.expandedBlockCollapsible dt.collapsibleHeader
+      padding: 0 0.5em 0 2em
+      background: white url(treeExpanded.png) no-repeat 0.5em 50%
+      cursor: pointer
+    &.collapsedBlockCollapsible
+      border: none
+      height: 1em
+      width: auto
+    &.collapsedInlineCollapsible dt.collapsibleHeader, &.collapsedBlockCollapsible dt.collapsibleHeader
+      float: none
+      position: relative
+      margin: 0 0 0 1em
+      padding: 0 0.5em 0 2em
+      line-height: 1.2em
+      cursor: pointer
+      background: white url(treeCollapsed.png) no-repeat 0.5em 50%
+    &.collapsedInlineCollapsible dd.collapsibleContent, &.collapsedBlockCollapsible dd.collapsibleContent
+      display: none
+    &.collapsedInlineCollapsible
+      border: none
+      height: 1em
+      width: auto
+      display: inline
+      dt.collapsibleHeader
+        position: static
+        float: none
+        margin: 0
+        padding: 0 0 0 2em
+        line-height: 1em
+        cursor: pointer
+        display: inline
+  /* @end
+
+=_sunburst_control_panel()
+  /* @group Control panel
+  #setup-link
+    font-size: 90%
+
+  #content ul
+    &.configlets
+      margin: 1em 0
+      list-style-image: none
+      list-style: none
+      li
+        margin-bottom: 1em
+        list-style: none
+        display: block
+        a
+          text-decoration: none
+          border: none
+          &:visited, &:active
+            color: #436976
+            background-color: transparent
+        label
+          font-weight: bold
+    &.configletDetails
+      margin: 0em 1em 1em 4em
+      list-style-image: none
+      list-style: none
+      li
+        margin-bottom: 1em
+        display: inline
+        a
+          text-decoration: none
+        label
+          font-weight: bold
+        &.configletDescription
+          display: block
+          color: #76797c
+          margin: 0
+
+  .inlineDisplay
+    display: inline
+
+  table
+    &.controlpanel-listing
+      width: 100%
+      td, th
+        font-size: 120%
+      dl
+        margin-top: 0
+      dd
+        margin-left: 1em
+      dl dt a .trigger
+        font-weight: normal
+    .controlpanel-listing td
+      vertical-align: top
+    &.controlpanel-listing
+      td.checker
+        text-align: center
+      th.smallcolumn
+        width: 1.5em
+
+  .chooser-right
+    float: right
+    margin-right: 0
+    margin-bottom: 0
+
+  .rule-element
+    background-color: #EEF3F5
+    margin: 0.5em 0pt 0.5em
+    padding: 0.3em 1em 0.3em 1em
+    width: auto
+    dl dd
+      margin-left: 1em
+
+  .rule-updown, .rule-operations
+    float: right
+    padding-top: 0.8em
+  /* @end
+
+=_sunburst_dashboard()
+  /* @group Dashboard
+  #dashboard-actions ul
+    list-style: none
+    li
+      list-style: none
+    margin-left: 0
+
+  #dashboard
+    font-size: 125%
+    line-height: 1em
+    dd
+      margin: 0
+    dl.portlet a:link
+      border-bottom: none
+
+  #dashboard-portlets1, #dashboard-portlets2, #dashboard-portlets3
+    float: left
+    width: 23%
+    padding: 0.7em 1.3em 0 0
+
+  #dashboard-portlets4
+    float: left
+    width: 23%
+    padding-top: 0.7em
+
+  #dashboard-portlets1 dl.portlet, #dashboard-portlets2 dl.portlet, #dashboard-portlets3 dl.portlet, #dashboard-portlets4 dl.portlet
+    margin-bottom: 1.5em
+  /* @end
+

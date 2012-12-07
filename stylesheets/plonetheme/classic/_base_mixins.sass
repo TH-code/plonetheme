@@ -1,0 +1,2160 @@
+@import plonetheme/classic/base_properties
+@import plonetheme/utilities/deco-gs
+
+=_classic_member
+  /* workflow state colors
+  .state-private
+    color: Red !important
+  .state-visible
+    color: #74AE0B !important
+  .state-published
+    color: $linkColor !important
+  .state-pending
+    color: #FFA500 !important
+  .state-expired
+    color: Red !important
+  .syndicated
+    color: #008000 !important
+
+=_classic_base
+  body
+    font: $fontBaseSize $fontFamily
+    background-color: $backgroundColor
+    color: $fontColor
+    margin: 0
+    padding: 0
+  table
+    font-size: 100%
+  a
+    color: $linkColor
+    background-color: transparent
+  img
+    border: none
+    vertical-align: middle
+  p
+    margin: 0 0 0.75em 0
+    line-height: 1.5em
+    img
+      border: none
+      margin: 0
+  hr
+    border: 0
+    height: $borderWidth
+    color: $globalBorderColor
+    background-color: $globalBorderColor
+    margin: 0.5em 0 1em 0
+  h1, h2, h3, h4, h5, h6
+    color: $fontColor
+    font-family: $headingFontFamily
+    margin: 0.75em 0 0.25em 0
+    a
+      color: $fontColor !important
+      text-decoration: none
+  h1
+    font-size: 160%
+  h2
+    font-size: 150%
+  h3
+    font-size: 125%
+    border-bottom: none
+    font-weight: bold
+  h4
+    font-size: 110%
+    border-bottom: none
+    font-weight: bold
+  h5
+    font-size: 100%
+    border-bottom: none
+    font-weight: bold
+  h6
+    font-size: $fontSmallSize
+    border-bottom: none
+    font-weight: bold
+  ul, ol
+    line-height: 1.5em
+    padding: 0
+  li
+    margin-bottom: 0.5em
+  dt
+    font-weight: bold
+  dd
+    line-height: 1.5em
+    margin-bottom: 1em
+  abbr, acronym, .explain
+    border-bottom: $borderWidth dotted $fontColor
+    color: $fontColor
+    background-color: transparent
+    cursor: help
+  abbr .explain
+    border-bottom: none
+  q
+    font-family: Baskerville, Georgia, serif
+    font-style: italic
+    font-size: 120%
+  blockquote
+    padding-left: 0.5em
+    margin-left: 0
+    border-left: 4px solid $globalBorderColor
+    color: $discreetColor
+  code, tt
+    font-family: Monaco, "Courier New", Courier, monospace
+    font-size: 120%
+    color: $fontColor
+    background-color: $globalBackgroundColor
+    padding: 0 0.1em
+  pre
+    font-family: Monaco, "Courier New", Courier, monospace
+    font-size: 100%
+    padding: 1em
+    border: $borderWidth $borderStyle $globalBorderColor
+    color: $fontColor
+    background-color: $globalBackgroundColor
+    overflow: auto
+  ins
+    color: green
+    text-decoration: none
+  del
+    color: red
+    text-decoration: line-through
+
+=_classic_public
+  /* Accessibility elements, applied by JS
+  body
+    &.largeText
+      font-size: 95%
+    &.smallText
+      font-size: 60%
+  /* Padding for the columns
+  #{$portal-column-one} .visualPadding
+    padding: 2em 0em 1em 2em
+  #{$portal-column-two} .visualPadding
+    padding: 2em 2em 1em 0em
+  /* Content area
+  h1, h2
+    border-bottom: $borderWidth $borderStyle $globalBorderColor
+    font-weight: normal
+  /* Compensate for the inline editing hover, since we have a 1px border
+  body.kssActive
+    h2.inlineEditable:hover, h1.inlineEditable:hover, h2.formlibInlineEditable:hover, h1.formlibInlineEditable:hover
+      padding-bottom: 1px
+  h3, h4, h5, h6
+    border-bottom: none
+    font-weight: bold
+  .documentFirstHeading
+    margin-top: 0
+  #content
+    font-size: 110%
+    padding: 1em 1em 2em 1em !important
+    background: $backgroundColor
+    ul
+      list-style-image: url("$portalUrl/bullet.png")
+      list-style-type: square
+      margin: 0.5em 0 0 1.5em
+    ol
+      margin: 0.5em 0 0 2.5em
+    &.mceContentBody
+      font-size: 76%
+    p a
+      text-decoration: none
+      border-bottom: 1px #ccc solid
+      &:visited
+        color: $linkVisitedColor
+        background-color: transparent
+      &:active
+        color: $linkActiveColor
+        background-color: transparent
+    a:target
+      background-color: #fd7 !important
+    li a
+      text-decoration: none
+      border-bottom: 1px #cccccc solid
+      &:visited
+        color: $linkVisitedColor
+      &:active
+        color: $linkActiveColor
+    dd a
+      text-decoration: none
+      border-bottom: 1px #cccccc solid
+      &:visited
+        color: $linkVisitedColor
+        background-color: transparent
+      &:active
+        color: $linkActiveColor
+        background-color: transparent
+  /* Reset font size for TinyMCE
+  /* Links with differently colored link underlines - only for content
+  /* End links
+  /* End edit form elements
+  #{$visual-portal-wrapper}
+    margin: 0
+    padding: 0
+  /* Logo properties
+  #{$portal-logo} img
+    border: 0
+    padding: 0
+    margin: 1em 0em 1em 2em
+  /* The skin switcher at the top, only shows up if you have multiple skins available
+  #{$portal-skinswitcher} a
+    display: block
+    float: left
+  #{$portal-top}
+    /* Top section
+    margin: 0
+    padding: 0
+    background-color: transparent
+  /* Site-wide action menu - font size, contact, index, sitemap etc
+  #{$portal-siteactions}
+    background-color: transparent
+    white-space: nowrap
+    list-style-image: none
+    list-style-type: none
+    margin: 1px 0 0 0
+    height: auto
+    line-height: normal
+    float: right
+    padding: 3px 2em 3px 0
+    li
+      display: inline
+      a
+        background-color: transparent
+        border: 1px solid $backgroundColor
+        color: $discreetColor
+        height: auto
+        padding: 0.2em
+        margin-right: 0.2em
+        text-decoration: none
+        text-transform: $textTransform
+      &.selected a, a:hover
+        background-color: $globalBackgroundColor
+        color: $globalFontColor
+        border: $borderWidth $borderStyle $globalBorderColor
+  /* Searchbox style and positioning
+  #{$portal-searchbox}
+    float: right
+    clear: right
+    background-color: transparent
+    margin: 1.5em 0 0 0
+    padding: 0 2em 0 0
+    text-align: right
+    text-transform: $textTransform
+    white-space: nowrap
+    z-index: 2
+    form
+      white-space: nowrap
+  #{$portal-advanced-search}
+    margin-top: 0.2em
+    clear: both
+    a
+      color: $discreetColor
+      text-decoration: none
+      text-transform: $textTransform
+  /* Search results elements
+  dl.searchResults dt
+    font-size: 140%
+    font-weight: normal
+  form.searchPage
+    text-align: center
+  input.searchPage
+    font-size: 200% !important
+  form.searchPage input.searchButton
+    background-position: 5px 7px
+    padding: 1px 10px 1px 25px
+  /* Collapsible elements in search_form
+  .collapsible .collapser
+    &.collapsed
+      padding-right: 14px
+      background: url("$portalUrl/arrowRight.png") center right no-repeat
+    &.expanded
+      padding-right: 14px
+      background: url("$portalUrl/arrowDown.png") center right no-repeat
+  /* LiveSearch styles
+  .LSRes
+    font-family: $fontFamily
+    visibility: visible
+    color: $globalFontColor
+    background-color: $backgroundColor
+    vertical-align: middle
+    display: block
+    list-style-image: none
+    list-style-type: none
+    text-align: left
+    min-width: 16.5em
+    text-transform: none
+    margin-left: 0
+    line-height: 1.1em
+  #LSHighlight, .LSHighlight
+    background-color: $globalBackgroundColor
+    border: $borderWidth $borderStyle $globalBorderColor
+    color: $globalFontColor
+  .LSTable
+    margin: 1em 0
+  .LSRow
+    border: $borderWidth $borderStyle $backgroundColor
+    white-space: normal
+    padding: 0
+    margin: 0
+    list-style-image: none
+    list-style-type: none
+    a
+      text-decoration: none
+      font-weight: bold
+      white-space: nowrap
+  .LSDescr
+    color: $discreetColor
+    font-size: $fontSmallSize
+    font-weight: normal
+    margin-left: 2.5em
+  .LSResult
+    position: relative
+    display: block
+    text-align: right
+    padding-top: 5px
+    margin: 0
+    left: 3px
+    z-index: 3
+  .LSShadow
+    position: relative
+    text-align: right
+  .livesearchContainer
+    background-color: $backgroundColor
+    margin-top: 0
+    padding: 0 !important
+    position: absolute
+    right: 0px
+    /* Currently exposes a rendering bug in Mozilla
+    top: 0
+    white-space: normal
+    font-family: $fontFamily
+    visibility: visible
+    text-align: left
+    color: $globalFontColor
+    border: $borderWidth $borderStyle $globalBorderColor
+    width: 30em
+    text-transform: none
+  * html .livesearchContainer
+    padding: $borderWidth !important
+    padding-top: 0 !important
+    background-color: $globalBorderColor
+    border: 0
+  #livesearchLegend
+    line-height: 1em
+    margin-top: -2em
+    margin-left: -0.1em
+    border: $borderWidth $borderStyle $globalBorderColor
+    border-bottom: 0
+  * html #livesearchLegend
+    margin-top: -1.9em
+    margin-left: -8px
+    position: relative
+  /* Workaround for Internet Explorer's broken z-index implementation
+  .LSIEFix
+    background-color: $backgroundColor
+    padding: 0.5em !important
+    z-index: 20
+  .LSBox
+    clear: left
+    float: left
+    text-align: right
+    padding-right: 1px
+    display: block
+  #LSNothingFound
+    text-align: center
+    padding: 2px
+  .LSBox label
+    font-weight: normal
+  /* The global section tabs.
+  #{$portal-globalnav}
+    background-color: transparent
+    padding: 0em 0em 0em 2em
+    white-space: nowrap
+    list-style: none
+    margin: 0
+    height: auto
+    line-height: normal
+    li
+      display: inline
+      a
+        /* The normal, unselected tabs. They are all links
+        background-color: transparent
+        border-color: $globalBorderColor
+        border-width: $borderWidth
+        border-style: $borderStyle $borderStyle none $borderStyle
+        color: $globalFontColor
+        height: auto
+        margin-right: 0.5em
+        padding: 0em 1.25em
+        text-decoration: none
+        text-transform: $textTransform
+      &.selected a
+        /* The selected tab. There's only one of this
+        background-color: $globalBackgroundColor
+        border: $borderWidth $borderStyle $globalBorderColor
+        border-bottom: $globalBackgroundColor $borderWidth $borderStyle
+        color: $globalFontColor
+      a:hover
+        background-color: $globalBackgroundColor
+        border-color: $globalBorderColor
+        border-bottom-color: $globalBackgroundColor
+        color: $globalFontColor
+  #{$portal-personaltools}
+    /* Bar with personalized menu (user preferences, etc)
+    background-color: $globalBackgroundColor
+    border-top-color: $globalBorderColor
+    border-top-style: $borderStyle
+    border-top-width: $borderWidth
+    border-bottom-color: $globalBorderColor
+    border-bottom-style: $borderStyle
+    border-bottom-width: $borderWidth
+    line-height: 1.6em
+    color: $fontColor
+    padding: 0em 3em 0em 3em
+    margin: 0
+    text-align: right
+    text-transform: $textTransform
+    list-style: none
+    .portalNotLoggedIn
+      /* Used on all descriptions relevant to those not logged in
+      color: $fontColor
+      padding: 0
+      background: transparent
+      background-image: none
+    li
+      color: $globalFontColor
+      margin-left: 1em
+      display: inline
+      a
+        text-decoration: none
+        color: $globalFontColor
+    .visualIconPadding
+      padding-left: 10px
+  .visualCaseSensitive
+    text-transform: none
+  #{$portal-languageselector}
+    margin: 0 1em 0 1em
+    float: right
+    li
+      display: inline
+  #{$portal-breadcrumbs}
+    /* The path bar, including breadcrumbs
+    border-bottom-color: $globalBorderColor
+    border-bottom-style: $borderStyle
+    border-bottom-width: $borderWidth
+    padding-left: 2em
+    padding-right: 2em
+    text-transform: $textTransform
+    line-height: 1.6em
+    a
+      text-decoration: none
+  .breadcrumbSeparator
+    font-size: 120%
+  .documentEditable
+    padding: 0em 1em 1em 1em !important
+    margin: 0 -1em
+  #content-news h1
+    margin-bottom: 1em
+  /* Only h5/h6 headlines in the content area should have the discreet color
+  #content
+    h5, h6
+      color: $discreetColor
+  .newsItem
+    margin-bottom: 1em
+    border-bottom: $borderWidth $borderStyle $globalBorderColor
+  .newsImage
+    border: 1px solid #ccc
+  .newsImageContainer
+    float: right
+    margin: 0 0 0.5em 1em
+    width: 202px
+  .newsContent
+    padding: 0 1em 1em 1em
+    ul, li
+      display: block
+      list-style: none
+      list-style-image: none
+      margin: 0
+      padding: 0
+  .newsAbout
+    display: block
+    color: $discreetColor
+    font-size: $fontSmallSize
+    padding: 0
+    margin-top: 0
+    list-style: none
+    list-style-image: none
+    float: right
+    text-align: right
+    li
+      display: inline
+  .newsFooter li
+    display: inline
+    margin: 0 1em 0 0
+  .documentActions
+    margin: 1em 0
+    padding: 0
+    text-align: right
+    border-top: $borderWidth $borderStyle $globalBorderColor
+    ul
+      margin: 0
+      padding: 0 0.5em
+      display: block
+      margin-top: -0.9em
+      list-style-type: none
+      list-style-image: none
+    li
+      display: inline
+      font-size: $fontSmallSize
+      margin: 0 0.5em
+      padding: 0 0.25em
+      background-color: $backgroundColor
+    a
+      border: none !important
+      text-decoration: none
+  /* Status messages
+  dl
+    &.portalMessage
+      font-size: $fontSmallSize
+      background-color: #ffffe3
+      border: 1px solid #996
+      a
+        color: black
+        border: none
+        text-decoration: underline
+      dt
+        background-color: #996
+        font-weight: bold
+        float: left
+        margin: 0 0.5em 0 0
+        padding: 0.5em 0.75em
+        color: White
+        line-height: 1.25em
+      dd
+        padding: 0.5em 0.5em
+        margin: 0
+        line-height: 1.25em
+    &.warning
+      border-color: #d80
+      dt
+        background-color: #d80
+    &.error
+      border-color: #d00
+      dt
+        background-color: #d00
+    &.warning, &.error
+      border-color: #d80
+      dd
+        background-color: #fd7
+  .documentDescription, .description
+    /* The summary text describing the document
+    font-weight: bold
+    display: block
+    margin: 0em 0em 0.5em 0em
+    line-height: 1.5em
+  .documentByLine
+    font-size: $fontSmallSize
+    font-weight: normal
+    color: $discreetColor
+    margin-bottom: 0.5em
+  dl.searchResults span.documentByLine
+    display: block
+  .discussion
+    margin-top: 1em
+  .even
+    background-color: $evenRowBackgroundColor
+  .odd
+    background-color: $oddRowBackgroundColor
+  .visualHighlight
+    background-color: #ffc
+  .discreet
+    color: $discreetColor
+    font-size: $fontSmallSize
+    font-weight: normal
+  .pullquote
+    padding: 0 1em 0 1em
+    margin: 0 0 1em 1em
+    font-weight: bold
+    color: #CC9933
+    float: right
+    width: 35%
+    clear: right
+    background-color: $backgroundColor
+    border-left: 4px solid $globalBorderColor
+  .callout
+    font-weight: bold
+    color: #CC9933
+    padding: 0px 1em
+  .notify, .documentEditable * .notify
+    border: $borderWidth $borderStyle $notifyBorderColor
+  .card
+    background-color: $globalBackgroundColor
+    border-color: $globalBorderColor
+    border-width: $borderWidth
+    border-style: $borderStyle
+    float: left
+    margin: 1em
+    text-align: center
+    width: 110px
+    padding: 1em 0
+    a
+      text-decoration: none
+  .portrait
+    background-color: $globalBackgroundColor
+    border-color: $globalBorderColor
+    border-width: $borderWidth
+    border-style: $borderStyle
+    font-size: $fontSmallSize
+    margin: 0.5em
+    padding: 1em 0 0.5em 0
+    text-align: center
+    width: 100px
+  .portraitPhoto
+    border: 1px solid black
+  /* The table used for listings - horizontal and vertical variants
+  table.listing, .stx table
+    /* The default table for document listings. Contains name, document types, modification times etc in a file-browser-like fashion
+    border-collapse: collapse
+    border-spacing: 0
+    border-left: $borderWidth $borderStyle $globalBorderColor
+    border-bottom: $borderWidth $borderStyle $globalBorderColor
+    font-size: $fontSmallSize
+    margin: 1em 0em 1em 0em
+  table.listing th, .stx table th
+    background: $globalBackgroundColor
+    border-top: $borderWidth $borderStyle $globalBorderColor
+    border-bottom: $borderWidth $borderStyle $globalBorderColor
+    border-right: $borderWidth $borderStyle $globalBorderColor
+    font-weight: normal
+    padding: 0.25em 0.5em
+    text-transform: $textTransform
+  table.listing
+    .top
+      border-left: $borderWidth $borderStyle $backgroundColor
+      border-top: $borderWidth $borderStyle $backgroundColor !important
+      border-right: $borderWidth $borderStyle $backgroundColor !important
+      text-align: right !important
+      padding: 0em 0em 1em 0em
+    .listingCheckbox
+      text-align: center
+    td
+      border-right: $borderWidth $borderStyle $globalBorderColor
+      padding: 0.25em 0.5em
+  .stx table td
+    border-right: $borderWidth $borderStyle $globalBorderColor
+    padding: 0.25em 0.5em
+  table.listing
+    a
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    img
+      vertical-align: middle
+    td a label
+      cursor: pointer
+  .stx table td a label
+    cursor: pointer
+  /* Vertical addition class
+  table
+    &.vertical
+      background-color: $backgroundColor
+      th
+        padding: 0.5em
+      td
+        border-top: $borderWidth $borderStyle $globalBorderColor
+        padding: 0.5em
+    &.grid td
+      border: $borderWidth $borderStyle $globalBorderColor
+      padding: 0.5em
+    &.plain
+      border: 1px solid #ccc
+      padding: 0.5em
+      border-collapse: collapse
+      td, th
+        border: 1px solid #ccc
+        padding: 0.5em
+        border-collapse: collapse
+  /* grid addition class
+  /* plain table class with light gray borders
+  /* Batch selector
+  .listingBar
+    background-color: $globalBackgroundColor
+    border-color: $globalBorderColor
+    border-style: $borderStyle
+    border-width: $borderWidth
+    padding: 0em 1em
+    text-align: center
+    text-transform: $textTransform
+    vertical-align: top
+    margin: 1em 0em
+    font-size: 94%
+    clear: both
+    span.previous
+      text-align: left
+      float: left
+      margin-right: 1em
+  .listingPrevious
+    text-align: left
+    float: left
+    margin-right: 1em
+  .listingBar span.next, .listingNext
+    text-align: right
+    float: right
+    margin-left: 1em
+  .listingBar
+    img
+      vertical-align: middle
+    a
+      text-decoration: none
+  .tileItem, .item
+    border-top: $borderWidth $borderStyle $globalBorderColor
+    padding-top: 0.5em
+    margin-top: 0.5em
+  .tileHeadline, .headline
+    border: none
+    font-size: 110%
+    font-weight: bold
+  .tileHeadline a, .headline a
+    text-decoration: none
+  .tileBody
+    margin-bottom: 0.5em
+  .tileImage
+    float: right
+    margin: 0 0 0.5em 0.5em
+    border: 1px solid black
+  .eventDetails
+    float: right
+    clear: right
+    margin: 0 0 0.5em 1em
+  /* Useful deviations from regular style on elements
+  /* List classes without markers
+  ul.visualNoMarker, ol.visualNoMarker
+    list-style-type: none
+    list-style-image: none
+    margin: 0.5em 0 0 0
+    line-height: 1em
+  ul.discreet
+    list-style-image: none
+    list-style-type: disc
+  textarea.proportional
+    font: 100% $fontFamily
+  .productCredits
+    text-align: right
+    font-size: $fontSmallSize
+    clear: both
+    font-weight: normal
+    color: $discreetColor
+  #{$portal-footer}
+    background-color: $globalBackgroundColor
+    border-top: $borderWidth $borderStyle $globalBorderColor
+    border-bottom: $borderWidth $borderStyle $globalBorderColor
+    float: none
+    line-height: 1.2em
+    margin: 2em 0em 1em 0em
+    padding: 0.5em 0em 1em 0em
+    text-align: center
+    p
+      margin: 0.25em 0
+    a
+      text-decoration: none
+      color: $linkColor
+      border: none
+      &:visited
+        color: $linkColor
+      &:hover
+        text-decoration: underline
+  #{$portal-colophon}
+    float: none
+    margin: 0 0 1em 0
+    padding: 0 0 1em 0
+    text-align: center
+    color: #666
+    ul
+      list-style-image: none
+      list-style-type: none
+      li
+        display: inline !important
+        font-size: $fontSmallSize
+        padding: 0 0.75em
+        a
+          text-decoration: none
+          border-bottom: 1px #ccc solid
+          color: #666
+  .feedButton
+    display: block
+    float: right
+    margin-top: 1px
+  .poweredBy
+    display: block
+    clear: both
+    font-size: $fontSmallSize
+    font-weight: normal
+    color: $discreetColor
+    text-align: right
+  /* Sitemap styles
+  #{$portal-sitemap}
+    list-style: none
+    list-style-image: none
+    margin: 0
+    font-size: 90%
+    border: none
+    a
+      border: $borderWidth $borderStyle $backgroundColor
+      &:hover
+        border: $borderWidth $borderStyle $globalBorderColor
+    .navTreeLevel1
+      padding-left: 1em
+      border-left: 0.5em solid $globalBorderColor
+      margin: 0 0 0 0.5em
+    .navTreeLevel2
+      padding-left: 1em
+      border-left: 0.5em solid $globalBackgroundColor
+      margin: 0 0 0 0.6em
+  /* Album view classes
+  .photoAlbumEntry
+    float: left
+    position: relative
+    overflow: hidden
+    height: 185px
+    width: 143px
+    margin: 0em
+    padding: 0px 6px 0px 9px
+    text-align: center
+    background-image: url("$portalUrl/polaroid-single.png")
+    background-repeat: no-repeat
+    img
+      border: 1px solid #ccc
+      display: block
+      margin: 0 auto
+  .photoAlbumEntryWrapper
+    /*display: block;
+    height: 130px
+    width: 128px
+    margin-bottom: 7px
+  .photoAlbumEntry a
+    display: block
+    text-decoration: none
+    font-size: $fontSmallSize
+    height: 169px
+    width: 130px
+    margin: 16px auto 0px
+  .photoAlbumFolder
+    background-image: url("$portalUrl/polaroid-multi.png")
+    background-repeat: no-repeat
+  .photoAlbumEntryTitle
+    color: $discreetColor
+    display: block
+    width: 128px
+    height: 3.6em
+  /* Link types
+  a.link-parent
+    display: block
+    background: transparent url("$portalUrl/arrowUp.png") 4px 5px no-repeat
+    padding: 1px 0px 10px 16px
+    font-size: $fontSmallSize
+    text-decoration: none
+  #content
+    .link-category
+      color: #74ae0b !important
+    .link-user
+      background: transparent url("$portalUrl/user.png") 0 1px no-repeat
+      padding: 1px 0px 1px 16px
+    .link-comment
+      background: transparent url("$portalUrl/discussionitem_icon.png") center left no-repeat
+      padding: 1px 0px 1px 16px !important
+      /* value:
+    .link-anchor
+      color: $discreetColor
+      text-decoration: none
+      font-weight: normal
+    .link-presentation
+      font-size: 90%
+      text-align: center
+    .link-wiki-add
+      color: red
+    span
+      &.link-external a
+        background: transparent url("$portalUrl/link_icon.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 16px
+      &.link-https a
+        background: transparent url("$portalUrl/lock_icon.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 16px
+      &.link-mailto a
+        background: transparent url("$portalUrl/mail_icon.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 16px
+      &.link-news a
+        background: transparent url("$portalUrl/topic_icon.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 16px
+      &.link-ftp a
+        background: transparent url("$portalUrl/file_icon.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 16px
+      &.link-irc a
+        background: transparent url("$portalUrl/discussionitem_icon.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 16px
+      &.link-callto a
+        background: transparent url("$portalUrl/phone_icon.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 16px
+      &.link-webcal a
+        background: transparent url("$portalUrl/event_icon.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 16px
+      &.link-feed a
+        background: transparent url("$portalUrl/rss.png") 0px 1px no-repeat
+        padding: 1px 0px 1px 18px
+    .link-plain
+      background-image: none !important
+      padding: 0 !important
+  /* Handling external links
+  /* Protocol-specific links
+  /* For ghosted elements
+  .visualGhosted
+    opacity: 0.2
+  /* Fullscreen
+   ***
+   *** Fullscreen mode is disabled by default. The styles below are used only in case you have it
+   *** enabled.
+  body.fullscreen
+    #{$portal-logo}, #{$portal-siteactions}
+      display: none
+    #{$portal-globalnav}
+      margin-top: 4em
+    #{$portal-searchbox}
+      margin: 0.5em 2em 0 0.5em
+      padding: 0
+      position: relative
+      z-index: 3
+  /* Image alignment classes
+  .image-left
+    float: left
+    clear: both
+    margin: 0.5em 1em 0.5em 0
+    border: 1px solid Black
+  .image-inline
+    float: none
+  .image-right
+    float: right
+    clear: both
+    margin: 0.5em
+    border: 1px solid Black
+  dd.image-caption
+    text-align: left
+    padding: 0
+    margin: 0
+  dl.captioned
+    padding: 10px
+  /* Dashboard
+  #dashboard-info-message
+    padding-top: 0.5em
+  #dashboard
+    width: 68em
+  #dashboard-portlets1, #dashboard-portlets2, #dashboard-portlets3
+    float: left
+    width: 16em
+    padding: 0.7em 1.3em 0 0
+  #dashboard-portlets4
+    float: left
+    width: 16em
+    padding-top: 0.7em
+  #dashboard-portlets1 a, #dashboard-portlets2 a, #dashboard-portlets3 a, #dashboard-portlets4 a
+    border-bottom: medium none
+  #dashboard-portlets1 dl.portlet, #dashboard-portlets2 dl.portlet, #dashboard-portlets3 dl.portlet, #dashboard-portlets4 dl.portlet
+    margin-bottom: 1.5em
+  div.managedPortlet.portlet
+    border-bottom: none
+  #dashboard select
+    width: 100%
+  .portletAssignments
+    margin-top: 1.5em
+  #dashboard-portlets1 div.managedPortlet a, #dashboard-portlets2 div.managedPortlet a, #dashboard-portlets3 div.managedPortlet a, #dashboard-portlets4 div.managedPortlet a
+    text-decoration: none
+    color: $globalFontColor
+    border-bottom: 1px solid $globalFontColor
+  #dashboard-portlets1 div.managedPortlet span a, #dashboard-portlets2 div.managedPortlet span a, #dashboard-portlets3 div.managedPortlet span a, #dashboard-portlets4 div.managedPortlet span a
+    border-bottom: none
+  #dashboard-actions
+    float: right
+    ul
+      list-style-image: none
+      list-style-position: outside
+      list-style-type: none
+      margin-top: 0
+      li
+        display: inline
+        padding-left: 0.7em
+        &.portalUser
+          padding-left: 18px
+  /* manage portlets
+  .section div
+    padding-top: 0.5em
+    padding-bottom: 0.5em
+  /* styling for overlays (popups)
+  div
+    &.overlay
+      width: auto
+      height: auto
+      /* initially overlay is hidden
+      display: none
+      /* some padding to layout nested elements nicely
+      margin: 1em
+    &.overlay-iframe, &.overlay-ajax
+      width: 60%
+      min-height: 100px
+      z-index: 99
+      /* overlays should be above everything
+    &.overlay-iframe
+      height: 60%
+    &.overlaybg div.close, &.overlay div.close
+      background-image: url("$portalUrl/pb_close.png")
+      position: absolute
+      left: -15px
+      top: -15px
+      cursor: pointer
+      height: 30px
+      width: 30px
+  /* default close button positioned on upper-left corner
+  .pb-ajax
+    overflow-y: auto
+    white-space: normal
+    border: $borderWidth $borderStyle $globalBorderColor
+    -moz-box-shadow: 0 0 1em #888
+    -webkit-box-shadow: 0 0 1em #888
+  .pb-image
+    white-space: normal
+    border: $borderWidth $borderStyle $globalBorderColor
+    -moz-box-shadow: 0 0 1em #888
+    -webkit-box-shadow: 0 0 1em #888
+  .pb-ajax
+    > *
+      background-color: $backgroundColor
+      padding: 1em
+      white-space: normal
+    .documentActions
+      display: none
+  div.overlay
+    div.close span
+      display: block
+      height: 1px
+      margin: -1px 0 0 -1px
+      overflow: hidden
+      padding: 0
+      width: 1px
+    .link-parent
+      display: none
+    #createGroup
+      legend
+        display: none
+      fieldset
+        border: none
+  /* Hide form elements that don't make sense within an overlay.
+  /* Core content type sprites
+  .icons-on
+    .contenttype-document
+      background: no-repeat transparent 0px 4px url(contenttypes-sprite.png)
+    .contenttype-event
+      background: no-repeat transparent 0px -212px url(contenttypes-sprite.png)
+    .contenttype-folder
+      background: no-repeat transparent 0px -644px url(contenttypes-sprite.png)
+    .contenttype-link
+      background: no-repeat transparent 0px -1076px url(contenttypes-sprite.png)
+    .contenttype-news-item
+      background: no-repeat transparent 0px -1292px url(contenttypes-sprite.png)
+    .contenttype-plone-site
+      background: no-repeat transparent 0px -1508px url(contenttypes-sprite.png)
+    .contenttype-topic
+      background: no-repeat transparent 0px -1724px url(contenttypes-sprite.png)
+    #plone-contentmenu-factories
+      .contenttype-file
+        background: no-repeat transparent 0px -428px url(contenttypes-sprite.png)
+      .contenttype-image
+        background: no-repeat transparent 0px -860px url(contenttypes-sprite.png)
+    .contenttype-document, .contenttype-event, .contenttype-folder, .contenttype-link, .contenttype-news-item, .contenttype-plone-site, .contenttype-topic
+      line-height: 2em
+      display: inline-block
+      padding-left: 20px !important
+    #plone-contentmenu-factories
+      .contenttype-file, .contenttype-image
+        line-height: 2em
+        display: inline-block
+        padding-left: 20px !important
+  /* These should only appear in the add menu
+
+=_classic_columns
+  @if $plone-4 == true
+    +deco-gs
+    #{$portal-column-content} > div:not([id^="viewlet"])
+      padding: 1em 1em 0 !important
+    #{$portal-column-content} > .documentEditable:not([id^="viewlet"])
+      padding: 1em 2em 0 !important
+  @else
+    #{$portal-columns}
+      width: 100% !important
+      border-collapse: collapse
+      border-spacing: 0
+    #{$portal-column-one}
+      vertical-align: top
+      width: $columnOneWidth
+      border-collapse: collapse
+      padding: 0
+    #{$portal-column-content}
+      vertical-align: top
+      border-collapse: collapse
+      padding: 1em 1em 0 1em
+      margin: 0em 0em 2em 0em
+    #{$portal-column-two}
+      vertical-align: top
+      width: $columnTwoWidth
+      border-collapse: collapse
+      padding: 0
+    /* fullscreen
+    body.fullscreen
+      #{$portal-column-one}, #{$portal-column-two}
+        display: none
+      #{$portal-column-content}
+        width: 100%
+        margin: 0
+        padding: 0
+
+=_classic_authoring
+  /* Editable border
+  .contentViews
+    background-color: transparent
+    padding-left: 1em
+    line-height: normal
+    margin: 0
+    list-style: none
+    border: $borderWidth $borderStyle $contentViewBorderColor
+    border-top-width: 0px
+    border-left-width: 0px
+    border-right-width: 0px
+    li
+      display: inline
+      padding-top: 0.5em
+      a
+        background-color: transparent
+        border: $borderWidth $borderStyle $contentViewBorderColor
+        border-style: $borderStyle
+        color: $contentViewFontColor
+        height: auto
+        margin-right: 0.5em
+        padding: 0em 1em
+        line-height: normal
+        text-decoration: none
+        text-transform: $textTransform
+        z-index: 1
+    .selected a
+      background-color: $contentViewBackgroundColor
+      border-bottom: $contentViewBackgroundColor $borderWidth $borderStyle
+      color: $contentViewFontColor
+    li a:hover
+      background-color: $contentViewBackgroundColor
+      color: $contentViewFontColor
+  .configlet .contentViews
+    font-size: 90%
+  /*
+   *** begin ECMAScript Content Action Menus
+  .contentActions
+    background-color: $contentViewBackgroundColor
+    border-left: $borderWidth $borderStyle $contentViewBorderColor
+    border-right: $borderWidth $borderStyle $contentViewBorderColor
+    color: $contentViewFontColor
+    text-align: right
+    text-transform: $textTransform
+    padding: 0 0 0 1em
+    z-index: 2
+    position: relative
+    height: 1.6em
+    ul
+      margin: 0
+      list-style: none
+      list-style-image: none
+      color: $fontColor
+      text-align: left
+      line-height: 1.6em
+    li
+      margin: 0
+      list-style: none
+      list-style-image: none
+      color: $fontColor
+      text-align: left
+      line-height: 1.6em
+      float: right
+      z-index: 4
+      border-left: $borderWidth $borderStyle $contentViewBorderColor
+    a
+      text-decoration: none
+      color: $contentViewFontColor
+      padding: 0 0.5em
+      cursor: pointer
+    span.subMenuTitle
+      padding: 0em 0.5em
+      position: relative
+      white-space: nowrap
+      display: inline
+    a span.subMenuTitle
+      padding: 0px
+      display: inline
+  .actionMenu
+    /*  The spec says we can't put this on an element with a float (although
+     *  Opera is the only one that cares) and we need it in order to catch
+     *  the position:absolute bubbling up
+    position: relative
+    margin: 0
+    padding: 0
+    .actionMenuHeader
+      margin: 0
+      padding: 0
+      font-weight: normal
+    &.activated .actionMenuHeader
+      position: relative
+      z-index: 10
+    .actionMenuHeader a
+      display: block
+  .arrowDownAlternative
+    font-size: 0.85em
+  .actionMenu
+    .actionMenuContent
+      display: none
+      z-index: 5
+      position: absolute
+      top: 1.6em
+      right: -1px
+      height: auto
+      padding: 0
+      margin: 0
+    &.activated .actionMenuContent
+      display: block !important
+      /* this one will be ignored by IE, it is here to fix the cut-off error in
+       * Firefox
+      display: table !important
+      border-collapse: collapse
+      border-spacing: 0
+    &.deactivated .actionMenuContent
+      display: none !important
+    .actionMenuContent
+      ul
+        display: block
+        background: $contentViewBackgroundColor
+        border: $borderWidth $contentViewBorderColor
+        border-style: none $borderStyle $borderStyle $borderStyle
+        margin: -2px 0 0 0
+        padding: 0
+      li
+        float: none
+        background-color: transparent
+        display: inline
+        padding: 0
+        margin: 0
+        border: 0
+        a
+          display: block
+          white-space: nowrap
+          margin: 0.2em 0
+      .selected
+        display: block
+        white-space: nowrap
+        padding: 0 0.5em
+        margin: 0.2em 0
+      li a:hover
+        background-color: $contentViewBorderColor
+        color: White
+      .actionSeparator a
+        padding-top: 0.2em
+        border-top: $borderWidth $borderStyle $contentViewBorderColor
+      .actionMenuSelected
+        color: #000
+        font-weight: bold
+  #templateMenu li a
+    padding-left: 16px
+  /*
+   *** end ECMAScript Content Action Menus
+  ul
+    &.configlets
+      margin: 1em 0
+      list-style-image: none
+      list-style: none
+      li
+        margin-bottom: 1em
+        a
+          text-decoration: none
+          border: none
+          &:visited, &:active
+            color: $linkColor
+            background-color: transparent
+        label
+          font-weight: bold
+    &.configletDetails
+      margin: 0em 1em 1em 4em
+      list-style-image: none
+      list-style: none
+      li
+        margin-bottom: 1em
+        display: inline
+        a
+          text-decoration: none
+        label
+          font-weight: bold
+        &.configletDescription
+          display: block
+          color: $discreetColor
+          font-size: $fontSmallSize
+          margin: 0
+  /* Additional STX workaround classes
+  .stx table
+    p
+      margin: 0
+      padding: 0
+    border: $borderWidth $borderStyle $globalBorderColor !important
+    td
+      border-bottom: $borderWidth $borderStyle $globalBorderColor
+  .reviewHistory, .contentHistory
+    display: inline
+    font-size: 110% !important
+    color: Black
+  .comment
+    background: $evenRowBackgroundColor
+    border: $borderWidth $borderStyleAnnotations $globalBorderColor
+    padding: 0.25em 1em 0.5em 1em
+    margin-bottom: 1em
+    h1, h2, h3, h4, h5, h6
+      border-bottom: $borderWidth $borderStyleAnnotations $discreetColor
+      font-weight: normal
+    h3 a
+      background-image: url("$portalUrl/discussionitem_icon.png")
+      background-repeat: no-repeat
+      padding-left: 18px
+      margin-left: -1px
+      margin-bottom: 1px
+      min-height: 1.6em
+      height: auto
+      line-height: 1.6em
+  .commentBody
+    margin: 0 1em 1em 1em
+  .spacer
+    margin: 1em
+  /* Collapsible elements
+  dl
+    &.collapsible
+      border: $borderWidth $borderStyle $globalBorderColor !important
+      margin: 1em 0 0 0
+      padding: 0
+      dt.collapsibleHeader
+        display: block
+        float: left
+        background: $backgroundColor
+        line-height: 1.2em
+        vertical-align: middle
+        font-size: 90%
+        position: relative
+        top: -0.6em
+        width: auto
+        margin: 0 0 -0.6em 1em
+        padding: 0 0.5em
+      dd.collapsibleContent
+        margin: 0
+        padding: 0 1em
+        clear: left
+        > dl
+          margin: 0
+          padding: 0
+    &.expandedInlineCollapsible dt.collapsibleHeader, &.expandedBlockCollapsible dt.collapsibleHeader
+      padding: 0 6px 0 22px
+      background: $backgroundColor url(treeExpanded.png) no-repeat 6px 50%
+      cursor: pointer
+    &.collapsedBlockCollapsible
+      border: none !important
+      height: 1em
+      width: auto
+      dt.collapsibleHeader
+        float: none
+        position: static
+        margin: 0
+        padding: 0 0 0 22px
+        line-height: 1em
+        background: transparent url(treeCollapsed.png) no-repeat 6px 50%
+        cursor: pointer
+    &.collapsedInlineCollapsible dd.collapsibleContent, &.collapsedBlockCollapsible dd.collapsibleContent
+      display: none
+    &.collapsedInlineCollapsible
+      border: none !important
+      height: 1em
+      width: auto
+      display: inline
+      dt.collapsibleHeader
+        position: static
+        float: none
+        margin: 0
+        padding: 0 0 0 22px
+        line-height: 1em
+        background: transparent url(treeCollapsed.png) no-repeat 6px 50%
+        cursor: pointer
+        display: inline
+  /* for IE the following isn't needed, that's why the css2 selector is used
+  .configlet .documentEditable
+    padding: 0em !important
+  .documentEditable #content
+    border: $borderWidth $borderStyle $contentViewBorderColor
+    padding: 0
+  .label
+    font-weight: bold
+    display: inline
+    padding-right: 0.5em
+  .optionsToggle
+    border: $borderWidth $borderStyle $globalBorderColor
+    color: $fontColor
+    background-color: $globalBackgroundColor
+    font-weight: normal !important
+    font-size: $fontSmallSize
+  /* Used on all descriptions relevant to those not logged in
+  .portalNotLoggedIn
+  #{$portal-column-content} fieldset > *
+    input:focus, textarea:focus
+      border-color: $notifyBorderColor
+      border-width: $borderWidth
+  /* for highlighting of search terms
+  .highlightedSearchTerm
+    background-color: #ffa
+  dl.searchResults .highlightedSearchTerm
+    background-color: transparent
+    font-weight: bold
+  /* for greying out inherited roles
+  .noInheritedRoles
+    color: #a0a0a0
+  /* for highlighting current items, like the language or today in the calendar
+  .currentItem
+    border-collapse: collapse
+    border: 2px $borderStyle $notifyBorderColor
+    padding: 1px
+  .managePortletsLink
+    display: block
+    color: $discreetColor
+    font-size: $fontSmallSize
+    font-weight: normal
+  ul.formTabs
+    position: relative
+    display: block
+    margin: 0 0 -2em 0
+    padding: 0
+    list-style-type: none
+    text-align: center
+  li
+    &.formTab
+      display: inline
+      margin: 0
+      padding: 0
+      a
+        /* this isn't supported by all browsers, so we keep it in a separate rule
+        display: inline-block
+        border-top: $borderWidth $borderStyle $globalBorderColor
+        border-bottom: $borderWidth $borderStyle $globalBorderColor
+        border-left: $borderWidth dotted $globalBorderColor
+        background: $backgroundColor
+        margin: 0
+        padding: 0.125em 0.75em
+        text-decoration: none
+        &:visited
+          color: $linkColor
+    &.firstFormTab a
+      border-left: $borderWidth $borderStyle $globalBorderColor
+    &.lastFormTab a
+      border-right: $borderWidth $borderStyle $globalBorderColor
+    &.formTab a
+      &.selected, &:hover
+        background: $globalBackgroundColor
+      &.notify
+        background-color: $notifyBackgroundColor
+        color: $fontColor
+      &.required span
+        background-image: url("$portalUrl/required.png")
+        background-position: center right
+        background-repeat: no-repeat
+        padding-right: 8px
+      &.notify:hover
+        background-color: $notifyBorderColor
+  .formPanel
+    padding: 1em 1em 1em 1em
+    border: $borderWidth $borderStyle $globalBorderColor
+    &.hidden
+      display: none
+  div.formControls input.hidden
+    display: none
+  /* @group content history
+  #content-history
+    #history dd
+      margin-top: 0.8em
+    div
+      &.historyRecord
+        font-size: 90%
+        margin-bottom: 10px
+      &.historyTools ul
+        float: right
+        list-style-image: none
+        list-style-position: outside
+        list-style-type: none
+        margin-top: 0
+        li
+          display: inline
+          a
+            border-bottom: none
+    .historyAction
+      color: $contentViewFontColor
+    .historyByLine
+      margin-bottom: 1em
+    div.historyComment
+      background-color: $globalBackgroundColor
+      padding: 0.25em 1em
+      p
+        color: $fontColor
+        margin: 0
+        padding-top: 1px
+    a.historyComparePrevious
+      border-bottom: medium none
+      border-top: 1px dotted $globalBorderColor
+      display: block
+      margin-bottom: -15px
+      margin-top: 11px
+    dl div.historyRecord a.historyComparePrevious span
+      background-color: white
+      left: 50%
+      position: relative
+      top: -1em
+  /* @end
+  /* @group jQuery Tag multiple selector
+  a.multiSelect
+    position: relative
+    cursor: default
+    text-decoration: none
+    color: black
+    display: -moz-inline-stack
+    display: inline-block
+    vertical-align: top
+    &:link, &:visited, &:hover, &:active
+      color: black
+      text-decoration: none
+    span
+      overflow: hidden
+      display: -moz-inline-stack
+      display: inline-block
+      white-space: nowrap
+      text-align: right
+      color: #777777
+  .multiSelectOptions
+    margin-top: -1px
+    overflow-y: auto
+    border: solid 1px #999999
+    background: #FFF
+    height: 14em
+    width: 100%
+    LABEL
+      padding: 2px 0 0 0
+      display: block
+      line-height: 1em
+      font-weight: normal
+      &.optGroup
+        font-weight: bold
+    .optGroupContainer LABEL
+      padding-left: 10px
+    &.optGroupHasCheckboxes .optGroupContainer LABEL
+      padding-left: 18px
+    input
+      vertical-align: middle
+      margin: 1px 4px 4px 6px
+    LABEL
+      &.checked
+        background-color: #EEE
+      &.selectAll
+        border-bottom: dotted 1px #CCC
+      &.hover
+        background-color: #777
+        color: white
+  .formHelp
+    font-weight: normal !important
+  #existingTagsSection
+    position: relative
+    margin-left: 3em
+  #existingTags
+    float: left
+    width: 50%
+  #content dd
+    margin-bottom: 1px
+    margin-left: 0
+  #selectedTagsSection
+    margin-left: 3em
+    float: left
+    width: 43%
+    margin-bottom: 0em !important
+  #selectedTags
+    margin-bottom: 1em
+  #newTagsSection
+    width: 49%
+    margin-left: 3em
+  span.selectedTag
+    -moz-background-clip: border
+    -moz-background-origin: padding
+    -moz-background-size: auto auto
+    -moz-border-radius: 0.5em
+    border-radius: 0.5em
+    background-attachment: scroll
+    background-color: #DDDDDD
+    background-image: none
+    background-position: 0 0
+    background-repeat: repeat
+    color: black
+    padding-bottom: 0.25em
+    padding-left: 0.5em
+    padding-right: 0.5em
+    padding-top: 0.25em
+  p.selectedTag
+    margin-bottom: .4em !important
+  #existingTagsTitle, #newTagsTitle
+    float: left
+  #existingTagsHelp, #newTagsHelp
+    float: right
+
+=_classic_portlets
+  /* Fallback for edit screen if both columns are hidden
+  .managePortletsFallback
+    margin: 0 0 0 1em
+  /* Main portlet elements
+  .portlet
+    margin: 1px 0 1em 0
+    border-bottom: $borderWidth $borderStyle $globalBorderColor
+    background-color: $backgroundColor
+    a
+      text-decoration: none
+      &.tile
+        display: block
+  .portletItem
+    ul
+      list-style-type: none
+    a
+      border-bottom: none
+  /* XXX: The two below rules should really be in the rule above, but that makes the items grow/shrink on :hover (navtree) - need to investigate how to make it not do that. ~limi, Dec 2005
+  .portletFooter a
+    border-bottom: none
+  .portletItem a:visited, .portletFooter a:visited
+    color: $linkColor
+  .portletHeader, .managedPortlet .portletHeader
+    background-color: $globalBackgroundColor
+    border: $borderWidth $borderStyle $globalBorderColor
+    padding: 0em 1em
+    text-transform: $textTransform
+    font-weight: normal
+    line-height: 1.6em
+  .portletHeader a, .managedPortlet .portletHeader a
+    color: $fontColor
+  .inheritedPortlet .portletHeader
+    background-color: transparent
+  .portletItem
+    margin: 0
+    padding: 1em
+    border-left: $borderWidth $borderStyle $globalBorderColor
+    border-right: $borderWidth $borderStyle $globalBorderColor
+    ol
+      margin: 0 0 0 1em
+  .portletItemDetails
+    text-align: right
+    display: block
+    color: $fontColor
+  .portletFooter
+    background-color: $evenRowBackgroundColor
+    margin: 0
+    padding: 0.25em 1em
+    border: $borderWidth $borderStyle $globalBorderColor
+    border-style: dotted $borderStyle none $borderStyle
+    text-align: right
+  /* Elements that enable layout with rounded corners
+  .portletTopLeft, .portletTopRight, .portletBottomLeft, .portletBottomRight
+  /*
+   *** Calendar elements - used in the calendar rendering
+  .dayPopup
+    background-color: $helpBackgroundColor
+    border: $borderWidth $borderStyle black
+    padding: 0.2em
+    position: absolute
+    visibility: hidden
+    width: 12em
+    z-index: 2
+  .date
+    font-weight: bold
+  .portletCalendar
+    width: 100%
+    margin: 1px 0 1em 0
+    width: 100%
+    dt
+      background-color: $globalBackgroundColor
+      font-weight: normal
+      text-align: center
+      line-height: 1.6em
+      border-bottom: none
+    dd
+      margin: 0
+      padding: 0
+    a
+      text-decoration: none
+      &:hover
+        text-decoration: none
+  .ploneCalendar
+    border-collapse: collapse
+    border-spacing: 0
+    width: 100%
+    td
+      background-color: transparent
+      width: 14%
+      text-align: center
+      padding: 2px
+    .weekdays th
+      background-color: $globalBackgroundColor
+      border: $borderWidth $borderStyle $globalBorderColor
+      border-style: $borderStyle none
+      text-align: center
+      padding: 2px
+      font-weight: normal
+    .event
+      background-color: $globalBackgroundColor
+      font-weight: bold
+    .todayevent
+      background-color: $globalBackgroundColor
+      border: 2px $borderStyle $notifyBorderColor
+      font-weight: bold
+    .todaynoevent
+      border-collapse: collapse
+      border: 2px $borderStyle $notifyBorderColor
+  .managePortletsLink
+    text-align: center
+  div
+    &.portlets-manager div.section
+      padding-top: 1em !important
+    &.managedPortlet
+      padding-top: 0.5em
+      padding-bottom: 0.5em
+      background-color: transparent
+  .managedPortlet
+    .portletHeader
+      min-height: 3em !important
+    a
+      text-decoration: underline
+  .managedPortletActions
+    display: block
+    float: right
+    a
+      text-decoration: none
+      &.up, &.down
+        color: blue !important
+      &.delete
+        color: red !important
+  .blockedPortlet
+    .portletHeader
+      border-color: $discreetColor
+    .portletBlockedMessage
+      color: $discreetColor
+  /* Table of Contents styling - essentially a portlet with smaller fonts and aligned right + limited in width
+  .toc
+    float: right
+    width: 30%
+    font-size: 90%
+    margin: 0 0 0.5em 0.5em
+    .TOC1Digit
+      margin-left: 1em
+    .TOC2Digit
+      margin-left: 2em
+    .TOC3Digit
+      margin-left: 3em
+  /* Static text portlet
+  .portletStaticText
+    ul
+      list-style-image: url("$portalUrl/bullet.png")
+      list-style-type: square
+      margin: 0.5em 0 0 1.5em
+    ol
+      margin: 0.5em 0 0 2em
+  /* LiveSearch portlet tweaks, since positioning changes
+  #{$portal-column-one} fieldset.livesearchContainer
+    right: inherit !important
+    top: 1.5em !important
+
+=_classic_plone-4
+
+=_classic_controlpanel
+  .inlineDisplay
+    display: inline
+  table
+    &.controlpanel-listing
+      width: 100%
+      td, th
+        font-size: 120%
+      dl
+        margin-top: 0
+      dd
+        margin-left: 1em
+      dl dt a .trigger
+        font-weight: normal
+    .controlpanel-listing td
+      vertical-align: top
+    &.controlpanel-listing
+      td.checker
+        text-align: center
+      th.smallcolumn
+        width: 1.5em
+  .chooser-right
+    float: right
+    margin-right: 0 !important
+    margin-bottom: 0 !important
+  .rule-element
+    background-color: #EEF3F5
+    margin: 0.5em 0pt 0.5em
+    padding: 0.3em 1em 0.3em 1em
+    width: auto
+    dl dd
+      margin-left: 1em
+  .rule-updown, .rule-operations
+    float: right
+    padding-top: 0.8em
+
+=_classic_deprecated
+
+=_classic_navtree
+  .portletNavigationTree
+    padding: 0
+    list-style: none !important
+    list-style-image: none !important
+    line-height: 1em
+  .navTree
+    list-style: none
+    list-style-image: none
+    margin-top: 1px
+    li
+      margin-bottom: 1px
+  .navTreeItem
+    display: block
+    padding: 0
+    margin: 0
+    a
+      border: $borderWidth $borderStyle $backgroundColor
+      display: block
+      text-decoration: none
+      padding-top: 0.2em
+      padding-bottom: 0.25em
+  dd.portletItem .navTreeItem a
+    border: $borderWidth $borderStyle $backgroundColor
+    display: block
+    text-decoration: none
+    padding-top: 0.2em
+    padding-bottom: 0.25em
+  .navTreeItem a:hover, dd.portletItem .navTreeItem a:hover
+    background-color: $globalBackgroundColor
+    color: $globalFontColor
+    border: $borderWidth $borderStyle $globalBorderColor
+  .navTreeCurrentItem
+    background-color: $globalBackgroundColor
+    color: $globalFontColor
+    border: $borderWidth $borderStyle $globalBorderColor !important
+  li.navTreeCurrentItem
+    display: block
+    padding: 0 0 0 1px
+    margin: 0 0 2px -1px
+    a
+      display: block
+      border: $borderWidth $borderStyle $globalBackgroundColor
+      min-height: 1.6em
+      line-height: 1.6em
+      height: auto
+      &:hover
+        display: block
+        border: $borderWidth $borderStyle $globalBackgroundColor
+        min-height: 1.6em
+        line-height: 1.6em
+        height: auto
+  /* Another workaround for broken Internet Explorer
+  * html li.navTreeCurrentItem a
+    height: 1.6em
+    &:hover
+      height: 1.6em
+  .navTreeLevel0
+    margin: 0
+  .navTreeLevel1
+    margin-left: 1em
+  .navTreeLevel2, .navTreeLevel3, .navTreeLevel4, .navTreeLevel5
+    margin-left: 0.75em
+
+=_classic_invisibles
+  /* List classes without markers
+  ul.visualNoMarker, ol.visualNoMarker
+    list-style-type: none
+    list-style-image: none
+    margin: 0.5em 0 0 0
+  .visualOverflow
+    overflow: auto
+    margin: 0 0 1em 0
+    pre, table, img
+      margin: 0
+  /* Accessibility and visual enhancement elements
+  .hiddenStructure
+    display: block
+    background: transparent
+    background-image: none
+    /* safari bug
+    border: none
+    height: 1px
+    overflow: hidden
+    padding: 0
+    margin: -1px 0 0 -1px
+    width: 1px
+  .contentViews .hiddenStructure, .contentActions .hiddenStructure
+    position: absolute
+    top: -200px
+    left: -200px
+  .hiddenLabel
+    display: block
+    background: transparent
+    background-image: none
+    /* safari bug
+    border: none
+    height: 1px
+    overflow: hidden
+    padding: 0
+    margin: -1px 0 0 -1px
+    width: 1px
+  /* Helper element to work with CSS floats
+  .visualClear
+    display: block
+    clear: both
+  /* Hiding helper elements for old browsers
+  .netscape4
+    display: none
+  /* for draggable elements
+  tr.dragging td
+    background-color: #ff6 !important
+  .draggingHook
+    cursor: move
+  .notDraggable
+
+=_classic_forms
+  textarea
+    font: 100% Monaco, "Courier New", Courier, monospace
+    border: 1px solid #ddd
+    border-color: #666 #ddd #ddd #666
+    color: $inputFontColor
+    background: white url("$portalUrl/input_background.png") repeat-x
+    width: 100%
+  input
+    font-family: $fontFamily
+    visibility: visible
+    border: 1px solid #ddd
+    border-color: #666 #ddd #ddd #666
+    color: $inputFontColor
+    vertical-align: middle
+    background: white url("$portalUrl/input_background.png") repeat-x
+    font-size: 1em
+  /* Code to work around IE's lacking support of sub-elements of the input element
+  .noborder, .documentEditable * .noborder, input[type=checkbox]
+    border: none
+    margin: 0
+    background: none
+    background-color: transparent
+  #searchGadget
+    border: $borderWidth solid $globalBorderColor
+  button
+    font-family: $fontFamily
+    visibility: visible
+    border: $borderWidth solid $globalBorderColor
+    color: $inputFontColor
+    vertical-align: middle
+    background-color: $globalBackgroundColor
+    padding: 1px
+    cursor: pointer
+    font-size: $fontSmallSize
+    text-transform: $textTransform
+  select
+    vertical-align: top
+  form
+    border: none
+    margin: 0
+  fieldset
+    border: $borderWidth $borderStyle $globalBorderColor
+    margin: 1em 0em 1em 0em
+    padding: 0em 1em 1em 1em
+    line-height: 1.5em
+    width: auto
+  legend
+    background: $backgroundColor
+    padding: 0.5em
+    font-size: 90%
+  label
+    font-weight: bold
+  optgroup
+    font-style: normal
+    font-weight: bold
+    color: #999
+    padding-left: 0.25em
+  option
+    color: black
+  optgroup > option
+    padding: 0 0.25em 0 1em
+  dl.enableFormTabbing dd
+    margin-left: 0
+    padding-top: 2em
+  #login-form
+    width: 30em
+    margin: 0 auto
+    .field
+      clear: none
+    input
+      font-size: 150%
+      &.context
+        padding: 1px 10px 1px 20px
+        background-position: 9px 5px
+        margin-bottom: 1em
+  #forgotten-password
+    float: right
+    width: 35%
+    margin: 0 1em
+  .standalone, .documentEditable * .standalone
+    background: $globalBackgroundColor url("$portalUrl/linkOpaque.png") 9px 1px no-repeat
+    color: $fontColor
+    cursor: pointer
+    font-size: $fontSmallSize
+    padding: 1px 1px 1px 15px
+    text-transform: $textTransform
+    border: $borderWidth solid $globalBorderColor
+  .context, .formControls .actionButtons .button, .documentEditable * .context
+    background: transparent url("$portalUrl/linkTransparent.png") 9px 1px no-repeat
+    color: $fontColor
+    cursor: pointer
+    font-size: $fontSmallSize
+    padding: 1px 1px 1px 15px
+    text-transform: $textTransform
+    border: $borderWidth solid $globalBorderColor
+  .destructive, .documentEditable * .destructive
+    background: $notifyBackgroundColor url("$portalUrl/linkTransparent.png") 9px 1px no-repeat
+    border: $borderWidth $borderStyle $notifyBorderColor
+    color: $fontColor
+    cursor: pointer
+    font-size: $fontSmallSize
+    padding: 1px 1px 1px 15px
+    text-transform: $textTransform
+    border: $borderWidth solid $globalBorderColor
+  input.searchButton
+    margin-bottom: $borderWidth !important
+    color: $fontColor
+    font-size: $fontSmallSize
+    background: $backgroundColor url("$portalUrl/search_icon.png") 2px 1px no-repeat
+    cursor: pointer
+    padding: 1px 1px 1px 19px
+    text-transform: $textTransform
+    border: $borderWidth solid $globalBorderColor
+  .searchSection
+    color: $discreetColor
+    margin-top: 0.25em
+    label:hover
+      color: $fontColor
+  /* The edit form elements
+  .field
+    top: 0
+    left: 0
+    margin: 0 1em 1em 0
+    clear: both
+    .field
+      margin: 0
+  .fieldRequired
+    background: url("$portalUrl/required.png") center left no-repeat
+    padding: 0 0 0 8px
+    color: $backgroundColor
+  .fieldUploadFile
+    text-align: right
+    margin-right: 0.75em
+    display: none
+  .fieldTextFormat
+    text-align: right
+    margin-right: 0.75em
+  .formHelp
+    font-size: 90%
+    color: $discreetColor
+    margin: 0 0 0.2em 0
+    &:hover
+      color: $fontColor
+      cursor: default
+  div.error
+    /* Class for error indication in forms
+    background-color: #fdc
+    border: 1px solid #d00
+    padding: 0.5em
+    margin: 0 0 1em 0
+    width: 95%
+  .error .fieldRequired
+    color: #d00
+  /* Styles to make the editing widgets look more like their view counterparts
+  #archetypes-fieldname-title input, input#form\.title
+    font-size: 160%
+    font-family: $headingFontFamily
+    font-weight: normal
+    width: 99%
+  #archetypes-fieldname-description textarea, textarea#form\.description
+    font: 100% $fontFamily
+    font-weight: bold
+  input.inputLabelActive
+    color: $discreetColor
+  textarea#form\.description
+    height: 6em
+    width: 99%
+  tr.selected
+    background-color: #ffa
+  .kupu-save-message
+    color: white
+    font-weight: bold
+    background-color: red
+    padding: 0.3em
+    position: fixed
+    top: 0
+    right: 0
+    z-index: 999
+
+=_classic_print
+  @media print
+    body
+      font-family: Baskerville, Georgia, Garamond, Times, serif
+      font-size: 11pt !important
+    h1, h2, h3, h4, h5, h6
+      border: none
+      font-family: Baskerville, Georgia, Garamond, Times, serif
+    div, p, ul, dl, ol
+      width: auto
+    ul, ol, dl
+      padding-right: 0.5em
+    ul
+      list-style-type: square
+    .documentDescription
+      font-weight: bold
+    pre
+      border: 1pt dotted black
+      white-space: pre
+      font-size: 8pt
+      overflow: auto
+      padding: 1em 0
+    table.listing
+      border: 1pt solid black
+      border-collapse: collapse
+      td
+        border: 1pt solid black
+        border-collapse: collapse
+    a
+      color: Black !important
+      padding: 0 !important
+      text-decoration: none !important
+      &:link, &:visited
+        color: #520
+        background: transparent
+    /* Page break class for use when printing
+    div
+      &.pageBreak
+        page-break-before: always
+      &.top
+        display: none
+    /* Uncomment these to get link addresses inserted along with the link text
+     *   when you print.
+     *#content a:link:after, 
+     *#content a:visited:after {
+     *   content: " [" attr(href) "] ";
+     *}
+    /* Hide all the elements that are irrelevant for printing
+    #{$portal-logo}, #{$portal-siteactions}, .hiddenStructure, #{$portal-searchbox}, #{$portal-globalnav}, #{$portal-personaltools}, #{$portal-breadcrumbs}, #{$portal-column-one}, #{$portal-column-two}, #{$portal-languageselector}, .contentViews, .contentActions, .help, .legend, .portalMessage, .documentActions, .documentByLine, .netscape4, #kss-spinner, #review-history, #content-history, .listingBar, #{$portal-footer}, #{$portal-colophon}, .skipnav, #kss-spinner, #review-history, #content-history, .listingBar, .discussion input, .overlay, .close, .visualNoPrint
+      display: none
+    .discussion .documentByLine
+      display: block
+
+=_classic_mobile
